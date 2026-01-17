@@ -1,4 +1,1 @@
-GERRIT_BRANCH: main
-CINDER_BRANCH: main
-OS_BRICK_BRANCH: main
-/workspaces/ciscripts_for_b100/install_with_gerrit.sh: line 26: ./stack.sh: No such file or directory
+/workspaces/ciscripts_for_b100/install_with_gerrit.sh
