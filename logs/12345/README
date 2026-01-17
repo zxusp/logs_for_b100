@@ -1,0 +1,4 @@
+{datetime} init logs success
+{datetime} install devstack success!
+{datetime} devstack self check success!
+{datetime} run tempest success!
