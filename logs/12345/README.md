@@ -1,12 +1,14 @@
 # CI for B100
- Build 3 start for Branch main Change 12345:3.  
-## Init
- 2026-01-19 03:49:28 init logs success!    
-## Install Devstack
- 2026-01-19 03:49:28 install devstack success!    
- 2026-01-19 03:49:28 devstack self check success!    
+  Build 3 started for Branch main, Change 12345:3.  
+## Initialization
+ 2026-01-19 06:17:38 Log initialization successful!    
+## Install DevStack
+ 2026-01-19 06:17:38   Installing DevStack...    
+ 2026-01-19 06:17:38 DevStack installation completed successfully!    
+ 2026-01-19 06:17:38 DevStack self-check passed!    
 ## Run Tempest
- 2026-01-19 03:49:28 run smoke tempest success!    
- 2026-01-19 03:49:28 run storage tempest success!    
+ 2026-01-19 06:17:38 Running Tempest tests...    
+ 2026-01-19 06:17:38 Smoke Tempest tests completed successfully!    
+ 2026-01-19 06:17:38 Storage Tempest tests completed successfully!    
 ## Finish
- 2026-01-19 03:49:28 build 3 end success!    
+ 2026-01-19 06:17:38 Build 3 completed successfully!    
