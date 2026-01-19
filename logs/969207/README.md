@@ -1,12 +1,14 @@
 # CI for B100
- Build 185 start for Branch master Change 969207:10.  
-## Init
- 2026-01-19 03:06:39 init logs success!    
-## Install Devstack
- 2026-01-19 03:24:09 install devstack success!    
- 2026-01-19 03:24:19 devstack self check success!    
+ Build 186 started for Branch master, Change 969207:10.  
+## Initialization
+ 2026-01-19 12:03:00 Log initialization successful!    
+## Install DevStack
+Installing DevStack...  
+ 2026-01-19 12:20:17 DevStack installation completed successfully!    
+ 2026-01-19 12:20:28 DevStack self-check passed!    
 ## Run Tempest
- 2026-01-19 03:26:24 run smoke tempest success!    
- 2026-01-19 11:45:54 run storage tempest success!    
+Running Tempest tests...  
+ 2026-01-19 12:22:37 Smoke Tempest tests completed successfully!    
+ 2026-01-19 12:35:31 Storage Tempest tests failed!    
 ## Finish
- 2026-01-19 11:45:54 build 185 end success!    
+ 2026-01-19 12:35:31 Build 186 completed successfully!    
