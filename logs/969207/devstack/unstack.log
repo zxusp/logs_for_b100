@@ -1,0 +1,1077 @@
+./unstack.sh: line 64: /home/slave/devstack/lib/oslo: No such file or directory
++ ./unstack.sh:main:97                     :   run_phase unstack
++ functions-common:run_phase:1851          :   local mode=unstack
++ functions-common:run_phase:1852          :   local phase=
++ functions-common:run_phase:1853          :   [[ -d /home/slave/devstack/extras.d ]]
++ functions-common:run_phase:1854          :   local extra_plugin_file_name
++ functions-common:run_phase:1855          :   for extra_plugin_file_name in $TOP_DIR/extras.d/*.sh
++ functions-common:run_phase:1860          :   local exceptions=80-tempest.sh
++ functions-common:run_phase:1861          :   local extra
+++ functions-common:run_phase:1862          :   basename /home/slave/devstack/extras.d/80-tempest.sh
++ functions-common:run_phase:1862          :   extra=80-tempest.sh
++ functions-common:run_phase:1863          :   [[ 80-tempest.sh =~ 80-tempest\.sh ]]
++ functions-common:run_phase:1867          :   [[ -r /home/slave/devstack/extras.d/80-tempest.sh ]]
++ functions-common:run_phase:1867          :   source /home/slave/devstack/extras.d/80-tempest.sh unstack
+++ extras.d/80-tempest.sh:source:3          :   is_service_enabled tempest
+++ functions-common:is_service_enabled:2050 :   local xtrace
++++ functions-common:is_service_enabled:2051 :   set +o
++++ functions-common:is_service_enabled:2051 :   grep xtrace
+++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
+++ functions-common:is_service_enabled:2052 :   set +o xtrace
+++ functions-common:is_service_enabled:2079 :   return 0
+++ extras.d/80-tempest.sh:source:4          :   [[ unstack == \s\o\u\r\c\e ]]
+++ extras.d/80-tempest.sh:source:7          :   [[ unstack == \s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:10         :   [[ unstack == \s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:13         :   [[ unstack == \s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:16         :   [[ unstack == \s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:19         :   [[ unstack == \s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:27         :   [[ unstack == \u\n\s\t\a\c\k ]]
+++ extras.d/80-tempest.sh:source:29         :   :
+++ extras.d/80-tempest.sh:source:32         :   [[ unstack == \c\l\e\a\n ]]
++ functions-common:run_phase:1872          :   [[ unstack == \s\o\u\r\c\e ]]
++ functions-common:run_phase:1875          :   [[ unstack == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
++ functions-common:run_phase:1878          :   run_plugins unstack
++ functions-common:run_plugins:1837        :   local mode=unstack
++ functions-common:run_plugins:1838        :   local phase=
++ functions-common:run_plugins:1840        :   local plugins=
++ functions-common:run_plugins:1841        :   local plugin
++ ./unstack.sh:main:101                    :   is_service_enabled nova
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:102                    :   stop_nova
++ lib/nova:stop_nova:1262                  :   stop_nova_rest
++ lib/nova:stop_nova_rest:1226             :   for serv in n-api n-api-meta n-sch
++ lib/nova:stop_nova_rest:1227             :   stop_process n-api
++ functions-common:stop_process:1699       :   local service=n-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-api.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api.service".
++ lib/nova:stop_nova_rest:1226             :   for serv in n-api n-api-meta n-sch
++ lib/nova:stop_nova_rest:1227             :   stop_process n-api-meta
++ functions-common:stop_process:1699       :   local service=n-api-meta
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-api-meta
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api-meta.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-api-meta.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-api-meta.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api-meta.service".
++ lib/nova:stop_nova_rest:1226             :   for serv in n-api n-api-meta n-sch
++ lib/nova:stop_nova_rest:1227             :   stop_process n-sch
++ functions-common:stop_process:1699       :   local service=n-sch
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-sch
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-sch.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-sch.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-sch.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-sch.service".
++ lib/nova:stop_nova:1263                  :   stop_nova_console_proxies
++ lib/nova:stop_nova_console_proxies:1232  :   [[ superconductor == \s\i\n\g\l\e\c\o\n\d\u\c\t\o\r ]]
++ lib/nova:stop_nova_console_proxies:1237  :   enable_nova_console_proxies
+++ lib/nova:enable_nova_console_proxies:1124 :   seq 1 1
++ lib/nova:enable_nova_console_proxies:1124 :   for i in $(seq 1 $NOVA_NUM_CELLS)
++ lib/nova:enable_nova_console_proxies:1125 :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:enable_nova_console_proxies:1126 :   is_service_enabled n-novnc
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:enable_nova_console_proxies:1127 :   enable_service n-novnc-cell1
++ functions-common:enable_service:2010     :   local xtrace
+++ functions-common:enable_service:2011     :   set +o
+++ functions-common:enable_service:2011     :   grep xtrace
++ functions-common:enable_service:2011     :   xtrace='set -o xtrace'
++ functions-common:enable_service:2012     :   set +o xtrace
++ lib/nova:enable_nova_console_proxies:1125 :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:enable_nova_console_proxies:1126 :   is_service_enabled n-spice
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/nova:enable_nova_console_proxies:1125 :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:enable_nova_console_proxies:1126 :   is_service_enabled n-sproxy
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
+++ lib/nova:stop_nova_console_proxies:1238  :   seq 1 1
++ lib/nova:stop_nova_console_proxies:1238  :   for i in $(seq 1 $NOVA_NUM_CELLS)
++ lib/nova:stop_nova_console_proxies:1239  :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:stop_nova_console_proxies:1240  :   stop_process n-novnc-cell1
++ functions-common:stop_process:1699       :   local service=n-novnc-cell1
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-novnc-cell1
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-novnc-cell1.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-novnc-cell1.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-novnc-cell1.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-novnc-cell1.service".
++ lib/nova:stop_nova_console_proxies:1239  :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:stop_nova_console_proxies:1240  :   stop_process n-spice-cell1
++ functions-common:stop_process:1699       :   local service=n-spice-cell1
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-spice-cell1
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/nova:stop_nova_console_proxies:1239  :   for srv in n-novnc n-spice n-sproxy
++ lib/nova:stop_nova_console_proxies:1240  :   stop_process n-sproxy-cell1
++ functions-common:stop_process:1699       :   local service=n-sproxy-cell1
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-sproxy-cell1
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/nova:stop_nova:1264                  :   stop_nova_conductor
++ lib/nova:stop_nova_conductor:1247        :   [[ superconductor == \s\i\n\g\l\e\c\o\n\d\u\c\t\o\r ]]
++ lib/nova:stop_nova_conductor:1252        :   enable_nova_fleet
++ lib/nova:enable_nova_fleet:1160          :   is_service_enabled n-cond
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:enable_nova_fleet:1161          :   enable_service n-super-cond
++ functions-common:enable_service:2010     :   local xtrace
+++ functions-common:enable_service:2011     :   set +o
+++ functions-common:enable_service:2011     :   grep xtrace
++ functions-common:enable_service:2011     :   xtrace='set -o xtrace'
++ functions-common:enable_service:2012     :   set +o xtrace
+++ lib/nova:enable_nova_fleet:1162          :   seq 1 1
++ lib/nova:enable_nova_fleet:1162          :   for i in $(seq 1 $NOVA_NUM_CELLS)
++ lib/nova:enable_nova_fleet:1163          :   enable_service n-cond-cell1
++ functions-common:enable_service:2010     :   local xtrace
+++ functions-common:enable_service:2011     :   set +o
+++ functions-common:enable_service:2011     :   grep xtrace
++ functions-common:enable_service:2011     :   xtrace='set -o xtrace'
++ functions-common:enable_service:2012     :   set +o xtrace
+++ lib/nova:stop_nova_conductor:1253        :   seq -f n-cond-cell%0.f 1 1
++ lib/nova:stop_nova_conductor:1253        :   for srv in n-super-cond $(seq -f n-cond-cell%0.f 1 $NOVA_NUM_CELLS)
++ lib/nova:stop_nova_conductor:1254        :   is_service_enabled n-super-cond
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:stop_nova_conductor:1255        :   stop_process n-super-cond
++ functions-common:stop_process:1699       :   local service=n-super-cond
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-super-cond
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-super-cond.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-super-cond.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-super-cond.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-super-cond.service".
++ lib/nova:stop_nova_conductor:1253        :   for srv in n-super-cond $(seq -f n-cond-cell%0.f 1 $NOVA_NUM_CELLS)
++ lib/nova:stop_nova_conductor:1254        :   is_service_enabled n-cond-cell1
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:stop_nova_conductor:1255        :   stop_process n-cond-cell1
++ functions-common:stop_process:1699       :   local service=n-cond-cell1
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-cond-cell1
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-cond-cell1.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-cond-cell1.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-cond-cell1.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cond-cell1.service".
++ lib/nova:stop_nova:1265                  :   stop_nova_compute
++ lib/nova:stop_nova_compute:1211          :   '[' libvirt == fake ']'
++ lib/nova:stop_nova_compute:1217          :   stop_process n-cpu
++ functions-common:stop_process:1699       :   local service=n-cpu
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-cpu
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-cpu.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@n-cpu.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@n-cpu.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
++ lib/nova:stop_nova_compute:1219          :   is_service_enabled n-cpu
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:stop_nova_compute:1219          :   [[ -r /home/slave/devstack/lib/nova_plugins/hypervisor-libvirt ]]
++ lib/nova:stop_nova_compute:1220          :   stop_nova_hypervisor
++ lib/nova_plugins/hypervisor-libvirt:stop_nova_hypervisor:136 :   :
++ ./unstack.sh:main:103                    :   cleanup_nova
++ lib/nova:cleanup_nova:207                :   is_service_enabled n-cpu
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/nova:cleanup_nova:209                :   clean_iptables
++ lib/nova:clean_iptables:195              :   sudo iptables -S -v
++ lib/nova:clean_iptables:195              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:195              :   grep nova
++ lib/nova:clean_iptables:195              :   grep '\-A'
++ lib/nova:clean_iptables:195              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:195              :   bash
++ lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
++ lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:197              :   grep nova
++ lib/nova:clean_iptables:197              :   grep '\-A'
++ lib/nova:clean_iptables:197              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
++ lib/nova:clean_iptables:197              :   bash
++ lib/nova:clean_iptables:199              :   sudo iptables -S -v
++ lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:199              :   grep nova
++ lib/nova:clean_iptables:199              :   grep '\-N'
++ lib/nova:clean_iptables:199              :   sed s/-N/-X/g
++ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:199              :   bash
++ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
++ lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:201              :   grep nova
++ lib/nova:clean_iptables:201              :   grep '\-N'
++ lib/nova:clean_iptables:201              :   sed s/-N/-X/g
++ lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
++ lib/nova:clean_iptables:201              :   bash
++ lib/nova:cleanup_nova:212                :   local instances
+++ lib/nova:cleanup_nova:213                :   sudo virsh list --all
+++ lib/nova:cleanup_nova:213                :   grep instance-
+++ lib/nova:cleanup_nova:213                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
++ lib/nova:cleanup_nova:213                :   instances=
++ lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
++ lib/nova:cleanup_nova:223                :   local tgts
+++ lib/nova:cleanup_nova:224                :   sudo iscsiadm --mode node
+++ lib/nova:cleanup_nova:224                :   grep volume-
+++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
+iscsiadm: No records found
++ lib/nova:cleanup_nova:224                :   tgts=
++ lib/nova:cleanup_nova:225                :   local target
++ lib/nova:cleanup_nova:229                :   sudo iscsiadm --mode node --op delete
+iscsiadm: No records found
++ lib/nova:cleanup_nova:229                :   true
++ lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
+sudo: nvme: command not found
++ lib/nova:cleanup_nova:232                :   true
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
++ lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
++ lib/nova:cleanup_nova:247                :   stop_process n-api
++ functions-common:stop_process:1699       :   local service=n-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api.service
+disabled
++ lib/nova:cleanup_nova:248                :   stop_process n-api-meta
++ functions-common:stop_process:1699       :   local service=n-api-meta
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled n-api-meta
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api-meta.service
+disabled
++ lib/nova:cleanup_nova:249                :   remove_uwsgi_config /etc/nova/nova-api-uwsgi.ini nova-api
++ lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-api
++ lib/apache:remove_uwsgi_config:407       :   local name=
+++ lib/apache:remove_uwsgi_config:410       :   basename nova-api
++ lib/apache:remove_uwsgi_config:410       :   name=nova-api
++ lib/apache:remove_uwsgi_config:412       :   [[ nova-api = /* ]]
++ lib/apache:remove_uwsgi_config:416       :   rm -rf /etc/nova/nova-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:417       :   disable_apache_site nova-api
++ lib/apache:disable_apache_site:207       :   local site=nova-api
++ lib/apache:disable_apache_site:208       :   is_ubuntu
++ functions-common:is_ubuntu:555           :   [[ -z deb ]]
++ functions-common:is_ubuntu:558           :   '[' deb = deb ']'
++ lib/apache:disable_apache_site:209       :   sudo a2dissite nova-api
+Site nova-api disabled.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
++ lib/nova:cleanup_nova:250                :   remove_uwsgi_config /etc/nova/nova-metadata-uwsgi.ini nova-metadata
++ lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-metadata-uwsgi.ini
++ lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-metadata
++ lib/apache:remove_uwsgi_config:407       :   local name=
+++ lib/apache:remove_uwsgi_config:410       :   basename nova-metadata
++ lib/apache:remove_uwsgi_config:410       :   name=nova-metadata
++ lib/apache:remove_uwsgi_config:412       :   [[ nova-metadata = /* ]]
++ lib/apache:remove_uwsgi_config:416       :   rm -rf /etc/nova/nova-metadata-uwsgi.ini
++ lib/apache:remove_uwsgi_config:417       :   disable_apache_site nova-metadata
++ lib/apache:disable_apache_site:207       :   local site=nova-metadata
++ lib/apache:disable_apache_site:208       :   is_ubuntu
++ functions-common:is_ubuntu:555           :   [[ -z deb ]]
++ functions-common:is_ubuntu:558           :   '[' deb = deb ']'
++ lib/apache:disable_apache_site:209       :   sudo a2dissite nova-metadata
+ERROR: Site nova-metadata does not exist!
++ lib/apache:disable_apache_site:209       :   true
++ lib/nova:cleanup_nova:252                :   [[ '' == \L\V\M ]]
++ ./unstack.sh:main:106                    :   is_service_enabled placement
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:107                    :   stop_placement
++ lib/placement:stop_placement:142         :   stop_process placement-api
++ functions-common:stop_process:1699       :   local service=placement-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled placement-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@placement-api.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@placement-api.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@placement-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@placement-api.service".
++ ./unstack.sh:main:110                    :   is_service_enabled glance
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:111                    :   stop_glance
++ lib/glance:stop_glance:666               :   stop_process g-api
++ functions-common:stop_process:1699       :   local service=g-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled g-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@g-api.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@g-api.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@g-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@g-api.service".
++ lib/glance:stop_glance:667               :   stop_process g-api-r
++ functions-common:stop_process:1699       :   local service=g-api-r
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled g-api-r
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:114                    :   is_service_enabled keystone
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:115                    :   stop_keystone
++ lib/keystone:stop_keystone:571           :   stop_process keystone
++ functions-common:stop_process:1699       :   local service=keystone
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled keystone
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@keystone.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@keystone.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@keystone.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@keystone.service".
++ ./unstack.sh:main:119                    :   is_service_enabled s-proxy
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:125                    :   is_service_enabled horizon
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:126                    :   stop_horizon
++ lib/horizon:stop_horizon:190             :   stop_apache_server
++ lib/apache:stop_apache_server:226        :   '[' -n apache2 ']'
++ lib/apache:stop_apache_server:227        :   stop_service apache2
++ functions-common:stop_service:2340       :   '[' -x /bin/systemctl ']'
++ functions-common:stop_service:2341       :   sudo /bin/systemctl stop apache2
++ ./unstack.sh:main:130                    :   is_service_enabled tls-proxy
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:135                    :   SCSI_PERSIST_DIR='/opt/stack/data/cinder/volumes/*'
++ ./unstack.sh:main:141                    :   is_service_enabled cinder
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:142                    :   stop_cinder
++ lib/cinder:stop_cinder:658               :   stop_process c-api
++ functions-common:stop_process:1699       :   local service=c-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled c-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-api.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@c-api.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@c-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-api.service".
++ lib/cinder:stop_cinder:659               :   stop_process c-bak
++ functions-common:stop_process:1699       :   local service=c-bak
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled c-bak
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/cinder:stop_cinder:660               :   stop_process c-sch
++ functions-common:stop_process:1699       :   local service=c-sch
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled c-sch
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-sch.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@c-sch.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@c-sch.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-sch.service".
++ lib/cinder:stop_cinder:661               :   stop_process c-vol
++ functions-common:stop_process:1699       :   local service=c-vol
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled c-vol
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-vol.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@c-vol.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@c-vol.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-vol.service".
++ ./unstack.sh:main:143                    :   cleanup_cinder
++ lib/cinder:cleanup_cinder:234            :   '[' lioadm = tgtadm ']'
++ lib/cinder:cleanup_cinder:262            :   '[' lioadm = lioadm ']'
++ lib/cinder:cleanup_cinder:263            :   sudo cinder-rtstool get-targets
++ lib/cinder:cleanup_cinder:263            :   sudo xargs -rn 1 cinder-rtstool delete
++ lib/cinder:cleanup_cinder:272            :   is_service_enabled c-vol
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/cinder:cleanup_cinder:272            :   [[ -n lvm:lvmdriver-1 ]]
++ lib/cinder:cleanup_cinder:273            :   local be be_name be_type
++ lib/cinder:cleanup_cinder:274            :   for be in ${CINDER_ENABLED_BACKENDS//,/ }
++ lib/cinder:cleanup_cinder:275            :   be_type=lvm
++ lib/cinder:cleanup_cinder:276            :   be_name=lvmdriver-1
++ lib/cinder:cleanup_cinder:277            :   type cleanup_cinder_backend_lvm
++ lib/cinder:cleanup_cinder:278            :   cleanup_cinder_backend_lvm lvmdriver-1
++ lib/cinder_backends/lvm:cleanup_cinder_backend_lvm:38 :   local be_name=lvmdriver-1
++ lib/cinder_backends/lvm:cleanup_cinder_backend_lvm:41 :   clean_lvm_volume_group stack-volumes-lvmdriver-1
++ lib/lvm:clean_lvm_volume_group:61        :   local vg=stack-volumes-lvmdriver-1
++ lib/lvm:clean_lvm_volume_group:63        :   _clean_lvm_volume_group stack-volumes-lvmdriver-1
++ lib/lvm:_clean_lvm_volume_group:40       :   local vg=stack-volumes-lvmdriver-1
++ lib/lvm:_clean_lvm_volume_group:43       :   sudo lvremove -f stack-volumes-lvmdriver-1
++ lib/lvm:clean_lvm_volume_group:64        :   _remove_lvm_volume_group stack-volumes-lvmdriver-1
++ lib/lvm:_remove_lvm_volume_group:50      :   local vg=stack-volumes-lvmdriver-1
++ lib/lvm:_remove_lvm_volume_group:53      :   sudo vgremove -f stack-volumes-lvmdriver-1
+  Volume group "stack-volumes-lvmdriver-1" successfully removed
+++ lib/lvm:clean_lvm_volume_group:67        :   sudo lvs --noheadings -o lv_name stack-volumes-lvmdriver-1
++ lib/lvm:clean_lvm_volume_group:67        :   [[ -z '' ]]
++ lib/lvm:clean_lvm_volume_group:68        :   local backing_file=/opt/stack/data/stack-volumes-lvmdriver-1-backing-file
++ lib/lvm:clean_lvm_volume_group:70        :   [[ -n stack-volumes-lvmdriver-1-backing-file ]]
++ lib/lvm:clean_lvm_volume_group:71        :   [[ -e /etc/systemd/system/stack-volumes-lvmdriver-1-backing-file.service ]]
++ lib/lvm:clean_lvm_volume_group:72        :   sudo systemctl disable --now stack-volumes-lvmdriver-1-backing-file.service
+Removed "/etc/systemd/system/local-fs.target.wants/stack-volumes-lvmdriver-1-backing-file.service".
++ lib/lvm:clean_lvm_volume_group:73        :   sudo rm -f /etc/systemd/system/stack-volumes-lvmdriver-1-backing-file.service
++ lib/lvm:clean_lvm_volume_group:74        :   sudo systemctl daemon-reload
++ lib/lvm:clean_lvm_volume_group:78        :   [[ -n /opt/stack/data/stack-volumes-lvmdriver-1-backing-file ]]
++ lib/lvm:clean_lvm_volume_group:78        :   [[ -e /opt/stack/data/stack-volumes-lvmdriver-1-backing-file ]]
++ lib/lvm:clean_lvm_volume_group:79        :   rm -f /opt/stack/data/stack-volumes-lvmdriver-1-backing-file
++ lib/cinder_backends/lvm:cleanup_cinder_backend_lvm:42 :   clean_lvm_filter
++ lib/lvm:clean_lvm_filter:177             :   sudo sed -i 's/^.*# from devstack$//' /etc/lvm/lvm.conf
++ lib/cinder:cleanup_cinder:283            :   is_service_enabled c-bak
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/cinder:cleanup_cinder:289            :   stop_process c-api
++ functions-common:stop_process:1699       :   local service=c-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled c-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-api.service
+disabled
++ lib/cinder:cleanup_cinder:290            :   remove_uwsgi_config /etc/cinder/cinder-api-uwsgi.ini cinder-wsgi
++ lib/apache:remove_uwsgi_config:405       :   local conf=/etc/cinder/cinder-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:406       :   local wsgi=cinder-wsgi
++ lib/apache:remove_uwsgi_config:407       :   local name=
+++ lib/apache:remove_uwsgi_config:410       :   basename cinder-wsgi
++ lib/apache:remove_uwsgi_config:410       :   name=cinder-wsgi
++ lib/apache:remove_uwsgi_config:412       :   [[ cinder-wsgi = /* ]]
++ lib/apache:remove_uwsgi_config:416       :   rm -rf /etc/cinder/cinder-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:417       :   disable_apache_site cinder-wsgi
++ lib/apache:disable_apache_site:207       :   local site=cinder-wsgi
++ lib/apache:disable_apache_site:208       :   is_ubuntu
++ functions-common:is_ubuntu:555           :   [[ -z deb ]]
++ functions-common:is_ubuntu:558           :   '[' deb = deb ']'
++ lib/apache:disable_apache_site:209       :   sudo a2dissite cinder-wsgi
+ERROR: Site cinder-wsgi does not exist!
++ lib/apache:disable_apache_site:209       :   true
++ ./unstack.sh:main:146                    :   [[ -n '' ]]
++ ./unstack.sh:main:162                    :   is_service_enabled neutron
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:163                    :   stop_neutron
++ lib/neutron:stop_neutron:731             :   stop_other
++ lib/neutron:stop_other:698               :   is_service_enabled q-dhcp neutron-dhcp
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron:stop_other:704               :   stop_process neutron-rpc-server
++ functions-common:stop_process:1699       :   local service=neutron-rpc-server
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-rpc-server
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@neutron-rpc-server.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@neutron-rpc-server.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-rpc-server.service".
++ lib/neutron:stop_other:705               :   stop_process neutron-periodic-workers
++ functions-common:stop_process:1699       :   local service=neutron-periodic-workers
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-periodic-workers
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@neutron-periodic-workers.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@neutron-periodic-workers.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-periodic-workers.service".
++ lib/neutron:stop_other:706               :   stop_process neutron-api
++ functions-common:stop_process:1699       :   local service=neutron-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-api.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@neutron-api.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@neutron-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-api.service".
++ lib/neutron:stop_other:707               :   _stop_ovn_maintenance
++ lib/neutron:_stop_ovn_maintenance:364    :   [[ ovn == \o\v\n ]]
++ lib/neutron:_stop_ovn_maintenance:365    :   stop_process neutron-ovn-maintenance-worker
++ functions-common:stop_process:1699       :   local service=neutron-ovn-maintenance-worker
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-ovn-maintenance-worker
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@neutron-ovn-maintenance-worker.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@neutron-ovn-maintenance-worker.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-ovn-maintenance-worker.service".
++ lib/neutron:stop_other:709               :   is_service_enabled q-l3 neutron-l3
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron:stop_other:714               :   is_service_enabled q-meta neutron-metadata-agent
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron:stop_other:718               :   is_service_enabled q-metering neutron-metering
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron:stop_other:722               :   [[ True == \T\r\u\e ]]
++ lib/neutron:stop_other:725               :   sudo pkill -9 -f '/opt/stack/data/venv/bin/neutron-rootwrap-[d]aemon'
++ lib/neutron:stop_other:725               :   :
++ lib/neutron:stop_neutron:732             :   stop_l2_agent
++ lib/neutron:stop_l2_agent:693            :   stop_process q-agt
++ functions-common:stop_process:1699       :   local service=q-agt
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled q-agt
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron:stop_neutron:734             :   [[ ovn == \o\v\n ]]
++ lib/neutron:stop_neutron:734             :   [[ False != \T\r\u\e ]]
++ lib/neutron:stop_neutron:735             :   stop_ovn
++ lib/neutron_plugins/ovn_agent:stop_ovn:789 :   is_service_enabled q-ovn-metadata-agent neutron-ovn-metadata-agent
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron_plugins/ovn_agent:stop_ovn:795 :   is_service_enabled q-ovn-agent neutron-ovn-agent
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/neutron_plugins/ovn_agent:stop_ovn:798 :   sudo pkill -9 -f '[h]aproxy'
++ lib/neutron_plugins/ovn_agent:stop_ovn:799 :   _stop_process devstack@q-ovn-agent.service
++ lib/neutron_plugins/ovn_agent:_stop_process:780 :   local service=devstack@q-ovn-agent.service
++ lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process devstack@q-ovn-agent.service'
+Stopping process devstack@q-ovn-agent.service
++ lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled devstack@q-ovn-agent.service
+enabled
++ lib/neutron_plugins/ovn_agent:_stop_process:783 :   sudo systemctl stop devstack@q-ovn-agent.service
++ lib/neutron_plugins/ovn_agent:_stop_process:784 :   sudo systemctl disable devstack@q-ovn-agent.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@q-ovn-agent.service".
++ lib/neutron_plugins/ovn_agent:stop_ovn:801 :   is_service_enabled ovn-controller-vtep
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron_plugins/ovn_agent:stop_ovn:804 :   is_service_enabled ovn-controller
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/neutron_plugins/ovn_agent:stop_ovn:805 :   _stop_process ovn-controller.service
++ lib/neutron_plugins/ovn_agent:_stop_process:780 :   local service=ovn-controller.service
++ lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process ovn-controller.service'
+Stopping process ovn-controller.service
++ lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled ovn-controller.service
+static
++ lib/neutron_plugins/ovn_agent:_stop_process:783 :   sudo systemctl stop ovn-controller.service
++ lib/neutron_plugins/ovn_agent:_stop_process:784 :   sudo systemctl disable ovn-controller.service
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
++ lib/neutron_plugins/ovn_agent:stop_ovn:807 :   is_service_enabled ovn-northd
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ lib/neutron_plugins/ovn_agent:stop_ovn:808 :   _stop_process ovn-central.service
++ lib/neutron_plugins/ovn_agent:_stop_process:780 :   local service=ovn-central.service
++ lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process ovn-central.service'
+Stopping process ovn-central.service
++ lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled ovn-central.service
+enabled
++ lib/neutron_plugins/ovn_agent:_stop_process:783 :   sudo systemctl stop ovn-central.service
++ lib/neutron_plugins/ovn_agent:_stop_process:784 :   sudo systemctl disable ovn-central.service
+Removed "/etc/systemd/system/multi-user.target.wants/ovn-central.service".
++ lib/neutron_plugins/ovn_agent:stop_ovn:810 :   is_service_enabled ovs-vtep
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/neutron_plugins/ovn_agent:stop_ovn:814 :   _stop_process ovs-vswitchd.service
++ lib/neutron_plugins/ovn_agent:_stop_process:780 :   local service=ovs-vswitchd.service
++ lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process ovs-vswitchd.service'
+Stopping process ovs-vswitchd.service
++ lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled ovs-vswitchd.service
+static
++ lib/neutron_plugins/ovn_agent:_stop_process:783 :   sudo systemctl stop ovs-vswitchd.service
++ lib/neutron_plugins/ovn_agent:_stop_process:784 :   sudo systemctl disable ovs-vswitchd.service
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
++ lib/neutron_plugins/ovn_agent:stop_ovn:815 :   _stop_process ovsdb-server.service
++ lib/neutron_plugins/ovn_agent:_stop_process:780 :   local service=ovsdb-server.service
++ lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process ovsdb-server.service'
+Stopping process ovsdb-server.service
++ lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled ovsdb-server.service
+static
++ lib/neutron_plugins/ovn_agent:_stop_process:783 :   sudo systemctl stop ovsdb-server.service
++ lib/neutron_plugins/ovn_agent:_stop_process:784 :   sudo systemctl disable ovsdb-server.service
+The unit files have no installation config (WantedBy=, RequiredBy=, UpheldBy=,
+Also=, or Alias= settings in the [Install] section, and DefaultInstance= for
+template units). This means they are not meant to be enabled or disabled using systemctl.
+ 
+Possible reasons for having these kinds of units are:
+• A unit may be statically enabled by being symlinked from another unit's
+  .wants/, .requires/, or .upholds/ directory.
+• A unit's purpose may be to act as a helper for some other unit which has
+  a requirement dependency on it.
+• A unit may be started when needed via activation (socket, path, timer,
+  D-Bus, udev, scripted systemctl call, ...).
+• In case of template units, the unit is meant to be enabled with some
+  instance name specified.
++ lib/neutron_plugins/ovn_agent:stop_ovn:817 :   _stop_ovs_dp
++ lib/neutron_plugins/ovn_agent:_stop_ovs_dp:775 :   sudo ovs-dpctl dump-dps
++ lib/neutron_plugins/ovn_agent:_stop_ovs_dp:775 :   sudo xargs -n1 ovs-dpctl del-dp
++ lib/neutron_plugins/ovn_agent:_stop_ovs_dp:776 :   modprobe -q -r vport_geneve vport_vxlan openvswitch
++ lib/neutron_plugins/ovn_agent:_stop_ovs_dp:776 :   true
++ ./unstack.sh:main:164                    :   cleanup_neutron
++ lib/neutron:cleanup_neutron:818          :   stop_process neutron-api
++ functions-common:stop_process:1699       :   local service=neutron-api
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-api
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-api.service
+disabled
++ lib/neutron:cleanup_neutron:819          :   stop_process neutron-rpc-server
++ functions-common:stop_process:1699       :   local service=neutron-rpc-server
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-rpc-server
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+disabled
++ lib/neutron:cleanup_neutron:820          :   stop_process neutron-periodic-workers
++ functions-common:stop_process:1699       :   local service=neutron-periodic-workers
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-periodic-workers
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+disabled
++ lib/neutron:cleanup_neutron:821          :   _stop_ovn_maintenance
++ lib/neutron:_stop_ovn_maintenance:364    :   [[ ovn == \o\v\n ]]
++ lib/neutron:_stop_ovn_maintenance:365    :   stop_process neutron-ovn-maintenance-worker
++ functions-common:stop_process:1699       :   local service=neutron-ovn-maintenance-worker
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled neutron-ovn-maintenance-worker
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+disabled
++ lib/neutron:cleanup_neutron:822          :   remove_uwsgi_config /etc/neutron/neutron-api-uwsgi.ini neutron-api
++ lib/apache:remove_uwsgi_config:405       :   local conf=/etc/neutron/neutron-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:406       :   local wsgi=neutron-api
++ lib/apache:remove_uwsgi_config:407       :   local name=
+++ lib/apache:remove_uwsgi_config:410       :   basename neutron-api
++ lib/apache:remove_uwsgi_config:410       :   name=neutron-api
++ lib/apache:remove_uwsgi_config:412       :   [[ neutron-api = /* ]]
++ lib/apache:remove_uwsgi_config:416       :   rm -rf /etc/neutron/neutron-api-uwsgi.ini
++ lib/apache:remove_uwsgi_config:417       :   disable_apache_site neutron-api
++ lib/apache:disable_apache_site:207       :   local site=neutron-api
++ lib/apache:disable_apache_site:208       :   is_ubuntu
++ functions-common:is_ubuntu:555           :   [[ -z deb ]]
++ functions-common:is_ubuntu:558           :   '[' deb = deb ']'
++ lib/apache:disable_apache_site:209       :   sudo a2dissite neutron-api
+Site neutron-api disabled.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
+++ lib/neutron:cleanup_neutron:823          :   apache_site_config_for neutron-api
+++ lib/apache:apache_site_config_for:174    :   local site=neutron-api
+++ lib/apache:apache_site_config_for:175    :   is_ubuntu
+++ functions-common:is_ubuntu:555           :   [[ -z deb ]]
+++ functions-common:is_ubuntu:558           :   '[' deb = deb ']'
+++ lib/apache:apache_site_config_for:177    :   echo /etc/apache2/sites-available/neutron-api.conf
++ lib/neutron:cleanup_neutron:823          :   sudo rm -f /etc/apache2/sites-available/neutron-api.conf
++ lib/neutron:cleanup_neutron:825          :   [[ -n br-ex ]]
++ lib/neutron:cleanup_neutron:826          :   _move_neutron_addresses_route br-ex '' False True inet
++ lib/neutron:_move_neutron_addresses_route:743 :   local from_intf=br-ex
++ lib/neutron:_move_neutron_addresses_route:744 :   local to_intf=
++ lib/neutron:_move_neutron_addresses_route:745 :   local add_ovs_port=False
++ lib/neutron:_move_neutron_addresses_route:746 :   local del_ovs_port=True
++ lib/neutron:_move_neutron_addresses_route:747 :   local af=inet
++ lib/neutron:_move_neutron_addresses_route:749 :   [[ -n br-ex ]]
++ lib/neutron:_move_neutron_addresses_route:749 :   [[ -n '' ]]
+++ lib/neutron:cleanup_neutron:828          :   ip -f inet6 a s dev br-ex
+++ lib/neutron:cleanup_neutron:828          :   grep -c global
+Device "br-ex" does not exist.
++ lib/neutron:cleanup_neutron:828          :   [[ 0 != 0 ]]
++ lib/neutron:cleanup_neutron:836          :   is_provider_network
++ functions-common:is_provider_network:2272 :   '[' '' == True ']'
++ functions-common:is_provider_network:2275 :   return 1
++ lib/neutron:cleanup_neutron:845          :   is_neutron_ovs_base_plugin
++ lib/neutron_plugins/ovs_base:is_neutron_ovs_base_plugin:23 :   return 0
++ lib/neutron:cleanup_neutron:846          :   neutron_ovs_base_cleanup
+++ lib/neutron_plugins/ovs_base:neutron_ovs_base_cleanup:46 :   sudo ovs-vsctl list port
+++ lib/neutron_plugins/ovs_base:neutron_ovs_base_cleanup:46 :   grep -o -e '[a-zA-Z-]*tap[0-9a-f-]*' -e 'q[rg]-[0-9a-f-]*'
+ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+++ lib/neutron_plugins/ovs_base:neutron_ovs_base_cleanup:51 :   sudo ovs-vsctl list-br
+++ lib/neutron_plugins/ovs_base:neutron_ovs_base_cleanup:51 :   grep -o -e br-int -e br-ex -e br-tun
+ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+++ lib/neutron:cleanup_neutron:850          :   sudo ip netns list
+++ lib/neutron:cleanup_neutron:850          :   grep -o -E '(qdhcp|qrouter|fip|snat)-[0-9a-f-]*'
++ lib/neutron:cleanup_neutron:854          :   [[ ovn == \o\v\n ]]
++ lib/neutron:cleanup_neutron:855          :   cleanup_ovn
++ lib/neutron_plugins/ovn_agent:cleanup_ovn:832 :   local ovn_path=/opt/stack/ovn
++ lib/neutron_plugins/ovn_agent:cleanup_ovn:833 :   local ovs_path=/opt/stack/ovs
++ lib/neutron_plugins/ovn_agent:cleanup_ovn:835 :   '[' -d /opt/stack/ovn ']'
++ lib/neutron_plugins/ovn_agent:cleanup_ovn:839 :   '[' -d /opt/stack/ovs ']'
++ lib/neutron_plugins/ovn_agent:cleanup_ovn:843 :   sudo rm -rf /var/run/ovn
++ ./unstack.sh:main:167                    :   is_service_enabled etcd3
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:168                    :   stop_etcd3
++ lib/etcd3:stop_etcd3:76                  :   '[' 172.21.16.48 '!=' 172.21.16.48 ']'
++ lib/etcd3:stop_etcd3:80                  :   sudo systemctl stop devstack@etcd.service
++ ./unstack.sh:main:169                    :   cleanup_etcd3
++ lib/etcd3:cleanup_etcd3:85               :   '[' 172.21.16.48 '!=' 172.21.16.48 ']'
++ lib/etcd3:cleanup_etcd3:89               :   sudo systemctl disable devstack@etcd.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@etcd.service".
++ lib/etcd3:cleanup_etcd3:91               :   local unitfile=/etc/systemd/system/devstack@etcd.service
++ lib/etcd3:cleanup_etcd3:92               :   sudo rm -f /etc/systemd/system/devstack@etcd.service
++ lib/etcd3:cleanup_etcd3:94               :   sudo systemctl daemon-reload
++ lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
++ lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
++ lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
+rm: cannot remove '/opt/stack/data/etcd': Device or resource busy
++ ./unstack.sh:main:172                    :   is_service_enabled openstack-cli-server
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:176                    :   stop_dstat
++ lib/dstat:stop_dstat:52                  :   stop_process dstat
++ functions-common:stop_process:1699       :   local service=dstat
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled dstat
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@dstat.service
+enabled
++ functions-common:stop_process:1708       :   sudo systemctl stop devstack@dstat.service
++ functions-common:stop_process:1709       :   sudo systemctl disable devstack@dstat.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@dstat.service".
++ lib/dstat:stop_dstat:53                  :   stop_process memory_tracker
++ functions-common:stop_process:1699       :   local service=memory_tracker
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled memory_tracker
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ lib/dstat:stop_dstat:54                  :   stop_process file_tracker
++ functions-common:stop_process:1699       :   local service=file_tracker
++ functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
++ functions-common:stop_process:1703       :   is_service_enabled file_tracker
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:178                    :   is_service_enabled atop
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 1
++ ./unstack.sh:main:185                    :   is_service_enabled cinder
++ functions-common:is_service_enabled:2050 :   local xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
++ functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
++ functions-common:is_service_enabled:2052 :   set +o xtrace
++ functions-common:is_service_enabled:2079 :   return 0
++ ./unstack.sh:main:185                    :   is_package_installed lvm2
++ functions-common:is_package_installed:1450 :   [[ -z lvm2 ]]
++ functions-common:is_package_installed:1454 :   [[ -z deb ]]
++ functions-common:is_package_installed:1458 :   [[ deb = \d\e\b ]]
++ functions-common:is_package_installed:1459 :   dpkg -s lvm2
++ ./unstack.sh:main:186                    :   clean_lvm_filter
++ lib/lvm:clean_lvm_filter:177             :   sudo sed -i 's/^.*# from devstack$//' /etc/lvm/lvm.conf
++ ./unstack.sh:main:189                    :   clean_pyc_files
++ functions-common:clean_pyc_files:2538    :   [[ -n /opt/stack ]]
++ functions-common:clean_pyc_files:2538    :   [[ -d /opt/stack ]]
++ functions-common:clean_pyc_files:2539    :   sudo find /opt/stack -name '*.pyc' -delete
++ ./unstack.sh:main:190                    :   rm -Rf /opt/stack/async
++ ./unstack.sh:main:195                    :   sudo sed -i '\+directory = /opt/stack+ d' /etc/gitconfig
