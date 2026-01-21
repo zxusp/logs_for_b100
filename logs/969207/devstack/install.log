@@ -19,7 +19,7 @@ OS_BRICK_BRANCH: master
 + NOUNSET=
 + [[ -n '' ]]
 ++ date +%s
-+ DEVSTACK_START_TIME=1768975609
++ DEVSTACK_START_TIME=1768987485
 + [[ -r /home/slave/devstack/.stackenv ]]
 + FILES=/home/slave/devstack/files
 + '[' '!' -d /home/slave/devstack/files ']'
@@ -777,13 +777,13 @@ fe80::9861:1aff:fe82:b704'
 + ./stack.sh:main:260                      :   sudo grep -q '^#includedir.*/etc/sudoers.d' /etc/sudoers
 + ./stack.sh:main:264                      :   [[ -n '' ]]
 ++ ./stack.sh:main:273                      :   mktemp
-+ ./stack.sh:main:273                      :   TEMPFILE=/tmp/tmp.YcUXJaCncS
++ ./stack.sh:main:273                      :   TEMPFILE=/tmp/tmp.lRcrbxgbNg
 + ./stack.sh:main:274                      :   echo 'slave ALL=(root) NOPASSWD:ALL'
 + ./stack.sh:main:277                      :   echo 'Defaults:slave secure_path=/sbin:/usr/sbin:/usr/bin:/bin:/usr/local/sbin:/usr/local/bin'
 + ./stack.sh:main:278                      :   echo 'Defaults:slave !requiretty'
-+ ./stack.sh:main:279                      :   chmod 0440 /tmp/tmp.YcUXJaCncS
-+ ./stack.sh:main:280                      :   sudo chown root:root /tmp/tmp.YcUXJaCncS
-+ ./stack.sh:main:281                      :   sudo mv /tmp/tmp.YcUXJaCncS /etc/sudoers.d/50_stack_sh
++ ./stack.sh:main:279                      :   chmod 0440 /tmp/tmp.lRcrbxgbNg
++ ./stack.sh:main:280                      :   sudo chown root:root /tmp/tmp.lRcrbxgbNg
++ ./stack.sh:main:281                      :   sudo mv /tmp/tmp.lRcrbxgbNg /etc/sudoers.d/50_stack_sh
 + ./stack.sh:main:287                      :   is_ubuntu
 + functions-common:is_ubuntu:555           :   [[ -z deb ]]
 + functions-common:is_ubuntu:558           :   '[' deb = deb ']'
@@ -900,14 +900,14 @@ Use 'sudo apt autoremove' to remove them.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1768975610386
-+ functions-common:time_stop:2432          :   [[ -z 1768975610386 ]]
++ functions-common:time_stop:2430          :   start_time=1768987486934
++ functions-common:time_stop:2432          :   [[ -z 1768987486934 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975610974
-+ functions-common:time_stop:2436          :   elapsed_time=588
++ functions-common:time_stop:2435          :   end_time=1768987487575
++ functions-common:time_stop:2436          :   elapsed_time=641
 + functions-common:time_stop:2437          :   total=0
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=588
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=641
 + functions-common:apt_get:1218            :   return 0
 ++ inc/python:install_python:483            :   which python3.12
 + inc/python:install_python:483            :   export PYTHON=/usr/bin/python3.12
@@ -929,32 +929,32 @@ Use 'sudo apt autoremove' to remove them.
 + ./stack.sh:main:487                      :   TIMESTAMP_FORMAT=%F-%H%M%S
 + ./stack.sh:main:488                      :   LOGDAYS=2
 ++ ./stack.sh:main:489                      :   date +%F-%H%M%S
-+ ./stack.sh:main:489                      :   CURRENT_LOG_TIME=2026-01-21-140651
++ ./stack.sh:main:489                      :   CURRENT_LOG_TIME=2026-01-21-172447
 + ./stack.sh:main:491                      :   [[ -n /opt/stack/logs/stack.sh.log ]]
 + ./stack.sh:main:494                      :   LOGFILE_DIR=/opt/stack/logs
 + ./stack.sh:main:495                      :   LOGFILE_NAME=stack.sh.log
 + ./stack.sh:main:496                      :   mkdir -p /opt/stack/logs
 + ./stack.sh:main:497                      :   find /opt/stack/logs -maxdepth 1 -name 'stack.sh.log.*' -mtime +2 -exec rm '{}' ';'
-+ ./stack.sh:main:498                      :   LOGFILE=/opt/stack/logs/stack.sh.log.2026-01-21-140651
-+ ./stack.sh:main:499                      :   SUMFILE=/opt/stack/logs/stack.sh.log.2026-01-21-140651.summary.2026-01-21-140651
++ ./stack.sh:main:498                      :   LOGFILE=/opt/stack/logs/stack.sh.log.2026-01-21-172447
++ ./stack.sh:main:499                      :   SUMFILE=/opt/stack/logs/stack.sh.log.2026-01-21-172447.summary.2026-01-21-172447
 + ./stack.sh:main:505                      :   exec
 + ./stack.sh:main:506                      :   [[ True == \T\r\u\e ]]
 + ./stack.sh:main:507                      :   _of_args=-v
 + ./stack.sh:main:508                      :   [[ True == \T\r\u\e ]]
 + ./stack.sh:main:509                      :   _of_args='-v --no-timestamp'
 + ./stack.sh:main:512                      :   exec
-++ ./stack.sh:main:512                      :   /usr/bin/python3.12 /home/slave/devstack/tools/outfilter.py -v --no-timestamp -o /opt/stack/logs/stack.sh.log.2026-01-21-140651
+++ ./stack.sh:main:512                      :   /usr/bin/python3.12 /home/slave/devstack/tools/outfilter.py -v --no-timestamp -o /opt/stack/logs/stack.sh.log.2026-01-21-172447
 /home/slave/devstack/tools/outfilter.py:29: SyntaxWarning: invalid escape sequence '\+'
   IGNORE_LINES = re.compile('(set \+o|xtrace)')
 /home/slave/devstack/tools/outfilter.py:30: SyntaxWarning: invalid escape sequence '\d'
   HAS_DATE = re.compile('^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \|')
 + ./stack.sh:main:514                      :   exec
-+ ./stack.sh:main:522                      :   echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-01-21-140651'
-++ ./stack.sh:main:514                      :   /usr/bin/python3.12 /home/slave/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-01-21-140651.summary.2026-01-21-140651
++ ./stack.sh:main:522                      :   echo_summary 'stack.sh log /opt/stack/logs/stack.sh.log.2026-01-21-172447'
+++ ./stack.sh:main:514                      :   /usr/bin/python3.12 /home/slave/devstack/tools/outfilter.py -o /opt/stack/logs/stack.sh.log.2026-01-21-172447.summary.2026-01-21-172447
 + ./stack.sh:echo_summary:467              :   [[ -t 3 ]]
-+ ./stack.sh:echo_summary:473              :   echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-01-21-140651
-+ ./stack.sh:main:524                      :   ln -sf /opt/stack/logs/stack.sh.log.2026-01-21-140651 /opt/stack/logs/stack.sh.log
-+ ./stack.sh:main:525                      :   ln -sf /opt/stack/logs/stack.sh.log.2026-01-21-140651.summary.2026-01-21-140651 /opt/stack/logs/stack.sh.log.summary
++ ./stack.sh:echo_summary:473              :   echo -e stack.sh log /opt/stack/logs/stack.sh.log.2026-01-21-172447
++ ./stack.sh:main:524                      :   ln -sf /opt/stack/logs/stack.sh.log.2026-01-21-172447 /opt/stack/logs/stack.sh.log
++ ./stack.sh:main:525                      :   ln -sf /opt/stack/logs/stack.sh.log.2026-01-21-172447.summary.2026-01-21-172447 /opt/stack/logs/stack.sh.log.summary
 + ./stack.sh:main:540                      :   check_path_perm_sanity /opt/stack
 + functions:check_path_perm_sanity:608     :   local real_path
 ++ functions:check_path_perm_sanity:609     :   readlink -f /opt/stack
@@ -964,11 +964,11 @@ Use 'sudo apt autoremove' to remove them.
 ++ functions:check_path_perm_sanity:611     :   tr / ' '
 + functions:check_path_perm_sanity:611     :   for i in $(echo ${real_path} | tr "/" " ")
 + functions:check_path_perm_sanity:612     :   rebuilt_path=/opt
-/home/slave/devstack/tools/outfilter.py:29: SyntaxWarning: invalid escape sequence '\+'
 ++ functions:check_path_perm_sanity:614     :   stat -c %a /opt
++ functions:check_path_perm_sanity:614     :   [[ 755 = 700 ]]
+/home/slave/devstack/tools/outfilter.py:29: SyntaxWarning: invalid escape sequence '\+'
 /home/slave/devstack/tools/outfilter.py:30: SyntaxWarning: invalid escape sequence '\d'
   HAS_DATE = re.compile('^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \|')
-+ functions:check_path_perm_sanity:614     :   [[ 755 = 700 ]]
 + functions:check_path_perm_sanity:611     :   for i in $(echo ${real_path} | tr "/" " ")
 + functions:check_path_perm_sanity:612     :   rebuilt_path=/opt/stack
 ++ functions:check_path_perm_sanity:614     :   stat -c %a /opt/stack
@@ -1021,30 +1021,15 @@ Linux zteusr 6.8.0-90-generic #91-Ubuntu SMP PREEMPT_DYNAMIC Tue Nov 18 14:14:30
 + functions-common:time_start:2410         :   local start_time=
 + functions-common:time_start:2411         :   [[ -n '' ]]
 ++ functions-common:time_start:2414         :   date +%s%3N
-+ functions-common:time_start:2414         :   _TIME_START[$name]=1768975611270
++ functions-common:time_start:2414         :   _TIME_START[$name]=1768987487866
 + functions-common:apt_get_update:1182     :   local 'proxies=http_proxy= https_proxy= no_proxy= '
 + functions-common:apt_get_update:1183     :   local 'update_cmd=sudo http_proxy= https_proxy= no_proxy=  apt-get update'
 + functions-common:apt_get_update:1184     :   timeout 300 sh -c 'while ! sudo http_proxy= https_proxy= no_proxy=  apt-get update; do sleep 30; done'
-Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
-Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease
 Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
-Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
-Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
-Get:6 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
-Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [74.2 kB]
-Get:8 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
-Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,697 kB]
-Get:10 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
-Get:11 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
-Get:12 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,519 kB]
-Get:13 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [386 kB]
-Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [30.4 kB]
-Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
-Get:16 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7,284 B]
-Get:17 http://archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
-Get:18 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10.5 kB]
-Get:19 http://archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
-Fetched 4,301 kB in 8s (512 kB/s)
+Hit:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Fetched 126 kB in 2s (80.5 kB/s)
 Reading package lists...
 + functions-common:apt_get_update:1188     :   REPOS_UPDATED=True
 + functions-common:apt_get_update:1190     :   time_stop apt-get-update
@@ -1054,14 +1039,14 @@ Reading package lists...
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get-update
-+ functions-common:time_stop:2430          :   start_time=1768975611270
-+ functions-common:time_stop:2432          :   [[ -z 1768975611270 ]]
++ functions-common:time_stop:2430          :   start_time=1768987487866
++ functions-common:time_stop:2432          :   [[ -z 1768987487866 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975623750
-+ functions-common:time_stop:2436          :   elapsed_time=12480
++ functions-common:time_stop:2435          :   end_time=1768987491125
++ functions-common:time_stop:2436          :   elapsed_time=3259
 + functions-common:time_stop:2437          :   total=0
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=12480
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=3259
 + functions-common:install_package:1442    :   real_install_package ksmtuned
 + functions-common:real_install_package:1429 :   is_ubuntu
 + functions-common:is_ubuntu:555           :   [[ -z deb ]]
@@ -1109,14 +1094,14 @@ Use 'sudo apt autoremove' to remove them.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1768975623779
-+ functions-common:time_stop:2432          :   [[ -z 1768975623779 ]]
++ functions-common:time_stop:2430          :   start_time=1768987491154
++ functions-common:time_stop:2432          :   [[ -z 1768987491154 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975624360
-+ functions-common:time_stop:2436          :   elapsed_time=581
-+ functions-common:time_stop:2437          :   total=588
++ functions-common:time_stop:2435          :   end_time=1768987491794
++ functions-common:time_stop:2436          :   elapsed_time=640
++ functions-common:time_stop:2437          :   total=641
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=1169
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=1281
 + functions-common:apt_get:1218            :   return 0
 + lib/host:configure_ksm:18                :   [[ -f /sys/kernel/mm/ksm/run ]]
 + lib/host:configure_ksm:19                :   sudo tee /sys/kernel/mm/ksm/run
@@ -1302,15 +1287,15 @@ Use 'sudo apt autoremove' to remove them.
 ++++ lib/neutron_plugins/services/l3:source:76 :   sed s/-//g
 ++++ lib/neutron_plugins/services/l3:source:76 :   cut -c 23-
 ++++ lib/neutron_plugins/services/l3:source:76 :   sed -e 's/\(..\)\(....\)\(....\)/\1:\2:\3/'
-+++ lib/neutron_plugins/services/l3:source:76 :   IPV6_GLOBAL_ID=19:c6c7:1829
++++ lib/neutron_plugins/services/l3:source:76 :   IPV6_GLOBAL_ID=2c:95f0:9c96
 +++ lib/neutron_plugins/services/l3:source:79 :   IPV6_RA_MODE=slaac
 +++ lib/neutron_plugins/services/l3:source:80 :   IPV6_ADDRESS_MODE=slaac
 +++ lib/neutron_plugins/services/l3:source:81 :   IPV6_PUBLIC_SUBNET_NAME=ipv6-public-subnet
 +++ lib/neutron_plugins/services/l3:source:82 :   IPV6_PRIVATE_SUBNET_NAME=ipv6-private-subnet
-+++ lib/neutron_plugins/services/l3:source:83 :   IPV6_ADDRS_SAFE_TO_USE=fd19:c6c7:1829::/56
-++++ lib/neutron_plugins/services/l3:source:86 :   echo fd19:c6c7:1829::/56
++++ lib/neutron_plugins/services/l3:source:83 :   IPV6_ADDRS_SAFE_TO_USE=fd2c:95f0:9c96::/56
+++++ lib/neutron_plugins/services/l3:source:86 :   echo fd2c:95f0:9c96::/56
 ++++ lib/neutron_plugins/services/l3:source:86 :   awk -F / '{ print $1"/"($2>63 ? $2 : 64) }'
-+++ lib/neutron_plugins/services/l3:source:86 :   FIXED_RANGE_V6=fd19:c6c7:1829::/64
++++ lib/neutron_plugins/services/l3:source:86 :   FIXED_RANGE_V6=fd2c:95f0:9c96::/64
 +++ lib/neutron_plugins/services/l3:source:87 :   IPV6_PRIVATE_NETWORK_GATEWAY=
 +++ lib/neutron_plugins/services/l3:source:88 :   IPV6_PUBLIC_RANGE=2001:db8::/64
 +++ lib/neutron_plugins/services/l3:source:89 :   IPV6_PUBLIC_NETWORK_GATEWAY=2001:db8::2
@@ -1323,7 +1308,7 @@ Use 'sudo apt autoremove' to remove them.
 +++ lib/neutron_plugins/services/l3:source:100 :   SUBNETPOOL_NAME_V4=shared-default-subnetpool-v4
 +++ lib/neutron_plugins/services/l3:source:101 :   SUBNETPOOL_NAME_V6=shared-default-subnetpool-v6
 +++ lib/neutron_plugins/services/l3:source:103 :   SUBNETPOOL_PREFIX_V4=10.0.0.0/22
-+++ lib/neutron_plugins/services/l3:source:104 :   SUBNETPOOL_PREFIX_V6=fd19:c6c7:1829::/56
++++ lib/neutron_plugins/services/l3:source:104 :   SUBNETPOOL_PREFIX_V6=fd2c:95f0:9c96::/56
 +++ lib/neutron_plugins/services/l3:source:106 :   SUBNETPOOL_SIZE_V4=26
 +++ lib/neutron_plugins/services/l3:source:107 :   SUBNETPOOL_SIZE_V6=64
 ++++ lib/neutron_plugins/services/l3:source:109 :   ip -4 route
@@ -1469,8 +1454,8 @@ Using mysql database backend
 + ./stack.sh:main:791                      :   save_stackenv 791
 + functions-common:save_stackenv:63        :   local tag=791
 ++ functions-common:save_stackenv:65        :   date +%F-%H%M%S
-+ functions-common:save_stackenv:65        :   time_stamp=2026-01-21-140705
-+ functions-common:save_stackenv:66        :   echo '# 2026-01-21-140705 791'
++ functions-common:save_stackenv:65        :   time_stamp=2026-01-21-172453
++ functions-common:save_stackenv:66        :   echo '# 2026-01-21-172453 791'
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
 + functions-common:save_stackenv:68        :   echo BASE_SQL_CONN=mysql+pymysql://root:ossdbg1stack@127.0.0.1
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
@@ -1484,7 +1469,7 @@ Using mysql database backend
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
 + functions-common:save_stackenv:68        :   echo KEYSTONE_SERVICE_URI=http://172.21.16.48/identity
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
-+ functions-common:save_stackenv:68        :   echo LOGFILE=/opt/stack/logs/stack.sh.log.2026-01-21-140651
++ functions-common:save_stackenv:68        :   echo LOGFILE=/opt/stack/logs/stack.sh.log.2026-01-21-172447
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
 + functions-common:save_stackenv:68        :   echo OS_CACERT=
 + functions-common:save_stackenv:67        :   for i in $STACK_ENV_VARS
@@ -1535,12 +1520,12 @@ Using mysql database backend
 ++ tools/install_prereqs.sh:source:44       :   PREREQ_RERUN_HOURS=2
 ++ tools/install_prereqs.sh:source:45       :   PREREQ_RERUN_SECONDS=7200
 +++ tools/install_prereqs.sh:source:47       :   date +%s
-++ tools/install_prereqs.sh:source:47       :   NOW=1768975625
+++ tools/install_prereqs.sh:source:47       :   NOW=1768987493
 +++ tools/install_prereqs.sh:source:48       :   head -1 /home/slave/devstack/.prereqs
 +++ tools/install_prereqs.sh:source:48       :   echo 0
 ++ tools/install_prereqs.sh:source:48       :   LAST_RUN=0
-++ tools/install_prereqs.sh:source:49       :   DELTA=1768975625
-++ tools/install_prereqs.sh:source:50       :   [[ 1768975625 -lt 7200 ]]
+++ tools/install_prereqs.sh:source:49       :   DELTA=1768987493
+++ tools/install_prereqs.sh:source:50       :   [[ 1768987493 -lt 7200 ]]
 ++ tools/install_prereqs.sh:source:57       :   export_proxy_variables
 ++ functions-common:export_proxy_variables:2241 :   isset http_proxy
 ++ functions-common:isset:264               :   [[ -v http_proxy ]]
@@ -1889,14 +1874,14 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 ++ functions-common:time_stop:2426          :   local total
 ++ functions-common:time_stop:2427          :   local start_time
 ++ functions-common:time_stop:2429          :   name=apt-get
-++ functions-common:time_stop:2430          :   start_time=1768975626094
-++ functions-common:time_stop:2432          :   [[ -z 1768975626094 ]]
+++ functions-common:time_stop:2430          :   start_time=1768987493534
+++ functions-common:time_stop:2432          :   [[ -z 1768987493534 ]]
 +++ functions-common:time_stop:2435          :   date +%s%3N
-++ functions-common:time_stop:2435          :   end_time=1768975629991
-++ functions-common:time_stop:2436          :   elapsed_time=3897
-++ functions-common:time_stop:2437          :   total=1169
+++ functions-common:time_stop:2435          :   end_time=1768987497434
+++ functions-common:time_stop:2436          :   elapsed_time=3900
+++ functions-common:time_stop:2437          :   total=1281
 ++ functions-common:time_stop:2439          :   _TIME_START[$name]=
-++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=5066
+++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=5181
 ++ functions-common:apt_get:1218            :   return 0
 ++ tools/install_prereqs.sh:source:74       :   [[ -n False ]]
 ++ tools/install_prereqs.sh:source:74       :   [[ False != \F\a\l\s\e ]]
@@ -2095,14 +2080,14 @@ Successfully installed autocommand-2.2.2 jaraco.context-6.0.1 jaraco.functools-4
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975635905
-+ functions-common:time_stop:2432          :   [[ -z 1768975635905 ]]
++ functions-common:time_stop:2430          :   start_time=1768987503368
++ functions-common:time_stop:2432          :   [[ -z 1768987503368 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975642653
-+ functions-common:time_stop:2436          :   elapsed_time=6748
++ functions-common:time_stop:2435          :   end_time=1768987510139
++ functions-common:time_stop:2436          :   elapsed_time=6771
 + functions-common:time_stop:2437          :   total=0
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=6748
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=6771
 + inc/python:pip_install:219               :   return 0
 + inc/python:setup_devstack_virtualenv:46  :   [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin: != *\:\/\o\p\t\/\s\t\a\c\k\/\d\a\t\a\/\v\e\n\v\/\b\i\n\:* ]]
 + inc/python:setup_devstack_virtualenv:47  :   export PATH=/opt/stack/data/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin
@@ -2159,14 +2144,14 @@ Successfully installed iso8601-2.1.0 os-testr-3.0.0 pbr-7.0.2 python-subunit-1.4
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975642692
-+ functions-common:time_stop:2432          :   [[ -z 1768975642692 ]]
++ functions-common:time_stop:2430          :   start_time=1768987510179
++ functions-common:time_stop:2432          :   [[ -z 1768987510179 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975645037
-+ functions-common:time_stop:2436          :   elapsed_time=2345
-+ functions-common:time_stop:2437          :   total=6748
++ functions-common:time_stop:2435          :   end_time=1768987512536
++ functions-common:time_stop:2436          :   elapsed_time=2357
++ functions-common:time_stop:2437          :   total=6771
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=9093
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=9128
 + inc/python:pip_install:219               :   return 0
 + ./stack.sh:main:851                      :   iniset -sudo /etc/systemd/journald.conf Journal RateLimitBurst 0
 + ./stack.sh:main:852                      :   sudo systemctl restart systemd-journald
@@ -2194,14 +2179,14 @@ Requirement already satisfied: autocommand in /opt/stack/requirements/.venv/lib/
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975645207
-+ functions-common:time_stop:2432          :   [[ -z 1768975645207 ]]
++ functions-common:time_stop:2430          :   start_time=1768987512717
++ functions-common:time_stop:2432          :   [[ -z 1768987512717 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975648259
-+ functions-common:time_stop:2436          :   elapsed_time=3052
-+ functions-common:time_stop:2437          :   total=9093
++ functions-common:time_stop:2435          :   end_time=1768987515727
++ functions-common:time_stop:2436          :   elapsed_time=3010
++ functions-common:time_stop:2437          :   total=9128
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=12145
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=12138
 + inc/python:pip_install:219               :   return 0
 + lib/infra:install_infra:35               :   PIP_VIRTUAL_ENV=/opt/stack/requirements/.venv
 + lib/infra:install_infra:35               :   pip_install /opt/stack/requirements
@@ -2226,8 +2211,8 @@ Requirement already satisfied: certifi>=2017.4.17 in /opt/stack/requirements/.ve
 Building wheels for collected packages: openstack_requirements
   Building wheel for openstack_requirements (pyproject.toml): started
   Building wheel for openstack_requirements (pyproject.toml): finished with status 'done'
-  Created wheel for openstack_requirements: filename=openstack_requirements-1.2.1.dev7921-py3-none-any.whl size=63767 sha256=47003a9c8c96786656946384800c57cafa124fe0147e2bddbc2025c3abf2a103
-  Stored in directory: /tmp/pip-ephem-wheel-cache-kck6pjvt/wheels/09/5d/92/4cd2c84803dbd4129257ae3d0359353f58d376e96c4633bda7
+  Created wheel for openstack_requirements: filename=openstack_requirements-1.2.1.dev7921-py3-none-any.whl size=63767 sha256=0dc1bee80ca86f8d099de3c619a6086cee50aa341b2f96bc69b27746e8f04305
+  Stored in directory: /tmp/pip-ephem-wheel-cache-6dmneoy7/wheels/09/5d/92/4cd2c84803dbd4129257ae3d0359353f58d376e96c4633bda7
 Successfully built openstack_requirements
 Installing collected packages: openstack_requirements
   Attempting uninstall: openstack_requirements
@@ -2243,14 +2228,14 @@ Successfully installed openstack_requirements-1.2.1.dev7921
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975648290
-+ functions-common:time_stop:2432          :   [[ -z 1768975648290 ]]
++ functions-common:time_stop:2430          :   start_time=1768987515758
++ functions-common:time_stop:2432          :   [[ -z 1768987515758 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975655300
-+ functions-common:time_stop:2436          :   elapsed_time=7010
-+ functions-common:time_stop:2437          :   total=12145
++ functions-common:time_stop:2435          :   end_time=1768987522721
++ functions-common:time_stop:2436          :   elapsed_time=6963
++ functions-common:time_stop:2437          :   total=12138
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=19155
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=19101
 + inc/python:pip_install:219               :   return 0
 + lib/infra:install_infra:39               :   unset PIP_VIRTUAL_ENV
 + lib/infra:install_infra:42               :   use_library_from_git pbr
@@ -2272,14 +2257,14 @@ Requirement already satisfied: setuptools in /opt/stack/data/venv/lib/python3.12
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975655345
-+ functions-common:time_stop:2432          :   [[ -z 1768975655345 ]]
++ functions-common:time_stop:2430          :   start_time=1768987522765
++ functions-common:time_stop:2432          :   [[ -z 1768987522765 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975656733
-+ functions-common:time_stop:2436          :   elapsed_time=1388
-+ functions-common:time_stop:2437          :   total=19155
++ functions-common:time_stop:2435          :   end_time=1768987524148
++ functions-common:time_stop:2436          :   elapsed_time=1383
++ functions-common:time_stop:2437          :   total=19101
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=20543
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=20484
 + inc/python:pip_install:219               :   return 0
 + ./stack.sh:main:861                      :   python3 -m venv /opt/stack/bindep-venv
 + ./stack.sh:main:863                      :   /opt/stack/bindep-venv/bin/pip install bindep
@@ -2504,14 +2489,14 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1768975662135
-+ functions-common:time_stop:2432          :   [[ -z 1768975662135 ]]
++ functions-common:time_stop:2430          :   start_time=1768987529563
++ functions-common:time_stop:2432          :   [[ -z 1768987529563 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975676873
-+ functions-common:time_stop:2436          :   elapsed_time=14738
-+ functions-common:time_stop:2437          :   total=5066
++ functions-common:time_stop:2435          :   end_time=1768987544016
++ functions-common:time_stop:2436          :   elapsed_time=14453
++ functions-common:time_stop:2437          :   total=5181
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=19804
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=19634
 + functions-common:apt_get:1218            :   return 0
 + lib/rpc_backend:install_rpc_backend:55   :   is_fedora
 + functions-common:is_fedora:535           :   [[ -z Ubuntu ]]
@@ -2673,7 +2658,7 @@ Setting up mysql-server-8.0 (8.0.44-0ubuntu0.24.04.2) ...
 update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
 Renaming removed key_buffer and myisam-recover options (if present)
 mysqld will log errors to /var/log/mysql/error.log
-mysqld is running as pid 1550306
+mysqld is running as pid 1617248
 Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
 Setting up mysql-server (8.0.44-0ubuntu0.24.04.2) ...
 Processing triggers for man-db (2.12.0-4build2) ...
@@ -2698,14 +2683,14 @@ No VM guests are running outdated hypervisor (qemu) binaries on this host.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1768975680958
-+ functions-common:time_stop:2432          :   [[ -z 1768975680958 ]]
++ functions-common:time_stop:2430          :   start_time=1768987548069
++ functions-common:time_stop:2432          :   [[ -z 1768987548069 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975697824
-+ functions-common:time_stop:2436          :   elapsed_time=16866
-+ functions-common:time_stop:2437          :   total=19804
++ functions-common:time_stop:2435          :   end_time=1768987564890
++ functions-common:time_stop:2436          :   elapsed_time=16821
++ functions-common:time_stop:2437          :   total=19634
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=36670
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=36455
 + functions-common:apt_get:1218            :   return 0
 + ./stack.sh:main:886                      :   '[' -n mysql ']'
 + ./stack.sh:main:887                      :   install_database_python
@@ -2742,14 +2727,14 @@ Successfully installed PyMySQL-1.1.2
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975697889
-+ functions-common:time_stop:2432          :   [[ -z 1768975697889 ]]
++ functions-common:time_stop:2430          :   start_time=1768987564954
++ functions-common:time_stop:2432          :   [[ -z 1768987564954 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975699332
-+ functions-common:time_stop:2436          :   elapsed_time=1443
-+ functions-common:time_stop:2437          :   total=20543
++ functions-common:time_stop:2435          :   end_time=1768987566401
++ functions-common:time_stop:2436          :   elapsed_time=1447
++ functions-common:time_stop:2437          :   total=20484
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=21986
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=21931
 + inc/python:pip_install:219               :   return 0
 + lib/databases/mysql:install_database_python_mysql:245 :   [[ PyMySQL == \M\y\S\Q\L\-\p\y\t\h\o\n ]]
 + lib/databases/mysql:install_database_python_mysql:247 :   [[ PyMySQL == \P\y\M\y\S\Q\L ]]
@@ -3290,8 +3275,8 @@ Using cached pycparser-2.23-py3-none-any.whl (118 kB)
 Building wheels for collected packages: os-brick
   Building editable for os-brick (pyproject.toml): started
   Building editable for os-brick (pyproject.toml): finished with status 'done'
-  Created wheel for os-brick: filename=os_brick-6.14.0.dev4-0.editable-py3-none-any.whl size=7991 sha256=897be82411016f5ca479f41841bb2a318f81f45bedd7fc795ad1c4c24f1c323e
-  Stored in directory: /tmp/pip-ephem-wheel-cache-i8chdiy2/wheels/42/03/28/5344515008c50524c066a3d250c2dfeb7c165c41802c0e19ce
+  Created wheel for os-brick: filename=os_brick-6.14.0.dev4-0.editable-py3-none-any.whl size=7991 sha256=f3a77e1d49ef21ed502b2b945aafac4a819824408c56dff56ec055726e6b2445
+  Stored in directory: /tmp/pip-ephem-wheel-cache-i2l4iqcq/wheels/42/03/28/5344515008c50524c066a3d250c2dfeb7c165c41802c0e19ce
 Successfully built os-brick
 Installing collected packages: Yappi, wrapt, WebOb, urllib3, tzdata, typing-extensions, tenacity, stevedore, six, PyYAML, pyparsing, pycparser, psutil, Paste, netaddr, msgpack, idna, greenlet, fasteners, dnspython, charset_normalizer, requests, python-dateutil, oslo.i18n, oslo.context, eventlet, debtcollector, cffi, oslo.utils, oslo.config, oslo.serialization, oslo.concurrency, oslo.log, oslo.service, oslo.privsep, os-win, os-brick
   Attempting uninstall: wrapt
@@ -3412,14 +3397,14 @@ Successfully installed Paste-3.10.1 PyYAML-6.0.3 WebOb-1.8.9 Yappi-1.7.3 cffi-2.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975701581
-+ functions-common:time_stop:2432          :   [[ -z 1768975701581 ]]
++ functions-common:time_stop:2430          :   start_time=1768987568675
++ functions-common:time_stop:2432          :   [[ -z 1768987568675 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975714515
-+ functions-common:time_stop:2436          :   elapsed_time=12934
-+ functions-common:time_stop:2437          :   total=21986
++ functions-common:time_stop:2435          :   end_time=1768987582615
++ functions-common:time_stop:2436          :   elapsed_time=13940
++ functions-common:time_stop:2437          :   total=21931
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=34920
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=35871
 + inc/python:pip_install:219               :   return 0
 + inc/python:setup_package:466             :   [[ -e == \-\e ]]
 + inc/python:setup_package:466             :   [[ True == \F\a\l\s\e ]]
@@ -3492,14 +3477,14 @@ Successfully installed etcd3gw-2.4.2 futurist-3.2.1
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975714625
-+ functions-common:time_stop:2432          :   [[ -z 1768975714625 ]]
++ functions-common:time_stop:2430          :   start_time=1768987582725
++ functions-common:time_stop:2432          :   [[ -z 1768987582725 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975716195
-+ functions-common:time_stop:2436          :   elapsed_time=1570
-+ functions-common:time_stop:2437          :   total=34920
++ functions-common:time_stop:2435          :   end_time=1768987584771
++ functions-common:time_stop:2436          :   elapsed_time=2046
++ functions-common:time_stop:2437          :   total=35871
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=36490
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=37917
 + inc/python:pip_install:219               :   return 0
 + ./stack.sh:main:926                      :   install_apache_uwsgi
 + lib/apache:install_apache_uwsgi:79       :   local apxs=apxs2
@@ -3577,14 +3562,14 @@ Use 'sudo apt autoremove' to remove them.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1768975716309
-+ functions-common:time_stop:2432          :   [[ -z 1768975716309 ]]
++ functions-common:time_stop:2430          :   start_time=1768987584886
++ functions-common:time_stop:2432          :   [[ -z 1768987584886 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975716958
++ functions-common:time_stop:2435          :   end_time=1768987585535
 + functions-common:time_stop:2436          :   elapsed_time=649
-+ functions-common:time_stop:2437          :   total=36670
++ functions-common:time_stop:2437          :   total=36455
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=37319
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=37104
 + functions-common:apt_get:1218            :   return 0
 + lib/apache:install_apache_uwsgi:118      :   is_ubuntu
 + functions-common:is_ubuntu:555           :   [[ -z deb ]]
@@ -3777,14 +3762,14 @@ Successfully installed PyJWT-2.10.1 decorator-5.2.1 dogpile.cache-1.5.0 keystone
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975717280
-+ functions-common:time_stop:2432          :   [[ -z 1768975717280 ]]
++ functions-common:time_stop:2430          :   start_time=1768987585860
++ functions-common:time_stop:2432          :   [[ -z 1768987585860 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975720500
-+ functions-common:time_stop:2436          :   elapsed_time=3220
-+ functions-common:time_stop:2437          :   total=36490
++ functions-common:time_stop:2435          :   end_time=1768987589537
++ functions-common:time_stop:2436          :   elapsed_time=3677
++ functions-common:time_stop:2437          :   total=37917
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=39710
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=41594
 + inc/python:pip_install:219               :   return 0
 + lib/keystone:install_keystonemiddleware:518 :   pip_install_gr python-memcached
 + inc/python:pip_install_gr:94             :   local name=python-memcached
@@ -3818,14 +3803,14 @@ Successfully installed python-memcached-1.62
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975720560
-+ functions-common:time_stop:2432          :   [[ -z 1768975720560 ]]
++ functions-common:time_stop:2430          :   start_time=1768987589597
++ functions-common:time_stop:2432          :   [[ -z 1768987589597 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975722205
-+ functions-common:time_stop:2436          :   elapsed_time=1645
-+ functions-common:time_stop:2437          :   total=39710
++ functions-common:time_stop:2435          :   end_time=1768987591028
++ functions-common:time_stop:2436          :   elapsed_time=1431
++ functions-common:time_stop:2437          :   total=41594
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=41355
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=43025
 + inc/python:pip_install:219               :   return 0
 + ./stack.sh:main:944                      :   is_service_enabled keystone
 + functions-common:is_service_enabled:2079 :   return 0
@@ -4075,8 +4060,8 @@ Using cached wcwidth-0.2.14-py2.py3-none-any.whl (37 kB)
 Building wheels for collected packages: keystone
   Building editable for keystone (pyproject.toml): started
   Building editable for keystone (pyproject.toml): finished with status 'done'
-  Created wheel for keystone: filename=keystone-28.1.0.dev19-0.editable-py3-none-any.whl size=9276 sha256=647d926de28cb3d3d6cd915ef12c9920046d2616fad43992ad9ea0d67624c9ff
-  Stored in directory: /tmp/pip-ephem-wheel-cache-j6r1ij5i/wheels/d5/df/96/ee2394c3a20d6f991844794e53669e9943a8d62f162c6e6710
+  Created wheel for keystone: filename=keystone-28.1.0.dev19-0.editable-py3-none-any.whl size=9276 sha256=18eba997ee4e9e082eb56a818b4a22579e7a08a2fa04f2902c2063d4948a952e
+  Stored in directory: /tmp/pip-ephem-wheel-cache-3pu6s0ds/wheels/d5/df/96/ee2394c3a20d6f991844794e53669e9943a8d62f162c6e6710
 Successfully built keystone
 Installing collected packages: scrypt, wcwidth, vine, SQLAlchemy, rpds-py, prometheus-client, oauthlib, markupsafe, itsdangerous, elementpath, click, cachetools, blinker, bcrypt, attrs, xmlschema, Werkzeug, testresources, referencing, PrettyTable, Mako, jinja2, cryptography, amqp, pyopenssl, kombu, jsonschema-specifications, Flask, alembic, pysaml2, oslo.middleware, oslo.db, jsonschema, osprofiler, oslo.policy, oslo.upgradecheck, oslo.metrics, oslo.messaging, keystone
   Attempting uninstall: scrypt
@@ -4227,14 +4212,14 @@ Successfully installed Flask-3.1.2 Mako-1.3.10 PrettyTable-3.16.0 SQLAlchemy-2.0
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975722580
-+ functions-common:time_stop:2432          :   [[ -z 1768975722580 ]]
++ functions-common:time_stop:2430          :   start_time=1768987591402
++ functions-common:time_stop:2432          :   [[ -z 1768987591402 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975738155
-+ functions-common:time_stop:2436          :   elapsed_time=15575
-+ functions-common:time_stop:2437          :   total=41355
++ functions-common:time_stop:2435          :   end_time=1768987608673
++ functions-common:time_stop:2436          :   elapsed_time=17271
++ functions-common:time_stop:2437          :   total=43025
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=56930
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=60296
 + inc/python:pip_install:219               :   return 0
 + inc/python:setup_package:466             :   [[ -e == \-\e ]]
 + inc/python:setup_package:466             :   [[ True == \F\a\l\s\e ]]
@@ -4500,14 +4485,14 @@ Successfully installed glance-store-5.2.0 oslo.rootwrap-7.7.0 python-cinderclien
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975740038
-+ functions-common:time_stop:2432          :   [[ -z 1768975740038 ]]
++ functions-common:time_stop:2430          :   start_time=1768987610556
++ functions-common:time_stop:2432          :   [[ -z 1768987610556 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975742632
-+ functions-common:time_stop:2436          :   elapsed_time=2594
-+ functions-common:time_stop:2437          :   total=56930
++ functions-common:time_stop:2435          :   end_time=1768987613161
++ functions-common:time_stop:2436          :   elapsed_time=2605
++ functions-common:time_stop:2437          :   total=60296
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=59524
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=62901
 + inc/python:pip_install:219               :   return 0
 + lib/glance:install_glance:569            :   copy_rootwrap /opt/stack/data/venv/etc/glance
 + lib/glance:copy_rootwrap:263             :   local source_path=/opt/stack/data/venv/etc/glance
@@ -4752,8 +4737,8 @@ Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
 Building wheels for collected packages: glance
   Building editable for glance (pyproject.toml): started
   Building editable for glance (pyproject.toml): finished with status 'done'
-  Created wheel for glance: filename=glance-31.1.0.dev24-0.editable-py3-none-any.whl size=9019 sha256=0dde8ba1ce95f00b3c8ffe6311c8cf915ec17035173b1b5bd490c7612ff05ee1
-  Stored in directory: /tmp/pip-ephem-wheel-cache-ezeb8djb/wheels/31/93/bf/c06e9c56745867b4722d11aae03416a994ddf0e859898c0382
+  Created wheel for glance: filename=glance-31.1.0.dev24-0.editable-py3-none-any.whl size=9019 sha256=9cefaba8c5268ded47ca64505270c49568da515237cb62434e7ca190de71d7a0
+  Stored in directory: /tmp/pip-ephem-wheel-cache-crfx_c10/wheels/31/93/bf/c06e9c56745867b4722d11aae03416a994ddf0e859898c0382
 Successfully built glance
 Installing collected packages: simplegeneric, requestsexceptions, pytz, pyperclip, zipp, retrying, pygments, pydot, networkx, markdown-it-py, jsonpointer, httplib2, autopage, rich, jsonpatch, importlib-metadata, automaton, WSME, rich-argparse, openstacksdk, cmd2, taskflow, oslo.reports, cliff, python-barbicanclient, oslo.limit, castellan, cursive, glance
   Attempting uninstall: pytz
@@ -4818,14 +4803,14 @@ Successfully installed WSME-0.12.1 automaton-3.2.0 autopage-0.5.2 castellan-5.4.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=pip_install
-+ functions-common:time_stop:2430          :   start_time=1768975742983
-+ functions-common:time_stop:2432          :   [[ -z 1768975742983 ]]
++ functions-common:time_stop:2430          :   start_time=1768987613511
++ functions-common:time_stop:2432          :   [[ -z 1768987613511 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1768975757402
-+ functions-common:time_stop:2436          :   elapsed_time=14419
-+ functions-common:time_stop:2437          :   total=59524
++ functions-common:time_stop:2435          :   end_time=1768987628728
++ functions-common:time_stop:2436          :   elapsed_time=15217
++ functions-common:time_stop:2437          :   total=62901
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=73943
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=78118
 + inc/python:pip_install:219               :   return 0
 + inc/python:setup_package:466             :   [[ -e == \-\e ]]
 + inc/python:setup_package:466             :   [[ True == \F\a\l\s\e ]]
@@ -5068,7 +5053,7 @@ Site glance-api already enabled
 + functions-common:time_start:2410         :   local start_time=
 + functions-common:time_start:2411         :   [[ -n '' ]]
 ++ functions-common:time_start:2414         :   date +%s%3N
-+ functions-common:time_start:2414         :   _TIME_START[$name]=1768975760025
++ functions-common:time_start:2414         :   _TIME_START[$name]=1768987631348
 + functions-common:git_timed:708           :   timeout -s SIGINT 0 git fetch https://opendev.org/openstack/cinder.git refs/changes/07/969207/12
 fatal: couldn't find remote ref refs/changes/07/969207/12
 + functions-common:git_timed:711           :   [[ 128 -ne 124 ]]
