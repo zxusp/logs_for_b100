@@ -37,8 +37,8 @@
 + functions-common:run_plugins:1841        :   local plugin
 + ./unstack.sh:main:101                    :   is_service_enabled nova
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   set +o
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
@@ -228,8 +228,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-super-cond.servi
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1703       :   is_service_enabled n-cond-cell1
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   grep xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
@@ -283,8 +283,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   grep '\-A'
++ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:197              :   bash
@@ -450,8 +450,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@g-api.service".
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1703       :   is_service_enabled keystone
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   grep xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
@@ -710,8 +710,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-ovn-maintenance-worker.service".
 + lib/neutron:stop_other:709               :   is_service_enabled q-l3 neutron-l3
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   set +o
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 1
@@ -1031,8 +1031,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@dstat.service".
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1703       :   is_service_enabled memory_tracker
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   set +o
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 1
