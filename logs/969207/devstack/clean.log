@@ -289,8 +289,8 @@ not-found
 + lib/nova:clean_iptables:197              :   bash
 + lib/nova:clean_iptables:199              :   sudo iptables -S -v
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:199              :   grep '\-N'
 + lib/nova:clean_iptables:199              :   grep nova
++ lib/nova:clean_iptables:199              :   grep '\-N'
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
@@ -1575,7 +1575,7 @@ The following packages were automatically installed and are no longer required:
 Use 'sudo apt autoremove' to remove them.
 The following packages will be REMOVED:
   rabbitmq-server*
-0 upgraded, 0 newly installed, 1 to remove and 43 not upgraded.
+0 upgraded, 0 newly installed, 1 to remove and 47 not upgraded.
 After this operation, 24.3 MB disk space will be freed.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 171893 files and directories currently installed.)
 Removing rabbitmq-server (3.12.1-1ubuntu1.2) ...
@@ -1591,14 +1591,14 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769046689956
-+ functions-common:time_stop:2432          :   [[ -z 1769046689956 ]]
++ functions-common:time_stop:2430          :   start_time=1769050102306
++ functions-common:time_stop:2432          :   [[ -z 1769050102306 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769046694551
-+ functions-common:time_stop:2436          :   elapsed_time=4595
++ functions-common:time_stop:2435          :   end_time=1769050106914
++ functions-common:time_stop:2436          :   elapsed_time=4608
 + functions-common:time_stop:2437          :   total=0
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=4595
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=4608
 + functions-common:apt_get:1218            :   return 0
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
@@ -1733,7 +1733,7 @@ The following packages will be REMOVED:
   erlang-inets* erlang-mnesia* erlang-os-mon* erlang-parsetools*
   erlang-public-key* erlang-runtime-tools* erlang-snmp* erlang-ssl*
   erlang-syntax-tools* erlang-tftp* erlang-tools* erlang-xmerl*
-0 upgraded, 0 newly installed, 17 to remove and 43 not upgraded.
+0 upgraded, 0 newly installed, 17 to remove and 47 not upgraded.
 After this operation, 32.0 MB disk space will be freed.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 170164 files and directories currently installed.)
 Removing erlang-eldap (1:25.3.2.8+dfsg-1ubuntu4.6) ...
@@ -1766,14 +1766,14 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769046694611
-+ functions-common:time_stop:2432          :   [[ -z 1769046694611 ]]
++ functions-common:time_stop:2430          :   start_time=1769050106974
++ functions-common:time_stop:2432          :   [[ -z 1769050106974 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769046701832
-+ functions-common:time_stop:2436          :   elapsed_time=7221
-+ functions-common:time_stop:2437          :   total=4595
++ functions-common:time_stop:2435          :   end_time=1769050114197
++ functions-common:time_stop:2436          :   elapsed_time=7223
++ functions-common:time_stop:2437          :   total=4608
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=11816
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=11831
 + functions-common:apt_get:1218            :   return 0
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
@@ -1932,7 +1932,7 @@ Use 'sudo apt autoremove' to remove them.
 The following packages will be REMOVED:
   libmysqlclient21* mysql-client-8.0* mysql-client-core-8.0* mysql-common*
   mysql-server* mysql-server-8.0* mysql-server-core-8.0* python3-mysqldb*
-0 upgraded, 0 newly installed, 8 to remove and 43 not upgraded.
+0 upgraded, 0 newly installed, 8 to remove and 47 not upgraded.
 After this operation, 192 MB disk space will be freed.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 169088 files and directories currently installed.)
 Removing python3-mysqldb (1.4.6-2build3) ...
@@ -1958,22 +1958,22 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769046701896
-+ functions-common:time_stop:2432          :   [[ -z 1769046701896 ]]
++ functions-common:time_stop:2430          :   start_time=1769050114259
++ functions-common:time_stop:2432          :   [[ -z 1769050114259 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769046707969
-+ functions-common:time_stop:2436          :   elapsed_time=6073
-+ functions-common:time_stop:2437          :   total=11816
++ functions-common:time_stop:2435          :   end_time=1769050120255
++ functions-common:time_stop:2436          :   elapsed_time=5996
++ functions-common:time_stop:2437          :   total=11831
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=17889
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=17827
 + functions-common:apt_get:1218            :   return 0
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + lib/databases/mysql:cleanup_database_mysql:47 :   return
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-01-21-172447 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-01-21-172447 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-01-21-172447
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-01-22-095150 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-01-22-095150 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-01-22-095150
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs
