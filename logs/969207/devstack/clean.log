@@ -76,7 +76,7 @@
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api.service
-not-found
+disabled
 + lib/nova:stop_nova_rest:1226             :   for serv in n-api n-api-meta n-sch
 + lib/nova:stop_nova_rest:1227             :   stop_process n-api-meta
 + functions-common:stop_process:1699       :   local service=n-api-meta
@@ -89,7 +89,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api-meta.service
-not-found
+disabled
 + lib/nova:stop_nova_rest:1226             :   for serv in n-api n-api-meta n-sch
 + lib/nova:stop_nova_rest:1227             :   stop_process n-sch
 + functions-common:stop_process:1699       :   local service=n-sch
@@ -102,7 +102,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-sch.service
-not-found
+disabled
 + lib/nova:stop_nova:1263                  :   stop_nova_console_proxies
 + lib/nova:stop_nova_console_proxies:1232  :   [[ superconductor == \s\i\n\g\l\e\c\o\n\d\u\c\t\o\r ]]
 + lib/nova:stop_nova_console_proxies:1237  :   enable_nova_console_proxies
@@ -152,7 +152,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-novnc-cell1.service
-not-found
+disabled
 + lib/nova:stop_nova_console_proxies:1239  :   for srv in n-novnc n-spice n-sproxy
 + lib/nova:stop_nova_console_proxies:1240  :   stop_process n-spice-cell1
 + functions-common:stop_process:1699       :   local service=n-spice-cell1
@@ -219,7 +219,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-super-cond.service
-not-found
+disabled
 + lib/nova:stop_nova_conductor:1253        :   for srv in n-super-cond $(seq -f n-cond-cell%0.f 1 $NOVA_NUM_CELLS)
 + lib/nova:stop_nova_conductor:1254        :   is_service_enabled n-cond-cell1
 + functions-common:is_service_enabled:2050 :   local xtrace
@@ -239,7 +239,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-cond-cell1.service
-not-found
+disabled
 + lib/nova:stop_nova:1265                  :   stop_nova_compute
 + lib/nova:stop_nova_compute:1211          :   '[' libvirt == fake ']'
 + lib/nova:stop_nova_compute:1217          :   stop_process n-cpu
@@ -253,7 +253,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-cpu.service
-not-found
+disabled
 + lib/nova:stop_nova_compute:1219          :   is_service_enabled n-cpu
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -294,8 +294,8 @@ not-found
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
-+ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
@@ -333,7 +333,7 @@ sudo: nvme: command not found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api.service
-not-found
+disabled
 + lib/nova:cleanup_nova:248                :   stop_process n-api-meta
 + functions-common:stop_process:1699       :   local service=n-api-meta
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -345,7 +345,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api-meta.service
-not-found
+disabled
 + lib/nova:cleanup_nova:249                :   remove_uwsgi_config /etc/nova/nova-api-uwsgi.ini nova-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-api
@@ -397,7 +397,7 @@ ERROR: Site nova-metadata does not exist!
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@placement-api.service
-not-found
+disabled
 + unstack.sh:main:110                      :   is_service_enabled glance
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -417,7 +417,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@g-api.service
-not-found
+disabled
 + lib/glance:stop_glance:667               :   stop_process g-api-r
 + functions-common:stop_process:1699       :   local service=g-api-r
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -447,7 +447,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@keystone.service
-not-found
+disabled
 + unstack.sh:main:119                      :   is_service_enabled s-proxy
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -495,7 +495,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-api.service
-not-found
+disabled
 + lib/cinder:stop_cinder:659               :   stop_process c-bak
 + functions-common:stop_process:1699       :   local service=c-bak
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -517,7 +517,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-sch.service
-not-found
+disabled
 + lib/cinder:stop_cinder:661               :   stop_process c-vol
 + functions-common:stop_process:1699       :   local service=c-vol
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -529,13 +529,12 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-vol.service
-not-found
+disabled
 + unstack.sh:main:143                      :   cleanup_cinder
 + lib/cinder:cleanup_cinder:234            :   '[' lioadm = tgtadm ']'
 + lib/cinder:cleanup_cinder:262            :   '[' lioadm = lioadm ']'
 + lib/cinder:cleanup_cinder:263            :   sudo cinder-rtstool get-targets
 + lib/cinder:cleanup_cinder:263            :   sudo xargs -rn 1 cinder-rtstool delete
-sudo: cinder-rtstool: command not found
 + lib/cinder:cleanup_cinder:272            :   is_service_enabled c-vol
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -590,7 +589,7 @@ sudo: cinder-rtstool: command not found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-api.service
-not-found
+disabled
 + lib/cinder:cleanup_cinder:290            :   remove_uwsgi_config /etc/cinder/cinder-api-uwsgi.ini cinder-wsgi
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/cinder/cinder-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=cinder-wsgi
@@ -660,7 +659,9 @@ ERROR: Site cinder-wsgi does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+disabled
 + lib/neutron:stop_other:705               :   stop_process neutron-periodic-workers
 + functions-common:stop_process:1699       :   local service=neutron-periodic-workers
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -670,7 +671,9 @@ ERROR: Site cinder-wsgi does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+disabled
 + lib/neutron:stop_other:706               :   stop_process neutron-api
 + functions-common:stop_process:1699       :   local service=neutron-api
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -680,7 +683,9 @@ ERROR: Site cinder-wsgi does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-api.service
+disabled
 + lib/neutron:stop_other:707               :   _stop_ovn_maintenance
 + lib/neutron:_stop_ovn_maintenance:364    :   [[ ovn == \o\v\n ]]
 + lib/neutron:_stop_ovn_maintenance:365    :   stop_process neutron-ovn-maintenance-worker
@@ -692,7 +697,9 @@ ERROR: Site cinder-wsgi does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+disabled
 + lib/neutron:stop_other:709               :   is_service_enabled q-l3 neutron-l3
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -751,7 +758,7 @@ ERROR: Site cinder-wsgi does not exist!
 + lib/neutron_plugins/ovn_agent:_stop_process:781 :   echo 'Stopping process devstack@q-ovn-agent.service'
 Stopping process devstack@q-ovn-agent.service
 + lib/neutron_plugins/ovn_agent:_stop_process:782 :   sudo systemctl is-enabled devstack@q-ovn-agent.service
-not-found
+disabled
 + lib/neutron_plugins/ovn_agent:stop_ovn:801 :   is_service_enabled ovn-controller-vtep
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -865,7 +872,9 @@ ovs-dpctl: 'del-dp' command requires at least 1 arguments
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-api.service
+disabled
 + lib/neutron:cleanup_neutron:819          :   stop_process neutron-rpc-server
 + functions-common:stop_process:1699       :   local service=neutron-rpc-server
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -875,7 +884,9 @@ ovs-dpctl: 'del-dp' command requires at least 1 arguments
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+disabled
 + lib/neutron:cleanup_neutron:820          :   stop_process neutron-periodic-workers
 + functions-common:stop_process:1699       :   local service=neutron-periodic-workers
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -885,7 +896,9 @@ ovs-dpctl: 'del-dp' command requires at least 1 arguments
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+disabled
 + lib/neutron:cleanup_neutron:821          :   _stop_ovn_maintenance
 + lib/neutron:_stop_ovn_maintenance:364    :   [[ ovn == \o\v\n ]]
 + lib/neutron:_stop_ovn_maintenance:365    :   stop_process neutron-ovn-maintenance-worker
@@ -897,7 +910,9 @@ ovs-dpctl: 'del-dp' command requires at least 1 arguments
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+disabled
 + lib/neutron:cleanup_neutron:822          :   remove_uwsgi_config /etc/neutron/neutron-api-uwsgi.ini neutron-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/neutron/neutron-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=neutron-api
@@ -996,7 +1011,7 @@ umount: /opt/stack/data/etcd: no mount point specified.
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@dstat.service
-not-found
+disabled
 + lib/dstat:stop_dstat:53                  :   stop_process memory_tracker
 + functions-common:stop_process:1699       :   local service=memory_tracker
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -1110,7 +1125,6 @@ not-found
 + lib/cinder:cleanup_cinder:262            :   '[' lioadm = lioadm ']'
 + lib/cinder:cleanup_cinder:263            :   sudo cinder-rtstool get-targets
 + lib/cinder:cleanup_cinder:263            :   sudo xargs -rn 1 cinder-rtstool delete
-sudo: cinder-rtstool: command not found
 + lib/cinder:cleanup_cinder:272            :   is_service_enabled c-vol
 + functions-common:is_service_enabled:2050 :   local xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
@@ -1165,7 +1179,7 @@ sudo: cinder-rtstool: command not found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@c-api.service
-not-found
+disabled
 + lib/cinder:cleanup_cinder:290            :   remove_uwsgi_config /etc/cinder/cinder-api-uwsgi.ini cinder-wsgi
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/cinder/cinder-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=cinder-wsgi
@@ -1213,7 +1227,7 @@ ERROR: Site glance-wsgi-api does not exist!
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@keystone.service
-not-found
+disabled
 + lib/keystone:cleanup_keystone:139        :   remove_uwsgi_config /etc/keystone/keystone-uwsgi-public.ini keystone-wsgi-public
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/keystone/keystone-uwsgi-public.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=keystone-wsgi-public
@@ -1250,8 +1264,8 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:195              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:195              :   grep nova
 + lib/nova:clean_iptables:195              :   grep '\-A'
-+ lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:195              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
@@ -1269,14 +1283,14 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   grep nova
++ lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:cleanup_nova:212                :   local instances
-++ lib/nova:cleanup_nova:213                :   grep instance-
 ++ lib/nova:cleanup_nova:213                :   sudo virsh list --all
+++ lib/nova:cleanup_nova:213                :   grep instance-
 ++ lib/nova:cleanup_nova:213                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
 + lib/nova:cleanup_nova:213                :   instances=
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
@@ -1306,7 +1320,7 @@ sudo: nvme: command not found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api.service
-not-found
+disabled
 + lib/nova:cleanup_nova:248                :   stop_process n-api-meta
 + functions-common:stop_process:1699       :   local service=n-api-meta
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -1318,7 +1332,7 @@ not-found
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
 + functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@n-api-meta.service
-not-found
+disabled
 + lib/nova:cleanup_nova:249                :   remove_uwsgi_config /etc/nova/nova-api-uwsgi.ini nova-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-api
@@ -1373,8 +1387,7 @@ ERROR: Site nova-metadata does not exist!
 + functions-common:is_ubuntu:555           :   [[ -z deb ]]
 + functions-common:is_ubuntu:558           :   '[' deb = deb ']'
 + lib/apache:disable_apache_site:209       :   sudo a2dissite placement-api
-ERROR: Site placement-api does not exist!
-+ lib/apache:disable_apache_site:209       :   true
+removing dangling symlink /etc/apache2/sites-enabled/placement-api.conf
 + ./clean.sh:main:91                       :   cleanup_neutron
 + lib/neutron:cleanup_neutron:818          :   stop_process neutron-api
 + functions-common:stop_process:1699       :   local service=neutron-api
@@ -1385,7 +1398,9 @@ ERROR: Site placement-api does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-api.service
+disabled
 + lib/neutron:cleanup_neutron:819          :   stop_process neutron-rpc-server
 + functions-common:stop_process:1699       :   local service=neutron-rpc-server
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -1395,7 +1410,9 @@ ERROR: Site placement-api does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+disabled
 + lib/neutron:cleanup_neutron:820          :   stop_process neutron-periodic-workers
 + functions-common:stop_process:1699       :   local service=neutron-periodic-workers
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
@@ -1405,7 +1422,9 @@ ERROR: Site placement-api does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+disabled
 + lib/neutron:cleanup_neutron:821          :   _stop_ovn_maintenance
 + lib/neutron:_stop_ovn_maintenance:364    :   [[ ovn == \o\v\n ]]
 + lib/neutron:_stop_ovn_maintenance:365    :   stop_process neutron-ovn-maintenance-worker
@@ -1417,7 +1436,9 @@ ERROR: Site placement-api does not exist!
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
-+ functions-common:is_service_enabled:2079 :   return 1
++ functions-common:is_service_enabled:2079 :   return 0
++ functions-common:stop_process:1707       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+disabled
 + lib/neutron:cleanup_neutron:822          :   remove_uwsgi_config /etc/neutron/neutron-api-uwsgi.ini neutron-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/neutron/neutron-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=neutron-api
@@ -1497,8 +1518,9 @@ ovs-vsctl: unix:/var/run/openvswitch/db.sock: database connection failed (No suc
 + functions-common:is_ubuntu:555           :   [[ -z deb ]]
 + functions-common:is_ubuntu:558           :   '[' deb = deb ']'
 + lib/apache:disable_apache_site:209       :   sudo a2dissite horizon
-ERROR: Site horizon does not exist!
-+ lib/apache:disable_apache_site:209       :   true
+Site horizon disabled.
+To activate the new configuration, you need to run:
+  systemctl reload apache2
 ++ lib/horizon:cleanup_horizon:70           :   apache_site_config_for horizon
 ++ lib/apache:apache_site_config_for:174    :   local site=horizon
 ++ lib/apache:apache_site_config_for:175    :   is_ubuntu
@@ -1591,14 +1613,14 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769061851788
-+ functions-common:time_stop:2432          :   [[ -z 1769061851788 ]]
++ functions-common:time_stop:2430          :   start_time=1769071030344
++ functions-common:time_stop:2432          :   [[ -z 1769071030344 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769061856555
-+ functions-common:time_stop:2436          :   elapsed_time=4767
++ functions-common:time_stop:2435          :   end_time=1769071035031
++ functions-common:time_stop:2436          :   elapsed_time=4687
 + functions-common:time_stop:2437          :   total=0
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=4767
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=4687
 + functions-common:apt_get:1218            :   return 0
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
@@ -1766,14 +1788,14 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769061856615
-+ functions-common:time_stop:2432          :   [[ -z 1769061856615 ]]
++ functions-common:time_stop:2430          :   start_time=1769071035090
++ functions-common:time_stop:2432          :   [[ -z 1769071035090 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769061863852
-+ functions-common:time_stop:2436          :   elapsed_time=7237
-+ functions-common:time_stop:2437          :   total=4767
++ functions-common:time_stop:2435          :   end_time=1769071043747
++ functions-common:time_stop:2436          :   elapsed_time=8657
++ functions-common:time_stop:2437          :   total=4687
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=12004
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=13344
 + functions-common:apt_get:1218            :   return 0
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
@@ -1940,6 +1962,7 @@ Removing libmysqlclient21:amd64 (8.0.44-0ubuntu0.24.04.2) ...
 Removing mysql-server (8.0.44-0ubuntu0.24.04.2) ...
 Removing mysql-server-8.0 (8.0.44-0ubuntu0.24.04.2) ...
 update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+update-alternatives: warning: not replacing /etc/mysql/my.cnf with a link
 Removing mysql-client-8.0 (8.0.44-0ubuntu0.24.04.2) ...
 Removing mysql-client-core-8.0 (8.0.44-0ubuntu0.24.04.2) ...
 Removing mysql-common (5.8+1.1.0build1) ...
@@ -1958,22 +1981,22 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2426          :   local total
 + functions-common:time_stop:2427          :   local start_time
 + functions-common:time_stop:2429          :   name=apt-get
-+ functions-common:time_stop:2430          :   start_time=1769061863915
-+ functions-common:time_stop:2432          :   [[ -z 1769061863915 ]]
++ functions-common:time_stop:2430          :   start_time=1769071043809
++ functions-common:time_stop:2432          :   [[ -z 1769071043809 ]]
 ++ functions-common:time_stop:2435          :   date +%s%3N
-+ functions-common:time_stop:2435          :   end_time=1769061870097
-+ functions-common:time_stop:2436          :   elapsed_time=6182
-+ functions-common:time_stop:2437          :   total=12004
++ functions-common:time_stop:2435          :   end_time=1769071049902
++ functions-common:time_stop:2436          :   elapsed_time=6093
++ functions-common:time_stop:2437          :   total=13344
 + functions-common:time_stop:2439          :   _TIME_START[$name]=
-+ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=18186
++ functions-common:time_stop:2440          :   _TIME_TOTAL[$name]=19437
 + functions-common:apt_get:1218            :   return 0
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + lib/databases/mysql:cleanup_database_mysql:47 :   return
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-01-22-104843 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-01-22-104843 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-01-22-104843
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-01-22-140433 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-01-22-140433 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-01-22-140433
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs

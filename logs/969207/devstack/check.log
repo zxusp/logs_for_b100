@@ -67,7 +67,7 @@ PASS: test_export_proxy_variables:L277 - OK: Proxy variables are exported when p
 PASS: test_export_proxy_variables:L286 - OK: Proxy variables aren't exported when proxy variables aren't set
 57 Tests PASSED
 Testing INI functions
-Creating /tmp/tmp.WsBvrfRLxt/etc/test.ini
+Creating /tmp/tmp.fK84DX9qCi/etc/test.ini
 PASS: main:L94 - OK
 PASS: main:L103 - test missing attribute argument
 PASS: main:L107 - missing section argument
@@ -185,7 +185,7 @@ PASS: test_localconf_has_option:L132 - OK
 PASS: test_localconf_has_option:L134 - OK
 PASS: test_localconf_update_option:L208 - OK
 PASS: test_localconf_update_option:L215 - OK
-ERROR: [[post-config|/tmp/tmp.qFApbhIKkW]]
+ERROR: [[post-config|/tmp/tmp.s5zk0hRQ8i]]
 [conf1_t1]
 conf1_t1_opt4=conf1_t1_val4
 conf1_t1_opt1=conf1_t1_val1
@@ -208,12 +208,12 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.vLIXnfxhO2]]
+[[post-extra|/tmp/tmp.An0UlGDWml]]
 [conf2_t1]
 conf2_t1_opt4=conf2_t1_val4
 conf2_t1_opt1 = conf2_t1_val1
 conf2_t1_opt2 = conf2_t1_val2
-conf2_t1_opt3 = conf2_t1_val3 != [[post-config|/tmp/tmp.qFApbhIKkW]]
+conf2_t1_opt3 = conf2_t1_val3 != [[post-config|/tmp/tmp.s5zk0hRQ8i]]
 [conf1_t1]
 conf1_t1_opt4 = conf1_t1_val4
 conf1_t1_opt1=conf1_t1_val1
@@ -236,14 +236,14 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.vLIXnfxhO2]]
+[[post-extra|/tmp/tmp.An0UlGDWml]]
 [conf2_t1]
 conf2_t1_opt4 = conf2_t1_val4
 conf2_t1_opt1 = conf2_t1_val1
 conf2_t1_opt2 = conf2_t1_val2
 conf2_t1_opt3 = conf2_t1_val3 in test_localconf_add_option:L294!
   OK
-ERROR: [[post-config|/tmp/tmp.qFApbhIKkW]]
+ERROR: [[post-config|/tmp/tmp.s5zk0hRQ8i]]
 [conf1_t1]
 conf1_t1_opt4=conf1_t1_val4
 conf1_t1_opt1=conf1_t1_val1
@@ -266,12 +266,12 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.vLIXnfxhO2]]
+[[post-extra|/tmp/tmp.An0UlGDWml]]
 [conf2_t1]
 conf2_t1_opt4=conf2_t1_val4
 conf2_t1_opt1 = conf2_t1_val1
 conf2_t1_opt2 = conf2_t1_val2
-conf2_t1_opt3 = conf2_t1_val3 != [[post-config|/tmp/tmp.qFApbhIKkW]]
+conf2_t1_opt3 = conf2_t1_val3 != [[post-config|/tmp/tmp.s5zk0hRQ8i]]
 [conf1_t1]
 conf1_t1_opt4 = conf1_t1_val4
 conf1_t1_opt1=conf1_t1_val1
@@ -294,14 +294,14 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.vLIXnfxhO2]]
+[[post-extra|/tmp/tmp.An0UlGDWml]]
 [conf2_t1]
 conf2_t1_opt4 = conf2_t1_val4
 conf2_t1_opt1 = conf2_t1_val1
 conf2_t1_opt2 = conf2_t1_val2
 conf2_t1_opt3 = conf2_t1_val3 in test_localconf_add_option:L301!
   OK
-ERROR: [[post-config|/tmp/tmp.3VIX0mjtGC]]
+ERROR: [[post-config|/tmp/tmp.64Y7Dur6Bl]]
 [conf1_t4]
 conf1_t4_opt1=conf1_t4_val1
 [conf1_t1]
@@ -322,13 +322,13 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.f1XLcMdhAp]]
+[[post-extra|/tmp/tmp.Z3OLS6QLBd]]
 [conf2_t2]
 conf2_t2_opt1=conf2_t2_val1
 [conf2_t1]
 conf2_t1_opt1=conf2_t1_val1
 conf2_t1_opt2=conf2_t1_val2
-conf2_t1_opt3=conf2_t1_val3 != [[post-config|/tmp/tmp.3VIX0mjtGC]]
+conf2_t1_opt3=conf2_t1_val3 != [[post-config|/tmp/tmp.64Y7Dur6Bl]]
 [conf1_t4]
 conf1_t4_opt1 = conf1_t4_val1
 [conf1_t1]
@@ -349,7 +349,7 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.f1XLcMdhAp]]
+[[post-extra|/tmp/tmp.Z3OLS6QLBd]]
 [conf2_t2]
 conf2_t2_opt1 = conf2_t2_val1
 [conf2_t1]
@@ -357,7 +357,7 @@ conf2_t1_opt1=conf2_t1_val1
 conf2_t1_opt2=conf2_t1_val2
 conf2_t1_opt3=conf2_t1_val3 in test_localconf_add_section_and_option:L376!
   OK
-ERROR: [[post-config|/tmp/tmp.3VIX0mjtGC]]
+ERROR: [[post-config|/tmp/tmp.64Y7Dur6Bl]]
 [conf1_t4]
 conf1_t4_opt1=conf1_t4_val1
 [conf1_t1]
@@ -378,13 +378,13 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.f1XLcMdhAp]]
+[[post-extra|/tmp/tmp.Z3OLS6QLBd]]
 [conf2_t2]
 conf2_t2_opt1=conf2_t2_val1
 [conf2_t1]
 conf2_t1_opt1=conf2_t1_val1
 conf2_t1_opt2=conf2_t1_val2
-conf2_t1_opt3=conf2_t1_val3 != [[post-config|/tmp/tmp.3VIX0mjtGC]]
+conf2_t1_opt3=conf2_t1_val3 != [[post-config|/tmp/tmp.64Y7Dur6Bl]]
 [conf1_t4]
 conf1_t4_opt1 = conf1_t4_val1
 [conf1_t1]
@@ -405,7 +405,7 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2
 LOCALRC_VAR3=localrc_val3
 
-[[post-extra|/tmp/tmp.f1XLcMdhAp]]
+[[post-extra|/tmp/tmp.Z3OLS6QLBd]]
 [conf2_t2]
 conf2_t2_opt1 = conf2_t2_val1
 [conf2_t1]
@@ -418,7 +418,7 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2_update
 LOCALRC_VAR3=localrc_val3
 
-[[post-config|/tmp/tmp.g6Clvi5eR0]]
+[[post-config|/tmp/tmp.htY1vEGGLd]]
 [conf1_t4]
 conf1_t4_opt1=conf1_t4_val1
 [conf1_t1]
@@ -434,7 +434,7 @@ conf1_t3_opt1=conf1_t3_val1
 conf1_t3_opt2=conf1_t3_val2
 conf1_t3_opt3=conf1_t3_val3
 
-[[post-extra|/tmp/tmp.9NuUHdcGgl]]
+[[post-extra|/tmp/tmp.ERUBfvbPb6]]
 [conf2_t1]
 conf2_t1_opt4=conf2_t1_val4
 conf2_t1_opt1=conf2_t1_val1
@@ -448,7 +448,7 @@ LOCALRC_VAR1=localrc_val1
 LOCALRC_VAR2=localrc_val2_update
 LOCALRC_VAR3=localrc_val3
 
-[[post-config|/tmp/tmp.g6Clvi5eR0]]
+[[post-config|/tmp/tmp.htY1vEGGLd]]
 [conf1_t4]
 conf1_t4_opt1 = conf1_t4_val1
 [conf1_t1]
@@ -464,7 +464,7 @@ conf1_t3_opt1=conf1_t3_val1
 conf1_t3_opt2=conf1_t3_val2
 conf1_t3_opt3=conf1_t3_val3
 
-[[post-extra|/tmp/tmp.9NuUHdcGgl]]
+[[post-extra|/tmp/tmp.ERUBfvbPb6]]
 [conf2_t1]
 conf2_t1_opt4 = conf2_t1_val4
 conf2_t1_opt1=conf2_t1_val1
@@ -622,13 +622,13 @@ PASS: main:L43 - eq
 PASS: main:L44 - eq fail
 PASS: main:L45 - eq fail
 32 Tests PASSED
-PASS: main:L23 - worlddump output /tmp/tmp.np49L2YSM5/worlddump-2026-01-22-061553.txt
-tests/test_worlddump.sh: line 25: [[: 245921
-245921: syntax error in expression (error token is "245921")
+PASS: main:L23 - worlddump output /tmp/tmp.zeepSws21j/worlddump-2026-01-22-084824.txt
+tests/test_worlddump.sh: line 25: [[: 244411
+244411: syntax error in expression (error token is "244411")
 1 Tests PASSED
 ........
 ----------------------------------------------------------------------
-Ran 8 tests in 0.006s
+Ran 8 tests in 0.005s
 
 OK
 =====================================================================
