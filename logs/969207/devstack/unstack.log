@@ -283,8 +283,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   grep '\-A'
++ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:197              :   bash
@@ -299,8 +299,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-N'
-+ lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
++ lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:cleanup_nova:212                :   local instances
 ++ lib/nova:cleanup_nova:213                :   sudo virsh list --all
@@ -321,7 +321,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1699       :   local service=n-api
@@ -501,8 +501,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@keystone.service".
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1703       :   is_service_enabled c-api
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   grep xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
@@ -731,7 +731,6 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-ovn-mainte
 + functions-common:is_service_enabled:2079 :   return 1
 + lib/neutron:stop_other:722               :   [[ True == \T\r\u\e ]]
 + lib/neutron:stop_other:725               :   sudo pkill -9 -f '/opt/stack/data/venv/bin/neutron-rootwrap-[d]aemon'
-+ lib/neutron:stop_other:725               :   :
 + lib/neutron:stop_neutron:732             :   stop_l2_agent
 + lib/neutron:stop_l2_agent:693            :   stop_process q-agt
 + functions-common:stop_process:1699       :   local service=q-agt
