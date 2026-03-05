@@ -257,8 +257,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:stop_nova_compute:1219          :   is_service_enabled n-cpu
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   set +o
 ++ functions-common:is_service_enabled:2051 :   grep xtrace
+++ functions-common:is_service_enabled:2051 :   set +o
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
