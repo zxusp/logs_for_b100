@@ -82,8 +82,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api-meta.service
 + functions-common:stop_process:1701       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1703       :   is_service_enabled n-sch
 + functions-common:is_service_enabled:2050 :   local xtrace
-++ functions-common:is_service_enabled:2051 :   grep xtrace
 ++ functions-common:is_service_enabled:2051 :   set +o
+++ functions-common:is_service_enabled:2051 :   grep xtrace
 + functions-common:is_service_enabled:2051 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2052 :   set +o xtrace
 + functions-common:is_service_enabled:2079 :   return 0
@@ -321,7 +321,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1699       :   local service=n-api
