@@ -278,8 +278,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:195              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:195              :   grep nova
 + lib/nova:clean_iptables:195              :   grep '\-A'
-+ lib/nova:clean_iptables:195              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:195              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
@@ -321,7 +321,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1699       :   local service=n-api
@@ -731,6 +731,7 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-ovn-mainte
 + functions-common:is_service_enabled:2079 :   return 1
 + lib/neutron:stop_other:722               :   [[ True == \T\r\u\e ]]
 + lib/neutron:stop_other:725               :   sudo pkill -9 -f '/opt/stack/data/venv/bin/neutron-rootwrap-[d]aemon'
++ lib/neutron:stop_other:725               :   :
 + lib/neutron:stop_neutron:732             :   stop_l2_agent
 + lib/neutron:stop_l2_agent:693            :   stop_process q-agt
 + functions-common:stop_process:1699       :   local service=q-agt
