@@ -202,8 +202,8 @@ not-found
 + lib/nova:stop_nova_conductor:1231        :   for srv in n-super-cond $(seq -f n-cond-cell%0.f 1 $NOVA_NUM_CELLS)
 + lib/nova:stop_nova_conductor:1232        :   is_service_enabled n-cond-cell1
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   set +o
 ++ functions-common:is_service_enabled:2040 :   grep xtrace
+++ functions-common:is_service_enabled:2040 :   set +o
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 0

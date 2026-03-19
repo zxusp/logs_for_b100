@@ -293,8 +293,8 @@ not-found
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
-+ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
@@ -1302,8 +1302,8 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   grep '\-A'
++ lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:197              :   bash
@@ -1311,13 +1311,13 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   grep '\-N'
-+ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   bash
++ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   grep nova
++ lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
@@ -1638,14 +1638,14 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2415          :   local total
 + functions-common:time_stop:2416          :   local start_time
 + functions-common:time_stop:2418          :   name=apt-get
-+ functions-common:time_stop:2419          :   start_time=1773884995023
-+ functions-common:time_stop:2421          :   [[ -z 1773884995023 ]]
++ functions-common:time_stop:2419          :   start_time=1773908038931
++ functions-common:time_stop:2421          :   [[ -z 1773908038931 ]]
 ++ functions-common:time_stop:2424          :   date +%s%3N
-+ functions-common:time_stop:2424          :   end_time=1773884999644
-+ functions-common:time_stop:2425          :   elapsed_time=4621
++ functions-common:time_stop:2424          :   end_time=1773908043571
++ functions-common:time_stop:2425          :   elapsed_time=4640
 + functions-common:time_stop:2426          :   total=0
 + functions-common:time_stop:2428          :   _TIME_START[$name]=
-+ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=4621
++ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=4640
 + functions-common:apt_get:1207            :   return 0
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
@@ -1813,14 +1813,14 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2415          :   local total
 + functions-common:time_stop:2416          :   local start_time
 + functions-common:time_stop:2418          :   name=apt-get
-+ functions-common:time_stop:2419          :   start_time=1773884999704
-+ functions-common:time_stop:2421          :   [[ -z 1773884999704 ]]
++ functions-common:time_stop:2419          :   start_time=1773908043632
++ functions-common:time_stop:2421          :   [[ -z 1773908043632 ]]
 ++ functions-common:time_stop:2424          :   date +%s%3N
-+ functions-common:time_stop:2424          :   end_time=1773885007252
-+ functions-common:time_stop:2425          :   elapsed_time=7548
-+ functions-common:time_stop:2426          :   total=4621
++ functions-common:time_stop:2424          :   end_time=1773908051087
++ functions-common:time_stop:2425          :   elapsed_time=7455
++ functions-common:time_stop:2426          :   total=4640
 + functions-common:time_stop:2428          :   _TIME_START[$name]=
-+ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=12169
++ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=12095
 + functions-common:apt_get:1207            :   return 0
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
@@ -2006,21 +2006,21 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2415          :   local total
 + functions-common:time_stop:2416          :   local start_time
 + functions-common:time_stop:2418          :   name=apt-get
-+ functions-common:time_stop:2419          :   start_time=1773885007316
-+ functions-common:time_stop:2421          :   [[ -z 1773885007316 ]]
++ functions-common:time_stop:2419          :   start_time=1773908051149
++ functions-common:time_stop:2421          :   [[ -z 1773908051149 ]]
 ++ functions-common:time_stop:2424          :   date +%s%3N
-+ functions-common:time_stop:2424          :   end_time=1773885013345
-+ functions-common:time_stop:2425          :   elapsed_time=6029
-+ functions-common:time_stop:2426          :   total=12169
++ functions-common:time_stop:2424          :   end_time=1773908057300
++ functions-common:time_stop:2425          :   elapsed_time=6151
++ functions-common:time_stop:2426          :   total=12095
 + functions-common:time_stop:2428          :   _TIME_START[$name]=
-+ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=18198
++ functions-common:time_stop:2429          :   _TIME_TOTAL[$name]=18246
 + functions-common:apt_get:1207            :   return 0
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-03-18-154616 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-03-18-154616 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-03-18-154616
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-03-19-095016 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-03-19-095016 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-03-19-095016
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs
