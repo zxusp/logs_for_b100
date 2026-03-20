@@ -255,8 +255,8 @@ not-found
 + lib/nova:clean_iptables:195              :   sudo iptables -S -v
 + lib/nova:clean_iptables:195              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:195              :   grep nova
-+ lib/nova:clean_iptables:195              :   grep '\-A'
 + lib/nova:clean_iptables:195              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:195              :   grep '\-A'
 + lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
@@ -922,8 +922,8 @@ ERROR: Site neutron-api does not exist!
 + lib/neutron:_move_neutron_addresses_route:758 :   local af=inet
 + lib/neutron:_move_neutron_addresses_route:760 :   [[ -n br-ex ]]
 + lib/neutron:_move_neutron_addresses_route:760 :   [[ -n '' ]]
-++ lib/neutron:cleanup_neutron:839          :   ip -f inet6 a s dev br-ex
 ++ lib/neutron:cleanup_neutron:839          :   grep -c global
+++ lib/neutron:cleanup_neutron:839          :   ip -f inet6 a s dev br-ex
 Device "br-ex" does not exist.
 + lib/neutron:cleanup_neutron:839          :   [[ 0 != 0 ]]
 + lib/neutron:cleanup_neutron:847          :   is_provider_network
