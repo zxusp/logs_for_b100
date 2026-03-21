@@ -303,8 +303,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:cleanup_nova:212                :   local instances
 ++ lib/nova:cleanup_nova:213                :   sudo virsh list --all
-++ lib/nova:cleanup_nova:213                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
 ++ lib/nova:cleanup_nova:213                :   grep instance-
+++ lib/nova:cleanup_nova:213                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
 + lib/nova:cleanup_nova:213                :   instances=
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
 + lib/nova:cleanup_nova:223                :   local tgts
@@ -680,8 +680,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-periodic-w
 + functions-common:stop_process:1690       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1692       :   is_service_enabled neutron-api
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   grep xtrace
 ++ functions-common:is_service_enabled:2040 :   set +o
+++ functions-common:is_service_enabled:2040 :   grep xtrace
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 0
@@ -1026,7 +1026,6 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@etcd.service".
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
-rm: cannot remove '/opt/stack/data/etcd': Device or resource busy
 + ./unstack.sh:main:183                    :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2039 :   local xtrace
 ++ functions-common:is_service_enabled:2040 :   set +o
