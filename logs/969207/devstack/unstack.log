@@ -161,8 +161,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-novnc-cell1.serv
 + functions-common:stop_process:1690       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1692       :   is_service_enabled n-sproxy-cell1
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   grep xtrace
 ++ functions-common:is_service_enabled:2040 :   set +o
+++ functions-common:is_service_enabled:2040 :   grep xtrace
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 1
@@ -278,8 +278,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:195              :   grep nova
 + lib/nova:clean_iptables:195              :   grep '\-A'
 + lib/nova:clean_iptables:195              :   sed s/-A/-D/g
-+ lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:195              :   bash
++ lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:197              :   grep nova
@@ -405,8 +405,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/devstack@placement-api.service".
 + ./unstack.sh:main:116                    :   is_service_enabled glance
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   set +o
 ++ functions-common:is_service_enabled:2040 :   grep xtrace
+++ functions-common:is_service_enabled:2040 :   set +o
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 0
