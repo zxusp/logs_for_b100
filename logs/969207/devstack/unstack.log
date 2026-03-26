@@ -161,8 +161,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-novnc-cell1.serv
 + functions-common:stop_process:1690       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1692       :   is_service_enabled n-sproxy-cell1
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   set +o
 ++ functions-common:is_service_enabled:2040 :   grep xtrace
+++ functions-common:is_service_enabled:2040 :   set +o
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 1
@@ -835,8 +835,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/ovn-central.service".
 + lib/neutron_plugins/ovn_agent:stop_ovn:833 :   is_service_enabled ovs-vtep
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   grep xtrace
 ++ functions-common:is_service_enabled:2040 :   set +o
+++ functions-common:is_service_enabled:2040 :   grep xtrace
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 1
