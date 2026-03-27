@@ -2,161 +2,161 @@ smoke create: /opt/stack/tempest/.tox/tempest
 smoke installdeps: -chttps://releases.openstack.org/constraints/upper/master, -r/opt/stack/tempest/requirements.txt
 smoke develop-inst: /opt/stack/tempest
 smoke installed: attrs==25.4.0,autopage==0.6.0,bcrypt==5.0.0,certifi==2026.2.25,cffi==2.0.0,charset-normalizer==3.4.4,cliff==4.13.2,cmd2==3.2.0,cryptography==43.0.3,debtcollector==3.0.0,defusedxml==0.7.1,fasteners==0.20,fixtures==4.3.1,idna==3.11,invoke==2.2.1,iso8601==2.1.0,jsonschema==4.26.0,jsonschema-specifications==2025.9.1,markdown-it-py==4.0.0,mdurl==0.1.2,msgpack==1.1.2,netaddr==1.3.0,oslo.concurrency==7.4.0,oslo.config==10.3.0,oslo.context==6.3.0,oslo.i18n==6.7.2,oslo.log==8.1.0,oslo.serialization==5.9.1,oslo.utils==10.0.0,packaging==26.0,paramiko==4.0.0,pbr==7.0.3,prettytable==3.17.0,psutil==7.2.2,pycparser==3.0,Pygments==2.19.2,PyNaCl==1.6.2,pyparsing==3.3.2,pyperclip==1.11.0,python-dateutil==2.9.0.post0,python-subunit==1.4.5,PyYAML==6.0.3,referencing==0.37.0,requests==2.32.5,rfc3986==2.0.0,rich==14.3.3,rich-argparse==1.7.2,rpds-py==0.30.0,setuptools==82.0.1,six==1.17.0,stestr==4.2.1,stevedore==5.7.0,-e git+https://opendev.org/openstack/tempest.git@bb561b970c41d86d42d4ff36557035550330462d#egg=tempest,testscenarios==0.5.0,testtools==2.8.5,tomlkit==0.14.0,typing_extensions==4.15.0,urllib3==2.6.3,voluptuous==0.16.0,wcwidth==0.6.0,wrapt==2.1.1
-smoke run-test-pre: PYTHONHASHSEED='3878555878'
+smoke run-test-pre: PYTHONHASHSEED='633526880'
 smoke run-test: commands[0] | find . -type f -name '*.pyc' -delete
 smoke run-test: commands[1] | tempest run --regex '\[.*\bsmoke\b.*\]'
-{2} setUpClass (tempest.api.object_storage.test_account_quotas.AccountQuotasTest) ... SKIPPED: AccountQuotasTest skipped as swift is not available
-{4} setUpClass (tempest.api.object_storage.test_container_quotas.ContainerQuotasTest) ... SKIPPED: ContainerQuotasTest skipped as swift is not available
-{1} setUpClass (tempest.api.object_storage.test_account_services.AccountTest) ... SKIPPED: AccountTest skipped as swift is not available
-{28} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_media_types [0.226345s] ... ok
-{33} tempest.api.identity.v3.test_domains.DefaultDomainTestJSON.test_default_domain_exists [0.251380s] ... ok
-{28} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_resources [0.257117s] ... ok
-{28} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_statuses [0.297151s] ... ok
-{28} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_list_api_versions [0.074274s] ... ok
-{23} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_delete_image [1.430092s] ... ok
-{36} tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_get_flavor [0.266780s] ... ok
-{36} tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_list_flavors [0.075296s] ... ok
-{32} tempest.api.identity.admin.v3.test_policies.PoliciesTestJSON.test_create_update_delete_policy [0.497563s] ... ok
-{31} tempest.api.identity.admin.v3.test_credentials.CredentialsTestJSON.test_credentials_create_get_update_delete [0.618967s] ... ok
-{34} tempest.api.identity.admin.v3.test_regions.RegionsTestJSON.test_create_region_with_specific_id [0.257548s] ... ok
-{30} tempest.api.identity.admin.v3.test_services.ServicesTestJSON.test_create_update_get_service [0.663815s] ... ok
-{21} tempest.api.network.test_versions.NetworksApiDiscovery.test_api_version_resources [1.587409s] ... ok
-{29} tempest.api.identity.admin.v3.test_roles.RolesV3TestJSON.test_role_create_update_show_list [0.583513s] ... ok
-{26} tempest.api.identity.admin.v3.test_domains.DomainsTestJSON.test_create_update_delete_domain [1.065786s] ... ok
-{27} tempest.api.identity.admin.v3.test_endpoints.EndPointsTestJSON.test_update_endpoint [0.965282s] ... ok
-{23} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_register_upload_get_image_file [2.036983s] ... ok
-{21} tempest.api.network.test_versions.NetworksApiDiscovery.test_show_api_v2_details [1.389092s] ... ok
-{19} tempest.api.identity.admin.v3.test_groups.GroupsV3TestJSON.test_group_users_add_list_delete [2.632548s] ... ok
-{23} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_update_image [0.933845s] ... ok
-{22} tempest.api.identity.admin.v3.test_trusts.TrustsV3TestJSON.test_get_trusts_all [3.123735s] ... ok
-{9} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_network [10.279829s] ... ok
-{17} tempest.api.network.test_subnetpools_extensions.SubnetPoolsTestJSON.test_create_list_show_update_delete_subnetpools [10.319408s] ... ok
-{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_network [10.501515s] ... ok
-{7} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete [12.465793s] ... ok
-{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_create_list_update_show_delete_security_group [11.447217s] ... ok
-{11} tempest.api.network.test_security_groups.SecGroupTest.test_create_list_update_show_delete_security_group [11.392126s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_create_update_delete_network_subnet [9.016282s] ... ok
-{25} tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create [2.031314s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_create_update_delete_network_subnet [10.042716s] ... ok
-{13} tempest.api.network.test_ports.PortsTestJSON.test_create_port_in_allowed_allocation_pools [10.214125s] ... ok
-{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_port_in_allowed_allocation_pools [10.196680s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_external_network_visibility [0.887753s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_external_network_visibility [1.019847s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_list_networks [0.418942s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_list_networks [0.176259s] ... ok
-{9} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_port [5.298542s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_list_subnets [0.229147s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_list_subnets [0.247182s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_show_network [0.211907s] ... ok
-{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_port [5.237217s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_show_network [0.180821s] ... ok
-{15} tempest.api.network.test_networks.NetworksTest.test_show_subnet [0.112605s] ... ok
-{16} tempest.api.network.test_networks.NetworksIpV6Test.test_show_subnet [0.206481s] ... ok
-{25} tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_list [2.761158s] ... ok
-{24} tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_groups_create_list_delete [7.049410s] ... ok
-{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_create_show_delete_security_group_rule [5.745519s] ... ok
-{18} tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_floating_ip_specifying_a_fixed_ip_address [3.326756s] ... ok
-{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_list_security_groups [0.043400s] ... ok
-{11} tempest.api.network.test_security_groups.SecGroupTest.test_create_show_delete_security_group_rule [5.946726s] ... ok
-{11} tempest.api.network.test_security_groups.SecGroupTest.test_list_security_groups [0.054215s] ... ok
-{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_port_with_no_securitygroups [3.455679s] ... ok
-{9} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_subnet [2.764844s] ... ok
-{10} tempest.api.network.test_extensions.ExtensionsTestJSON.test_list_show_extensions [18.478954s] ... ok
-{13} tempest.api.network.test_ports.PortsTestJSON.test_create_port_with_no_securitygroups [4.353191s] ... ok
-{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_update_delete_port [1.073578s] ... ok
-{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_subnet [3.439918s] ... ok
-{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_list_ports [0.114895s] ... ok
-{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_show_port [0.064050s] ... ok
-{13} tempest.api.network.test_ports.PortsTestJSON.test_create_update_delete_port [1.067171s] ... ok
-{13} tempest.api.network.test_ports.PortsTestJSON.test_list_ports [0.072569s] ... ok
-{13} tempest.api.network.test_ports.PortsTestJSON.test_show_port [0.044897s] ... ok
-{20} tempest.scenario.test_dashboard_basic_ops.TestDashboardBasicOps.test_basic_scenario [22.057896s] ... ok
-{18} tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_list_show_update_delete_floating_ip [4.048820s] ... ok
-{3} tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces [25.298772s] ... ok
-{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_multiple_router_interfaces [25.476113s] ... ok
-{3} tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_port_id [4.163656s] ... ok
-{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_remove_router_interface_with_port_id [4.241581s] ... ok
-{35} tempest.api.compute.servers.test_server_addresses.ServerAddressesTestJSON.test_list_server_addresses [0.173858s] ... ok
-{35} tempest.api.compute.servers.test_server_addresses.ServerAddressesTestJSON.test_list_server_addresses_by_network [0.109753s] ... ok
-{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_remove_router_interface_with_subnet_id [3.152345s] ... ok
-{3} tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_subnet_id [3.901090s] ... ok
-{7} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_from_image [24.172240s] ... ok
-{5} tempest.api.network.test_routers.RoutersIpV6Test.test_create_show_list_update_delete_router [2.969478s] ... ok
-{3} tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router [2.731632s] ... ok
+{1} setUpClass (tempest.api.object_storage.test_container_services.ContainerTest) ... SKIPPED: ContainerTest skipped as swift is not available
+{3} setUpClass (tempest.api.object_storage.test_object_services.ObjectTest) ... SKIPPED: ObjectTest skipped as swift is not available
+{2} setUpClass (tempest.api.object_storage.test_container_quotas.ContainerQuotasTest) ... SKIPPED: ContainerQuotasTest skipped as swift is not available
+{29} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_media_types [0.244259s] ... ok
+{36} tempest.api.identity.v3.test_domains.DefaultDomainTestJSON.test_default_domain_exists [0.215725s] ... ok
+{29} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_resources [0.279625s] ... ok
+{29} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_statuses [0.215768s] ... ok
+{29} tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_list_api_versions [0.175451s] ... ok
+{23} tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_get_flavor [0.436476s] ... ok
+{24} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_delete_image [1.341181s] ... ok
+{23} tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_list_flavors [0.074272s] ... ok
+{33} tempest.api.identity.admin.v3.test_policies.PoliciesTestJSON.test_create_update_delete_policy [0.577603s] ... ok
+{30} tempest.api.identity.admin.v3.test_services.ServicesTestJSON.test_create_update_get_service [0.628625s] ... ok
+{35} tempest.api.identity.admin.v3.test_regions.RegionsTestJSON.test_create_region_with_specific_id [0.205229s] ... ok
+{31} tempest.api.identity.admin.v3.test_credentials.CredentialsTestJSON.test_credentials_create_get_update_delete [0.417664s] ... ok
+{21} tempest.api.network.test_versions.NetworksApiDiscovery.test_api_version_resources [1.393564s] ... ok
+{27} tempest.api.identity.admin.v3.test_domains.DomainsTestJSON.test_create_update_delete_domain [0.660088s] ... ok
+{32} tempest.api.identity.admin.v3.test_roles.RolesV3TestJSON.test_role_create_update_show_list [0.463563s] ... ok
+{28} tempest.api.identity.admin.v3.test_endpoints.EndPointsTestJSON.test_update_endpoint [1.112597s] ... ok
+{24} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_register_upload_get_image_file [2.041062s] ... ok
+{21} tempest.api.network.test_versions.NetworksApiDiscovery.test_show_api_v2_details [1.440240s] ... ok
+{20} tempest.api.identity.admin.v3.test_trusts.TrustsV3TestJSON.test_get_trusts_all [2.481506s] ... ok
+{24} tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_update_image [0.787872s] ... ok
+{22} tempest.api.identity.admin.v3.test_groups.GroupsV3TestJSON.test_group_users_add_list_delete [3.004312s] ... ok
+{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_network [10.233311s] ... ok
+{17} tempest.api.network.test_subnetpools_extensions.SubnetPoolsTestJSON.test_create_list_show_update_delete_subnetpools [10.499765s] ... ok
+{10} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_network [10.796149s] ... ok
+{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_create_list_update_show_delete_security_group [11.438970s] ... ok
+{11} tempest.api.network.test_security_groups.SecGroupTest.test_create_list_update_show_delete_security_group [11.420416s] ... ok
+{7} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete [12.706015s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_create_update_delete_network_subnet [9.868030s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_create_update_delete_network_subnet [9.128037s] ... ok
+{26} tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_create [1.493907s] ... ok
+{13} tempest.api.network.test_ports.PortsTestJSON.test_create_port_in_allowed_allocation_pools [10.810444s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_external_network_visibility [0.954311s] ... ok
+{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_port_in_allowed_allocation_pools [10.213075s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_list_networks [0.488284s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_external_network_visibility [1.170174s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_list_subnets [0.216607s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_list_networks [0.247858s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_show_network [0.235197s] ... ok
+{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_port [5.076322s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_list_subnets [0.255204s] ... ok
+{10} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_port [4.612250s] ... ok
+{15} tempest.api.network.test_networks.NetworksIpV6Test.test_show_subnet [0.247909s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_show_network [0.285617s] ... ok
+{16} tempest.api.network.test_networks.NetworksTest.test_show_subnet [0.172767s] ... ok
+{26} tempest.api.compute.security_groups.test_security_group_rules.SecurityGroupRulesTestJSON.test_security_group_rules_list [2.935154s] ... ok
+{25} tempest.api.compute.security_groups.test_security_groups.SecurityGroupsTestJSON.test_security_groups_create_list_delete [6.742781s] ... ok
+{11} tempest.api.network.test_security_groups.SecGroupTest.test_create_show_delete_security_group_rule [5.705215s] ... ok
+{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_create_show_delete_security_group_rule [5.744936s] ... ok
+{11} tempest.api.network.test_security_groups.SecGroupTest.test_list_security_groups [0.113519s] ... ok
+{12} tempest.api.network.test_security_groups.SecGroupIPv6Test.test_list_security_groups [0.120354s] ... ok
+{18} tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_floating_ip_specifying_a_fixed_ip_address [3.483254s] ... ok
+{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_port_with_no_securitygroups [3.308337s] ... ok
+{10} tempest.api.network.test_networks.BulkNetworkOpsIpV6Test.test_bulk_create_delete_subnet [3.074429s] ... ok
+{13} tempest.api.network.test_ports.PortsTestJSON.test_create_port_with_no_securitygroups [4.407945s] ... ok
+{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_create_update_delete_port [1.198724s] ... ok
+{9} tempest.api.network.test_extensions.ExtensionsTestJSON.test_list_show_extensions [19.198229s] ... ok
+{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_list_ports [0.084598s] ... ok
+{14} tempest.api.network.test_ports.PortsIpV6TestJSON.test_show_port [0.031587s] ... ok
+{8} tempest.api.network.test_networks.BulkNetworkOpsTest.test_bulk_create_delete_subnet [3.942787s] ... ok
+{13} tempest.api.network.test_ports.PortsTestJSON.test_create_update_delete_port [1.158457s] ... ok
+{13} tempest.api.network.test_ports.PortsTestJSON.test_list_ports [0.051845s] ... ok
+{13} tempest.api.network.test_ports.PortsTestJSON.test_show_port [0.036248s] ... ok
+{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_multiple_router_interfaces [19.929478s] ... ok
+{19} tempest.scenario.test_dashboard_basic_ops.TestDashboardBasicOps.test_basic_scenario [22.324115s] ... ok
+{18} tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_list_show_update_delete_floating_ip [3.782362s] ... ok
+{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_remove_router_interface_with_port_id [4.544302s] ... ok
+{5} tempest.api.network.test_routers.RoutersIpV6Test.test_add_remove_router_interface_with_subnet_id [3.622264s] ... ok
+{4} tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces [29.468625s] ... ok
+{5} tempest.api.network.test_routers.RoutersIpV6Test.test_create_show_list_update_delete_router [3.039321s] ... ok
+{34} tempest.api.compute.servers.test_server_addresses.ServerAddressesTestJSON.test_list_server_addresses [0.251446s] ... ok
+{34} tempest.api.compute.servers.test_server_addresses.ServerAddressesTestJSON.test_list_server_addresses_by_network [0.129625s] ... ok
 {5} setUpClass (tempest.scenario.test_server_multinode.TestServerMultinode) ... SKIPPED: Less than 2 compute nodes, skipping multinode tests.
-{37} tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers [0.148975s] ... ok
-{37} tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_server_details [0.000614s] ... ok
-{3} setUpClass (tempest.api.object_storage.test_container_services.ContainerTest) ... SKIPPED: ContainerTest skipped as swift is not available
-{2} tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_attach_detach_volume_to_instance [29.078330s] ... ok
-{39} tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers [0.164299s] ... ok
-{39} tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details [0.000411s] ... ok
-{37} tempest.api.image.v2.test_versions.VersionsTest.test_list_versions [0.005471s] ... ok
-{37} tempest.api.volume.test_versions.VersionsTest.test_list_versions [0.007088s] ... ok
-{38} tempest.api.compute.servers.test_create_server.ServersTestBootFromVolume.test_list_servers [0.140574s] ... ok
-{38} tempest.api.compute.servers.test_create_server.ServersTestBootFromVolume.test_verify_server_details [0.000415s] ... ok
-{39} tempest.api.compute.test_versions.TestVersions.test_get_version_details [0.027934s] ... ok
-{39} tempest.api.compute.test_versions.TestVersions.test_list_api_versions [0.008833s] ... ok
-{0} tempest.api.compute.servers.test_attach_interfaces.AttachInterfacesUnderV243Test.test_add_remove_fixed_ip [52.896848s] ... ok
-{6} tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard [22.124815s] ... ok
-{4} tempest.scenario.test_server_basic_ops.TestServerBasicOps.test_server_basic_ops [49.232434s] ... ok
-{0} setUpClass (tempest.api.object_storage.test_object_services.ObjectTest) ... SKIPPED: ObjectTest skipped as swift is not available
-{38} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list [0.048450s] ... ok
-{1} tempest.scenario.test_network_basic_ops.TestNetworkBasicOps.test_network_basic_ops [95.093123s] ... ok
+{37} tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers [0.170388s] ... ok
+{37} tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details [0.000438s] ... ok
+{4} tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_port_id [4.263197s] ... ok
+{7} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_from_image [24.276264s] ... ok
+{4} tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_subnet_id [3.639091s] ... ok
+{1} tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_attach_detach_volume_to_instance [27.072288s] ... ok
+{4} tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router [2.517140s] ... ok
+{4} setUpClass (tempest.api.object_storage.test_account_services.AccountTest) ... SKIPPED: AccountTest skipped as swift is not available
+{39} tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers [0.134794s] ... ok
+{39} tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_server_details [0.000579s] ... ok
+{37} tempest.api.image.v2.test_versions.VersionsTest.test_list_versions [0.004550s] ... ok
+{37} tempest.api.volume.test_versions.VersionsTest.test_list_versions [0.007853s] ... ok
+{38} tempest.api.compute.servers.test_create_server.ServersTestBootFromVolume.test_list_servers [0.141743s] ... ok
+{38} tempest.api.compute.servers.test_create_server.ServersTestBootFromVolume.test_verify_server_details [0.000416s] ... ok
+{39} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list [0.049292s] ... ok
+{0} tempest.api.compute.servers.test_attach_interfaces.AttachInterfacesUnderV243Test.test_add_remove_fixed_ip [51.170608s] ... ok
+{38} tempest.api.compute.test_versions.TestVersions.test_get_version_details [0.031481s] ... ok
+{38} tempest.api.compute.test_versions.TestVersions.test_list_api_versions [0.010678s] ... ok
+{0} setUpClass (tempest.api.object_storage.test_account_quotas.AccountQuotasTest) ... SKIPPED: AccountQuotasTest skipped as swift is not available
+{6} tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard [19.588304s] ... ok
+{3} tempest.scenario.test_server_basic_ops.TestServerBasicOps.test_server_basic_ops [47.709468s] ... ok
+{2} tempest.scenario.test_network_basic_ops.TestNetworkBasicOps.test_network_basic_ops [90.794846s] ... ok
 
 ======
 Totals
 ======
-Ran: 97 tests in 98.2700 sec.
+Ran: 97 tests in 94.0697 sec.
  - Passed: 91
  - Skipped: 6
  - Expected Fail: 0
  - Unexpected Success: 0
  - Failed: 0
-Sum of execute time for each test: 572.7010 sec.
+Sum of execute time for each test: 560.7807 sec.
 
 ==============
 Worker Balance
 ==============
- - Worker 0 (2 tests) => 0:00:55.284347
- - Worker 1 (2 tests) => 0:01:38.253783
- - Worker 2 (2 tests) => 0:00:43.878496
- - Worker 3 (5 tests) => 0:00:36.886656
- - Worker 4 (2 tests) => 0:01:09.896816
- - Worker 5 (5 tests) => 0:00:36.557764
- - Worker 6 (1 tests) => 0:00:22.124815
- - Worker 7 (2 tests) => 0:00:36.644363
- - Worker 8 (3 tests) => 0:00:19.186019
- - Worker 9 (3 tests) => 0:00:18.351251
- - Worker 10 (1 tests) => 0:00:18.478954
- - Worker 11 (3 tests) => 0:00:17.403347
- - Worker 12 (3 tests) => 0:00:17.244037
- - Worker 13 (5 tests) => 0:00:15.759761
- - Worker 14 (5 tests) => 0:00:14.916882
- - Worker 15 (6 tests) => 0:00:10.887535
- - Worker 16 (6 tests) => 0:00:11.887608
- - Worker 17 (1 tests) => 0:00:10.319408
- - Worker 18 (2 tests) => 0:00:07.382150
- - Worker 19 (1 tests) => 0:00:02.632548
- - Worker 20 (1 tests) => 0:00:22.057896
- - Worker 21 (2 tests) => 0:00:02.984678
- - Worker 22 (1 tests) => 0:00:03.123735
- - Worker 23 (3 tests) => 0:00:04.409859
- - Worker 24 (1 tests) => 0:00:07.049410
- - Worker 25 (2 tests) => 0:00:04.798806
- - Worker 26 (1 tests) => 0:00:01.065786
- - Worker 27 (1 tests) => 0:00:00.965282
- - Worker 28 (4 tests) => 0:00:00.865434
- - Worker 29 (1 tests) => 0:00:00.583513
- - Worker 30 (1 tests) => 0:00:00.663815
- - Worker 31 (1 tests) => 0:00:00.618967
- - Worker 32 (1 tests) => 0:00:00.497563
- - Worker 33 (1 tests) => 0:00:00.251380
- - Worker 34 (1 tests) => 0:00:00.257548
- - Worker 35 (2 tests) => 0:00:00.289198
- - Worker 36 (2 tests) => 0:00:00.348152
- - Worker 37 (4 tests) => 0:00:11.039688
- - Worker 38 (3 tests) => 0:00:18.116934
- - Worker 39 (4 tests) => 0:00:10.702316
+ - Worker 0 (2 tests) => 0:00:53.412532
+ - Worker 1 (2 tests) => 0:00:42.730120
+ - Worker 2 (2 tests) => 0:01:33.941756
+ - Worker 3 (2 tests) => 0:01:08.110018
+ - Worker 4 (5 tests) => 0:00:40.699950
+ - Worker 5 (5 tests) => 0:00:32.395886
+ - Worker 6 (1 tests) => 0:00:19.588304
+ - Worker 7 (2 tests) => 0:00:36.991701
+ - Worker 8 (3 tests) => 0:00:19.260420
+ - Worker 9 (1 tests) => 0:00:19.198229
+ - Worker 10 (3 tests) => 0:00:18.489733
+ - Worker 11 (3 tests) => 0:00:17.249295
+ - Worker 12 (3 tests) => 0:00:17.313690
+ - Worker 13 (5 tests) => 0:00:16.472523
+ - Worker 14 (5 tests) => 0:00:14.844553
+ - Worker 15 (6 tests) => 0:00:12.024797
+ - Worker 16 (6 tests) => 0:00:11.270607
+ - Worker 17 (1 tests) => 0:00:10.499765
+ - Worker 18 (2 tests) => 0:00:07.272810
+ - Worker 19 (1 tests) => 0:00:22.324115
+ - Worker 20 (1 tests) => 0:00:02.481506
+ - Worker 21 (2 tests) => 0:00:02.841772
+ - Worker 22 (1 tests) => 0:00:03.004312
+ - Worker 23 (2 tests) => 0:00:00.519437
+ - Worker 24 (3 tests) => 0:00:04.176755
+ - Worker 25 (1 tests) => 0:00:06.742781
+ - Worker 26 (2 tests) => 0:00:04.435480
+ - Worker 27 (1 tests) => 0:00:00.660088
+ - Worker 28 (1 tests) => 0:00:01.112597
+ - Worker 29 (4 tests) => 0:00:00.925799
+ - Worker 30 (1 tests) => 0:00:00.628625
+ - Worker 31 (1 tests) => 0:00:00.417664
+ - Worker 32 (1 tests) => 0:00:00.463563
+ - Worker 33 (1 tests) => 0:00:00.577603
+ - Worker 34 (2 tests) => 0:00:00.391775
+ - Worker 35 (1 tests) => 0:00:00.205229
+ - Worker 36 (1 tests) => 0:00:00.215725
+ - Worker 37 (4 tests) => 0:00:12.328331
+ - Worker 38 (4 tests) => 0:00:12.082092
+ - Worker 39 (3 tests) => 0:00:16.824003
 ___________________________________ summary ____________________________________
   smoke: commands succeeded
   congratulations :)
