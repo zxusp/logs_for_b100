@@ -255,8 +255,8 @@ not-found
 + lib/nova:clean_iptables:195              :   sudo iptables -S -v
 + lib/nova:clean_iptables:195              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:195              :   grep nova
-+ lib/nova:clean_iptables:195              :   grep '\-A'
 + lib/nova:clean_iptables:195              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:195              :   grep '\-A'
 + lib/nova:clean_iptables:195              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
@@ -264,11 +264,11 @@ not-found
 + lib/nova:clean_iptables:197              :   grep nova
 + lib/nova:clean_iptables:197              :   grep '\-A'
 + lib/nova:clean_iptables:197              :   sed s/-A/-D/g
-+ lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:197              :   bash
-+ lib/nova:clean_iptables:199              :   sudo iptables -S -v
++ lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:199              :   grep nova
++ lib/nova:clean_iptables:199              :   sudo iptables -S -v
 + lib/nova:clean_iptables:199              :   grep '\-N'
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
@@ -288,8 +288,8 @@ not-found
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
 + lib/nova:cleanup_nova:223                :   local tgts
 ++ lib/nova:cleanup_nova:224                :   sudo iscsiadm --mode node
-++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
 ++ lib/nova:cleanup_nova:224                :   grep volume-
+++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
 iscsiadm: No records found
 + lib/nova:cleanup_nova:224                :   tgts=
 + lib/nova:cleanup_nova:225                :   local target
@@ -339,9 +339,7 @@ not-found
 + functions-common:is_ubuntu:544           :   [[ -z deb ]]
 + functions-common:is_ubuntu:547           :   '[' deb = deb ']'
 + lib/apache:disable_apache_site:209       :   sudo a2dissite nova-api
-Site nova-api disabled.
-To activate the new configuration, you need to run:
-  systemctl reload apache2
+Site nova-api already disabled
 + lib/nova:cleanup_nova:250                :   remove_uwsgi_config /etc/nova/nova-metadata-uwsgi.ini nova-metadata
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-metadata-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-metadata
@@ -516,6 +514,7 @@ not-found
 + lib/cinder:cleanup_cinder:262            :   '[' lioadm = lioadm ']'
 + lib/cinder:cleanup_cinder:263            :   sudo cinder-rtstool get-targets
 + lib/cinder:cleanup_cinder:263            :   sudo xargs -rn 1 cinder-rtstool delete
+sudo: cinder-rtstool: command not found
 + lib/cinder:cleanup_cinder:272            :   is_service_enabled c-vol
 + functions-common:is_service_enabled:2039 :   local xtrace
 ++ functions-common:is_service_enabled:2040 :   set +o
@@ -964,6 +963,7 @@ Failed to disable unit: Unit file devstack@etcd.service does not exist.
 + lib/etcd3:cleanup_etcd3:94               :   sudo systemctl daemon-reload
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
+umount: /opt/stack/data/etcd: no mount point specified.
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
 + ./unstack.sh:main:183                    :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2039 :   local xtrace
