@@ -1,14 +1,13 @@
 # CI for B100
-  Build 246 started for Branch master, Change 969207:42.  
+  Build 247 started for Branch master, Change 969207:42.  
 ## Initialization
- 2026-06-11 13:22:10 Log initialization successful!    
+ 2026-06-11 13:54:32 Log initialization successful!    
 ## Install DevStack
- 2026-06-11 13:22:10   Installing DevStack...    
- 2026-06-11 13:35:53 DevStack installation completed successfully!    
- 2026-06-11 13:36:04 DevStack self-check passed!    
+ 2026-06-11 13:54:32   Installing DevStack...    
+ 2026-06-11 14:07:02 DevStack installation completed successfully!    
+ 2026-06-11 14:07:13 DevStack self-check passed!    
 ## Run Tempest
- 2026-06-11 13:36:04 Running Tempest tests...    
- 2026-06-11 13:38:14 Smoke Tempest tests completed successfully!    
- 2026-06-11 13:54:28 Storage Tempest tests completed successfully!    
+ 2026-06-11 14:07:13 Running Tempest tests...    
+ 2026-06-11 14:09:19 Smoke Tempest tests failed!    
 ## Finish
- 2026-06-11 13:54:28 Build 246 completed successfully!    
+ 2026-06-11 14:09:19 Build 247 failed!    
