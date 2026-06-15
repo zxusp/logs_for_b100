@@ -150,8 +150,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-novnc-cell1.serv
 + functions-common:stop_process:1690       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1692       :   is_service_enabled n-spice-cell1
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   set +o
 ++ functions-common:is_service_enabled:2040 :   grep xtrace
+++ functions-common:is_service_enabled:2040 :   set +o
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 1
@@ -320,7 +320,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/locks
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1688       :   local service=n-api
@@ -595,8 +595,8 @@ Removed "/etc/systemd/system/local-fs.target.wants/stack-volumes-lvmdriver-1-bac
 + lib/lvm:clean_lvm_filter:177             :   sudo sed -i 's/^.*# from devstack$//' /etc/lvm/lvm.conf
 + lib/cinder:cleanup_cinder:283            :   is_service_enabled c-bak
 + functions-common:is_service_enabled:2039 :   local xtrace
-++ functions-common:is_service_enabled:2040 :   set +o
 ++ functions-common:is_service_enabled:2040 :   grep xtrace
+++ functions-common:is_service_enabled:2040 :   set +o
 + functions-common:is_service_enabled:2040 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2041 :   set +o xtrace
 + functions-common:is_service_enabled:2068 :   return 1
