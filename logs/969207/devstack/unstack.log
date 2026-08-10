@@ -320,7 +320,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1688       :   local service=n-api
@@ -730,7 +730,6 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@neutron-ovn-mainte
 + functions-common:is_service_enabled:2068 :   return 1
 + lib/neutron:stop_other:733               :   [[ True == \T\r\u\e ]]
 + lib/neutron:stop_other:736               :   sudo pkill -9 -f '/opt/stack/data/venv/bin/neutron-rootwrap-[d]aemon'
-+ lib/neutron:stop_other:736               :   :
 + lib/neutron:stop_neutron:743             :   stop_l2_agent
 + lib/neutron:stop_l2_agent:704            :   stop_process q-agt
 + functions-common:stop_process:1688       :   local service=q-agt
@@ -871,7 +870,8 @@ Possible reasons for having these kinds of units are:
 + lib/neutron_plugins/ovn_agent:_stop_process:797 :   echo 'Stopping process ovsdb-server.service'
 Stopping process ovsdb-server.service
 + lib/neutron_plugins/ovn_agent:_stop_process:799 :   sudo systemctl is-active ovsdb-server.service
-inactive
+active
++ lib/neutron_plugins/ovn_agent:_stop_process:800 :   sudo systemctl stop ovsdb-server.service
 + lib/neutron_plugins/ovn_agent:_stop_process:802 :   sudo systemctl is-enabled ovsdb-server.service
 static
 + lib/neutron_plugins/ovn_agent:_stop_process:803 :   sudo systemctl disable ovsdb-server.service
@@ -1025,7 +1025,6 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@etcd.service".
 + lib/etcd3:cleanup_etcd3:94               :   sudo systemctl daemon-reload
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
-umount: /opt/stack/data/etcd: not mounted.
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
 + ./unstack.sh:main:183                    :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2039 :   local xtrace
