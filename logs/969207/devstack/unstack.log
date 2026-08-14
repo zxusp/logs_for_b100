@@ -309,8 +309,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
 + lib/nova:cleanup_nova:223                :   local tgts
 ++ lib/nova:cleanup_nova:224                :   sudo iscsiadm --mode node
-++ lib/nova:cleanup_nova:224                :   grep volume-
 ++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
+++ lib/nova:cleanup_nova:224                :   grep volume-
 iscsiadm: No records found
 + lib/nova:cleanup_nova:224                :   tgts=
 + lib/nova:cleanup_nova:225                :   local target
@@ -320,7 +320,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:232                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:232                :   true
-+ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/locks
++ lib/nova:cleanup_nova:235                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
 + lib/nova:cleanup_nova:238                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:247                :   stop_process n-api
 + functions-common:stop_process:1688       :   local service=n-api
