@@ -288,8 +288,8 @@ not-found
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
 + lib/nova:cleanup_nova:223                :   local tgts
 ++ lib/nova:cleanup_nova:224                :   sudo iscsiadm --mode node
-++ lib/nova:cleanup_nova:224                :   grep volume-
 ++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
+++ lib/nova:cleanup_nova:224                :   grep volume-
 iscsiadm: No records found
 + lib/nova:cleanup_nova:224                :   tgts=
 + lib/nova:cleanup_nova:225                :   local target
