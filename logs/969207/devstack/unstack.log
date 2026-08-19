@@ -261,11 +261,11 @@ not-found
 + lib/nova:clean_iptables:195              :   bash
 + lib/nova:clean_iptables:197              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:197              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:197              :   grep '\-A'
 + lib/nova:clean_iptables:197              :   grep nova
++ lib/nova:clean_iptables:197              :   grep '\-A'
 + lib/nova:clean_iptables:197              :   sed s/-A/-D/g
-+ lib/nova:clean_iptables:197              :   bash
 + lib/nova:clean_iptables:197              :   awk '{print "sudo iptables -t nat",$0}'
++ lib/nova:clean_iptables:197              :   bash
 + lib/nova:clean_iptables:199              :   sudo iptables -S -v
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:199              :   grep nova
@@ -273,8 +273,8 @@ not-found
 + lib/nova:clean_iptables:199              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
-+ lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
++ lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-N'
 + lib/nova:clean_iptables:201              :   sed s/-N/-X/g
@@ -288,8 +288,8 @@ not-found
 + lib/nova:cleanup_nova:214                :   '[' '!' '' = '' ']'
 + lib/nova:cleanup_nova:223                :   local tgts
 ++ lib/nova:cleanup_nova:224                :   sudo iscsiadm --mode node
-++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
 ++ lib/nova:cleanup_nova:224                :   grep volume-
+++ lib/nova:cleanup_nova:224                :   cut -d ' ' -f2
 iscsiadm: No records found
 + lib/nova:cleanup_nova:224                :   tgts=
 + lib/nova:cleanup_nova:225                :   local target
