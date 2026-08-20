@@ -72,8 +72,12 @@ Requirement already satisfied: mdurl~=0.1 in ./.tox/venv/lib/python3.12/site-pac
 Building wheels for collected packages: cinder-tempest-plugin
   Building editable for cinder-tempest-plugin (pyproject.toml): started
   Building editable for cinder-tempest-plugin (pyproject.toml): finished with status 'done'
-  Created wheel for cinder-tempest-plugin: filename=cinder_tempest_plugin-1.22.1.dev3-0.editable-py3-none-any.whl size=8609 sha256=03920c057bf2268f432153c7075bdda29b57b69135035836b19ef7bfccaae418
-  Stored in directory: /tmp/pip-ephem-wheel-cache-1e_xhh2f/wheels/ed/66/13/a189967002c5a17b5be79aafc45c201bfd977ffc6e00d32aab
+  Created wheel for cinder-tempest-plugin: filename=cinder_tempest_plugin-1.22.1.dev3-0.editable-py3-none-any.whl size=8609 sha256=412ba8de15491e4c1410e4e078d736a9368c627da1ae5e727315d2ff1b99ab94
+  Stored in directory: /tmp/pip-ephem-wheel-cache-88j481de/wheels/ed/66/13/a189967002c5a17b5be79aafc45c201bfd977ffc6e00d32aab
 Successfully built cinder-tempest-plugin
 Installing collected packages: cinder-tempest-plugin
+  Attempting uninstall: cinder-tempest-plugin
+    Found existing installation: cinder-tempest-plugin 1.22.1.dev3
+    Uninstalling cinder-tempest-plugin-1.22.1.dev3:
+      Successfully uninstalled cinder-tempest-plugin-1.22.1.dev3
 Successfully installed cinder-tempest-plugin-1.22.1.dev3
