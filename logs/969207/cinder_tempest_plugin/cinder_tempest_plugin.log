@@ -1,0 +1,299 @@
+{0} setUpClass (cinder_tempest_plugin.api.volume.admin.test_volume_replication.VolumeReplicationTest) [0.000000s] ... FAILED
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/api/volume/admin/test_volume_replication.py", line 34, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+{12} setUpClass (cinder_tempest_plugin.api.volume.admin.test_consistencygroups.ConsistencyGroupsV2Test) ... SKIPPED: Cinder consistency group feature disabled
+{11} setUpClass (cinder_tempest_plugin.api.volume.admin.test_volume_backup.VolumesBackupsTest) ... SKIPPED: Cinder backup feature disabled
+{13} setUpClass (cinder_tempest_plugin.rbac.v3.test_capabilities.ProjectMemberTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{16} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectReaderTests33) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{20} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectMemberTests39) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{9} setUpClass (cinder_tempest_plugin.rbac.v3.test_snapshots.ProjectReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{17} setUpClass (cinder_tempest_plugin.api.volume.test_multiple_volume_from_resource.CreateVolumesFromBackupTest) ... SKIPPED: Cinder backup feature disabled
+{3} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectAdminTests33) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{24} setUpClass (cinder_tempest_plugin.rbac.v3.test_user_messages.ProjectReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{19} setUpClass (cinder_tempest_plugin.rbac.v3.test_capabilities.ProjectReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{14} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectMemberTests33) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{25} setUpClass (cinder_tempest_plugin.scenario.test_encrypted_volume_transfer.TransferEncryptedVolumeTest) ... SKIPPED: Barbican is required
+{18} setUpClass (cinder_tempest_plugin.scenario.test_volume_replication.VolumeReplicationTest) [0.000000s] ... FAILED
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/scenario/test_volume_replication.py", line 38, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+{28} setUpClass (cinder_tempest_plugin.rbac.v3.test_capabilities.ProjectAdminTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{29} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectReaderTests39) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{10} setUpClass (cinder_tempest_plugin.scenario.test_volume_concurrency.ConcurrentVolumeActionsTest) ... SKIPPED: Concurrency tests are disabled.
+{15} setUpClass (cinder_tempest_plugin.rbac.v3.test_snapshots.ProjectMemberTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{27} setUpClass (cinder_tempest_plugin.api.volume.test_volume_backup.VolumesBackupsTest) ... SKIPPED: Cinder backup feature disabled
+{21} setUpClass (cinder_tempest_plugin.scenario.test_volume_multiattach.VolumeMultiattachTests) ... SKIPPED: Volume multi-attach is not available.
+{22} setUpClass (cinder_tempest_plugin.rbac.v3.test_user_messages.ProjectAdminTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{26} setUpClass (cinder_tempest_plugin.api.volume.admin.test_volume_replication_negative.VolumeReplicationNegativeTest) [0.000000s] ... FAILED
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/api/volume/admin/test_volume_replication_negative.py", line 34, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+{6} cinder_tempest_plugin.api.volume.test_multiple_volume_from_resource.CreateVolumesFromImageTest.test_create_from_image_multiple [3.320709s] ... ok
+{23} cinder_tempest_plugin.api.volume.test_volume_unicode.CinderUnicodeTest.test_create_delete_unicode_volume_name [0.040840s] ... ok
+{8} cinder_tempest_plugin.api.volume.test_multiple_volume_from_resource.CreateVolumesFromSourceVolumeTest.test_create_multiple_volume_from_source_volume [5.681260s] ... ok
+{5} cinder_tempest_plugin.api.volume.test_volume_revert.VolumeRevertTests.test_volume_revert_to_snapshot [6.712780s] ... ok
+{7} cinder_tempest_plugin.api.volume.test_multiple_volume_from_resource.CreateVolumesFromSnapshotTest.test_create_multiple_volume_from_snapshot [7.524282s] ... ok
+{23} cinder_tempest_plugin.api.volume.test_volume_unicode.CinderUnicodeTest.test_snapshot_create_volume_description_non_ascii_code [4.662017s] ... ok
+{5} cinder_tempest_plugin.api.volume.test_volume_revert.VolumeRevertTests.test_volume_revert_to_snapshot_after_extended_negative [6.580287s] ... ok
+{1} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeImageDependencyTests.test_image_volume_dependencies_1 [16.113166s] ... ok
+{6} setUpClass (cinder_tempest_plugin.rbac.v3.test_user_messages.ProjectMemberTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{4} cinder_tempest_plugin.api.volume.test_create_from_image.VolumeAndVolumeTypeFromImageTest.test_create_from_image_with_volume_type_image_property [16.971640s] ... ok
+{8} setUpClass (cinder_tempest_plugin.rbac.v3.test_volume_types.VolumeTypesReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{9} cinder_tempest_plugin.scenario.test_snapshots.SnapshotDependencyTests.test_snapshot_removal [12.382705s] ... ok
+{4} setUpClass (cinder_tempest_plugin.rbac.v3.test_volume_types.VolumeTypesMemberTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{5} setUpClass (cinder_tempest_plugin.rbac.v3.test_volumes.ProjectReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{2} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeDependencyTests.test_delete_dep_chain [23.577943s] ... ok
+{7} setUpClass (cinder_tempest_plugin.rbac.v3.test_backups.ProjectAdminTests39) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{1} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeImageDependencyTests.test_image_volume_dependencies_2 [17.132323s] ... ok
+{2} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeDependencyTests.test_delete_dep_chain_2 [15.346663s] ... ok
+{2} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeDependencyTests.test_delete_source_snapshot [6.714946s] ... ok
+{2} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeDependencyTests.test_delete_source_volume [6.585926s] ... ok
+{1} cinder_tempest_plugin.api.volume.test_volume_dependency.VolumeImageDependencyTests.test_image_volume_dependencies_3 [20.382314s] ... ok
+{1} setUpClass (cinder_tempest_plugin.rbac.v3.test_volume_actions.ProjectReaderTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{2} setUpClass (cinder_tempest_plugin.rbac.v3.test_volume_types.VolumeTypesAdminTests) ... SKIPPED: Tempest is not configured to enforce_scope for cinder, skipping RBAC tests. To enable these tests set `tempest.conf [enforce_scope] cinder=True`.
+{3} cinder_tempest_plugin.scenario.test_volume_encrypted.TestEncryptedCinderVolumes.test_attach_cloned_encrypted_volume [89.055101s] ... ok
+{0} cinder_tempest_plugin.scenario.test_snapshots.SnapshotDataIntegrityTests.test_snapshot_data_integrity [195.019022s] ... ok
+{3} cinder_tempest_plugin.scenario.test_volume_encrypted.TestEncryptedCinderVolumes.test_boot_cloned_encrypted_volume [123.695498s] ... ok
+
+==============================
+Failed 3 tests - output below:
+==============================
+
+setUpClass (cinder_tempest_plugin.api.volume.admin.test_volume_replication.VolumeReplicationTest)
+-------------------------------------------------------------------------------------------------
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/api/volume/admin/test_volume_replication.py", line 34, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+
+setUpClass (cinder_tempest_plugin.scenario.test_volume_replication.VolumeReplicationTest)
+-----------------------------------------------------------------------------------------
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/scenario/test_volume_replication.py", line 38, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+
+setUpClass (cinder_tempest_plugin.api.volume.admin.test_volume_replication_negative.VolumeReplicationNegativeTest)
+------------------------------------------------------------------------------------------------------------------
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/test.py", line 185, in setUpClass
+    raise value.with_traceback(trace)
+
+      File "/opt/stack/tempest/tempest/test.py", line 162, in setUpClass
+    cls.skip_checks()
+
+      File "/opt/stack/cinder-tempest-plugin/cinder_tempest_plugin/api/volume/admin/test_volume_replication_negative.py", line 34, in skip_checks
+    if not CONF.volume_feature_enabled.replication:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 4211, in __getattr__
+    return self._conf._get(name, self._group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3613, in _get
+    value, loc = self._do_get(name, group, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3636, in _do_get
+    info = self._get_opt_info(name, group)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      File "/opt/stack/tempest/.tox/venv/lib/python3.12/site-packages/oslo_config/cfg.py", line 3887, in _get_opt_info
+    raise NoSuchOptError(opt_name, group)
+
+    oslo_config.cfg.NoSuchOptError: no such option replication in group [volume-feature-enabled]
+
+
+
+======
+Totals
+======
+Ran: 48 tests in 223.2135 sec.
+ - Passed: 19
+ - Skipped: 26
+ - Expected Fail: 0
+ - Unexpected Success: 0
+ - Failed: 3
+Sum of execute time for each test: 577.4994 sec.
+
+==============
+Worker Balance
+==============
+ - Worker 0 (2 tests) => 0:03:24.946549
+ - Worker 1 (4 tests) => 0:00:56.496954
+ - Worker 2 (5 tests) => 0:00:57.344135
+ - Worker 3 (3 tests) => 0:03:42.636076
+ - Worker 4 (2 tests) => 0:00:21.336760
+ - Worker 5 (3 tests) => 0:00:22.291910
+ - Worker 6 (2 tests) => 0:00:16.505564
+ - Worker 7 (2 tests) => 0:00:23.892574
+ - Worker 8 (2 tests) => 0:00:21.006150
+ - Worker 9 (2 tests) => 0:00:22.122806
+ - Worker 10 (1 tests) => 0:00:00
+ - Worker 11 (1 tests) => 0:00:00
+ - Worker 12 (1 tests) => 0:00:00
+ - Worker 13 (1 tests) => 0:00:00
+ - Worker 14 (1 tests) => 0:00:00
+ - Worker 15 (1 tests) => 0:00:00
+ - Worker 16 (1 tests) => 0:00:00
+ - Worker 17 (1 tests) => 0:00:00
+ - Worker 18 (1 tests) => 0:00:00
+ - Worker 19 (1 tests) => 0:00:00
+ - Worker 20 (1 tests) => 0:00:00
+ - Worker 21 (1 tests) => 0:00:00
+ - Worker 22 (1 tests) => 0:00:00
+ - Worker 23 (2 tests) => 0:00:04.708628
+ - Worker 24 (1 tests) => 0:00:00
+ - Worker 25 (1 tests) => 0:00:00
+ - Worker 26 (1 tests) => 0:00:00
+ - Worker 27 (1 tests) => 0:00:00
+ - Worker 28 (1 tests) => 0:00:00
+ - Worker 29 (1 tests) => 0:00:00
