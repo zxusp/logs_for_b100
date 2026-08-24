@@ -65,8 +65,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api.service".
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1700       :   is_service_enabled n-api-meta
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
@@ -282,17 +282,17 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:201              :   grep nova
-+ lib/nova:clean_iptables:201              :   grep '\-A'
 + lib/nova:clean_iptables:201              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:201              :   grep '\-A'
++ lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:clean_iptables:203              :   sudo iptables -S -v
 + lib/nova:clean_iptables:203              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:203              :   grep nova
 + lib/nova:clean_iptables:203              :   grep '\-N'
 + lib/nova:clean_iptables:203              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:203              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:203              :   grep nova
 + lib/nova:clean_iptables:203              :   bash
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
@@ -305,11 +305,18 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
 ++ lib/nova:cleanup_nova:217                :   grep instance-
 ++ lib/nova:cleanup_nova:217                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
-+ lib/nova:cleanup_nova:217                :   instances=
-+ lib/nova:cleanup_nova:218                :   '[' '!' '' = '' ']'
++ lib/nova:cleanup_nova:217                :   instances=instance-00000125
++ lib/nova:cleanup_nova:218                :   '[' '!' instance-00000125 = '' ']'
++ lib/nova:cleanup_nova:219                :   echo instance-00000125
++ lib/nova:cleanup_nova:219                :   xargs -n1 sudo virsh destroy
+Domain 'instance-00000125' destroyed
+
++ lib/nova:cleanup_nova:220                :   xargs -n1 sudo virsh undefine --managed-save --nvram
+Domain 'instance-00000125' has been undefined
+
 + lib/nova:cleanup_nova:227                :   local tgts
-++ lib/nova:cleanup_nova:228                :   grep volume-
 ++ lib/nova:cleanup_nova:228                :   sudo iscsiadm --mode node
+++ lib/nova:cleanup_nova:228                :   grep volume-
 ++ lib/nova:cleanup_nova:228                :   cut -d ' ' -f2
 iscsiadm: No records found
 + lib/nova:cleanup_nova:228                :   tgts=
@@ -320,7 +327,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:236                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:236                :   true
-+ lib/nova:cleanup_nova:239                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
++ lib/nova:cleanup_nova:239                :   sudo rm -rf /opt/stack/data/nova/instances/55e457b0-d1b3-4755-ba8e-5814fdf23105 /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
 + lib/nova:cleanup_nova:242                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:251                :   stop_process n-api
 + functions-common:stop_process:1696       :   local service=n-api
@@ -468,8 +475,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@keystone.service".
 + functions-common:is_service_enabled:2076 :   return 1
 + ./unstack.sh:main:131                    :   is_service_enabled horizon
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
