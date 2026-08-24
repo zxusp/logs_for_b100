@@ -289,8 +289,8 @@ not-found
 + lib/nova:clean_iptables:203              :   sudo iptables -S -v
 + lib/nova:clean_iptables:203              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:203              :   grep nova
-+ lib/nova:clean_iptables:203              :   grep '\-N'
 + lib/nova:clean_iptables:203              :   sed s/-N/-X/g
++ lib/nova:clean_iptables:203              :   grep '\-N'
 + lib/nova:clean_iptables:203              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:203              :   bash
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
@@ -301,8 +301,8 @@ not-found
 + lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:205              :   bash
 + lib/nova:cleanup_nova:216                :   local instances
-++ lib/nova:cleanup_nova:217                :   grep instance-
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
+++ lib/nova:cleanup_nova:217                :   grep instance-
 ++ lib/nova:cleanup_nova:217                :   sed 's/.*\(instance-[0-9a-fA-F]*\).*/\1/g'
 + lib/nova:cleanup_nova:217                :   instances=
 + lib/nova:cleanup_nova:218                :   '[' '!' '' = '' ']'
@@ -1017,6 +1017,7 @@ Failed to disable unit: Unit file devstack@etcd.service does not exist.
 + lib/etcd3:cleanup_etcd3:94               :   sudo systemctl daemon-reload
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
+umount: /opt/stack/data/etcd: no mount point specified.
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
 + unstack.sh:main:183                      :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2047 :   local xtrace
@@ -1320,8 +1321,8 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:205              :   grep nova
 + lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   sed s/-N/-X/g
-+ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:205              :   bash
++ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
 ++ lib/nova:cleanup_nova:217                :   grep instance-
@@ -1556,8 +1557,8 @@ ERROR: Site horizon does not exist!
 + lib/horizon:cleanup_horizon:70           :   sudo rm -f /etc/apache2/sites-available/horizon.conf
 + ./clean.sh:main:95                       :   is_service_enabled ldap
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 1
@@ -1639,14 +1640,14 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787555826667
-+ functions-common:time_stop:2429          :   [[ -z 1787555826667 ]]
++ functions-common:time_stop:2427          :   start_time=1787572369551
++ functions-common:time_stop:2429          :   [[ -z 1787572369551 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787555831189
-+ functions-common:time_stop:2433          :   elapsed_time=4522
++ functions-common:time_stop:2432          :   end_time=1787572374124
++ functions-common:time_stop:2433          :   elapsed_time=4573
 + functions-common:time_stop:2434          :   total=0
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=4522
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=4573
 + functions-common:apt_get:1215            :   return 0
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
@@ -1814,14 +1815,14 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787555831252
-+ functions-common:time_stop:2429          :   [[ -z 1787555831252 ]]
++ functions-common:time_stop:2427          :   start_time=1787572374184
++ functions-common:time_stop:2429          :   [[ -z 1787572374184 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787555838628
-+ functions-common:time_stop:2433          :   elapsed_time=7376
-+ functions-common:time_stop:2434          :   total=4522
++ functions-common:time_stop:2432          :   end_time=1787572381578
++ functions-common:time_stop:2433          :   elapsed_time=7394
++ functions-common:time_stop:2434          :   total=4573
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=11898
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=11967
 + functions-common:apt_get:1215            :   return 0
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
@@ -2006,21 +2007,21 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787555838690
-+ functions-common:time_stop:2429          :   [[ -z 1787555838690 ]]
++ functions-common:time_stop:2427          :   start_time=1787572381641
++ functions-common:time_stop:2429          :   [[ -z 1787572381641 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787555844697
-+ functions-common:time_stop:2433          :   elapsed_time=6007
-+ functions-common:time_stop:2434          :   total=11898
++ functions-common:time_stop:2432          :   end_time=1787572387663
++ functions-common:time_stop:2433          :   elapsed_time=6022
++ functions-common:time_stop:2434          :   total=11967
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=17905
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=17989
 + functions-common:apt_get:1215            :   return 0
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-24-151353 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-24-151353 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-24-151353
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-24-151740 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-24-151740 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-24-151740
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs

@@ -2,44 +2,62 @@
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
 HEAD is now at 33536777 Merge "update constraint for os_vif to new release 5.2.0"
+Checkout requirements master success 33536777 Merge "update constraint for os_vif to new release 5.2.0"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
 HEAD is now at 00a030403f Merge "Report OWNER_NOVA trait on resource providers"
+Checkout nova master success 00a030403f Merge "Report OWNER_NOVA trait on resource providers"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
 HEAD is now at ca4708870 Merge "NetApp:Fix to handle error during consistency group expand operation"
+Checkout cinder master success ca4708870 Merge "NetApp:Fix to handle error during consistency group expand operation"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/glance ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/glance
  * branch                master     -> FETCH_HEAD
 HEAD is now at 8d723c84c Merge "MBR safety check is non-fatal for non-disk-image formats"
+Checkout glance master success 8d723c84c Merge "MBR safety check is non-fatal for non-disk-image formats"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/os-brick ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/os-brick
  * branch            master     -> FETCH_HEAD
 HEAD is now at 46ca08f Merge "Initiate NVMeConnProps with controllers in extend_volume"
+Checkout os-brick master success 46ca08f Merge "Initiate NVMeConnProps with controllers in extend_volume"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/keystone ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/keystone
  * branch                master     -> FETCH_HEAD
 HEAD is now at 16afc813b Merge "Abandon server-side paged search cursor when sizelimit is reached"
+Checkout keystone master success 16afc813b Merge "Abandon server-side paged search cursor when sizelimit is reached"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
 HEAD is now at dbdbc25afa Merge "bgp: Add output_port for main LR static route"
+Checkout neutron master success dbdbc25afa Merge "bgp: Add output_port for main LR static route"
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/horizon ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/horizon
  * branch                master     -> FETCH_HEAD
 HEAD is now at 949ffdead Imported Translations from Zanata
+Checkout horizon master success 949ffdead Imported Translations from Zanata
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/tempest ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/tempest
  * branch                master     -> FETCH_HEAD
 HEAD is now at ea2da2069 Fix list_live_migrations for the server uuid field
+Checkout tempest master success ea2da2069 Fix list_live_migrations for the server uuid field
+
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
