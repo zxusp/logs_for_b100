@@ -1,29 +1,37 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-HEAD is now at 33536777 Merge "update constraint for os_vif to new release 5.2.0"
-Checkout requirements master success 33536777 Merge "update constraint for os_vif to new release 5.2.0"
+   33536777..db93254a  master     -> origin/master
+Previous HEAD position was 33536777 Merge "update constraint for os_vif to new release 5.2.0"
+HEAD is now at db93254a Denylist types-psutil
+Checkout requirements master success db93254a Denylist types-psutil
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-HEAD is now at 00a030403f Merge "Report OWNER_NOVA trait on resource providers"
-Checkout nova master success 00a030403f Merge "Report OWNER_NOVA trait on resource providers"
+   00a030403f..9aa9a54e04  master     -> origin/master
+Previous HEAD position was 00a030403f Merge "Report OWNER_NOVA trait on resource providers"
+HEAD is now at 9aa9a54e04 Merge "Filter out deleted instances when looking for build timouts"
+Checkout nova master success 9aa9a54e04 Merge "Filter out deleted instances when looking for build timouts"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-HEAD is now at ca4708870 Merge "NetApp:Fix to handle error during consistency group expand operation"
-Checkout cinder master success ca4708870 Merge "NetApp:Fix to handle error during consistency group expand operation"
+   ca4708870..b7831e8de  master     -> origin/master
+Previous HEAD position was ca4708870 Merge "NetApp:Fix to handle error during consistency group expand operation"
+HEAD is now at b7831e8de Merge "Quobyte: drop psutil requirement"
+Checkout cinder master success b7831e8de Merge "Quobyte: drop psutil requirement"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/glance ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/glance
  * branch                master     -> FETCH_HEAD
-HEAD is now at 8d723c84c Merge "MBR safety check is non-fatal for non-disk-image formats"
-Checkout glance master success 8d723c84c Merge "MBR safety check is non-fatal for non-disk-image formats"
+   8d723c84c..2699961fa  master     -> origin/master
+Previous HEAD position was 8d723c84c Merge "MBR safety check is non-fatal for non-disk-image formats"
+HEAD is now at 2699961fa tests: Ignore CHECK constraints in test_models_sync
+Checkout glance master success 2699961fa tests: Ignore CHECK constraints in test_models_sync
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/os-brick ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
@@ -43,8 +51,10 @@ Checkout keystone master success 16afc813b Merge "Abandon server-side paged sear
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-HEAD is now at dbdbc25afa Merge "bgp: Add output_port for main LR static route"
-Checkout neutron master success dbdbc25afa Merge "bgp: Add output_port for main LR static route"
+   dbdbc25afa..e248fffe09  master     -> origin/master
+Previous HEAD position was dbdbc25afa Merge "bgp: Add output_port for main LR static route"
+HEAD is now at e248fffe09 Merge "Revert "[CI][FT] Tempoarary skip failing tests centos 10 stream""
+Checkout neutron master success e248fffe09 Merge "Revert "[CI][FT] Tempoarary skip failing tests centos 10 stream""
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/horizon ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
