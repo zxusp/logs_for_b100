@@ -71,7 +71,10 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api.service".
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-api-meta.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-api-meta.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-api-meta.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-api-meta.service".
 + lib/nova:stop_nova_rest:1197             :   for serv in n-api n-api-meta n-sch
 + lib/nova:stop_nova_rest:1198             :   stop_process n-sch
 + functions-common:stop_process:1696       :   local service=n-sch
@@ -84,7 +87,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-sch.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-sch.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-sch.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-sch.service".
 + lib/nova:stop_nova:1234                  :   stop_nova_console_proxies
 + lib/nova:stop_nova_console_proxies:1203  :   [[ superconductor == \s\i\n\g\l\e\c\o\n\d\u\c\t\o\r ]]
 + lib/nova:stop_nova_console_proxies:1208  :   enable_nova_console_proxies
@@ -134,7 +140,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-novnc-cell1.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-novnc-cell1.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-novnc-cell1.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-novnc-cell1.service".
 + lib/nova:stop_nova_console_proxies:1210  :   for srv in n-novnc n-spice n-sproxy
 + lib/nova:stop_nova_console_proxies:1211  :   stop_process n-spice-cell1
 + functions-common:stop_process:1696       :   local service=n-spice-cell1
@@ -201,7 +210,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-super-cond.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-super-cond.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-super-cond.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-super-cond.service".
 + lib/nova:stop_nova_conductor:1224        :   for srv in n-super-cond $(seq -f n-cond-cell%0.f 1 $NOVA_NUM_CELLS)
 + lib/nova:stop_nova_conductor:1225        :   is_service_enabled n-cond-cell1
 + functions-common:is_service_enabled:2047 :   local xtrace
@@ -221,7 +233,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-cond-cell1.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-cond-cell1.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-cond-cell1.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cond-cell1.service".
 + lib/nova:stop_nova:1236                  :   stop_nova_compute
 + lib/nova:stop_nova_compute:1182          :   '[' libvirt == fake ']'
 + lib/nova:stop_nova_compute:1188          :   stop_process n-cpu
@@ -235,7 +250,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-cpu.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@n-cpu.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@n-cpu.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:stop_nova_compute:1190          :   is_service_enabled n-cpu
 + functions-common:is_service_enabled:2047 :   local xtrace
 ++ functions-common:is_service_enabled:2048 :   set +o
@@ -260,8 +278,8 @@ not-found
 + lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   grep '\-A'
 + lib/nova:clean_iptables:199              :   sed s/-A/-D/g
-+ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
++ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
@@ -274,15 +292,15 @@ not-found
 + lib/nova:clean_iptables:203              :   grep nova
 + lib/nova:clean_iptables:203              :   grep '\-N'
 + lib/nova:clean_iptables:203              :   sed s/-N/-X/g
-+ lib/nova:clean_iptables:203              :   bash
 + lib/nova:clean_iptables:203              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:203              :   bash
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:205              :   grep nova
 + lib/nova:clean_iptables:205              :   grep '\-N'
-+ lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:205              :   bash
++ lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
 ++ lib/nova:cleanup_nova:217                :   grep instance-
@@ -327,7 +345,7 @@ disabled
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@n-api-meta.service
-not-found
+disabled
 + lib/nova:cleanup_nova:253                :   remove_uwsgi_config /etc/nova/nova-api-uwsgi.ini nova-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/nova/nova-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=nova-api
@@ -381,7 +399,10 @@ ERROR: Site nova-metadata does not exist!
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@placement-api.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@placement-api.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@placement-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@placement-api.service".
 + ./unstack.sh:main:116                    :   is_service_enabled glance
 + functions-common:is_service_enabled:2047 :   local xtrace
 ++ functions-common:is_service_enabled:2048 :   set +o
@@ -401,7 +422,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@g-api.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@g-api.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@g-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@g-api.service".
 + lib/glance:stop_glance:668               :   stop_process g-api-r
 + functions-common:stop_process:1696       :   local service=g-api-r
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
@@ -482,7 +506,10 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@keystone.service".
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@c-api.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@c-api.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@c-api.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-api.service".
 + lib/cinder:stop_cinder:660               :   stop_process c-bak
 + functions-common:stop_process:1696       :   local service=c-bak
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
@@ -504,7 +531,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@c-sch.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@c-sch.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@c-sch.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-sch.service".
 + lib/cinder:stop_cinder:662               :   stop_process c-vol
 + functions-common:stop_process:1696       :   local service=c-vol
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
@@ -516,7 +546,10 @@ not-found
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@c-vol.service
-not-found
+enabled
++ functions-common:stop_process:1705       :   sudo systemctl stop devstack@c-vol.service
++ functions-common:stop_process:1706       :   sudo systemctl disable devstack@c-vol.service
+Removed "/etc/systemd/system/multi-user.target.wants/devstack@c-vol.service".
 + ./unstack.sh:main:149                    :   cleanup_cinder
 + lib/cinder:cleanup_cinder:236            :   '[' lioadm = tgtadm ']'
 + lib/cinder:cleanup_cinder:264            :   '[' lioadm = lioadm ']'
@@ -587,7 +620,7 @@ Removed "/etc/systemd/system/local-fs.target.wants/stack-volumes-lvmdriver-1-bac
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
 + functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@c-api.service
-not-found
+disabled
 + lib/cinder:cleanup_cinder:292            :   remove_uwsgi_config /etc/cinder/cinder-api-uwsgi.ini cinder-wsgi
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/cinder/cinder-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=cinder-wsgi

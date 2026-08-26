@@ -1,8 +1,6 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-   db93254a..0dc6259f  master     -> origin/master
-Previous HEAD position was db93254a Denylist types-psutil
 HEAD is now at 0dc6259f Merge "Revert "update constraint for pbr to new release 7.1.1""
 Checkout requirements master success 0dc6259f Merge "Revert "update constraint for pbr to new release 7.1.1""
 
@@ -10,17 +8,15 @@ Checkout requirements master success 0dc6259f Merge "Revert "update constraint f
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-   9aa9a54e04..0defb285db  master     -> origin/master
-Previous HEAD position was 9aa9a54e04 Merge "Filter out deleted instances when looking for build timouts"
-HEAD is now at 0defb285db Merge "Bump python_version for mypy to 3.11"
-Checkout nova master success 0defb285db Merge "Bump python_version for mypy to 3.11"
+   0defb285db..5a9d04d193  master     -> origin/master
+Previous HEAD position was 0defb285db Merge "Bump python_version for mypy to 3.11"
+HEAD is now at 5a9d04d193 Merge "Use service shutdown related config options in nova-graceful-shutdown"
+Checkout nova master success 5a9d04d193 Merge "Use service shutdown related config options in nova-graceful-shutdown"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-   b7831e8de..33b782f53  master     -> origin/master
-Previous HEAD position was b7831e8de Merge "Quobyte: drop psutil requirement"
 HEAD is now at 33b782f53 Merge "Move boto3 to driver requirement"
 Checkout cinder master success 33b782f53 Merge "Move boto3 to driver requirement"
 
@@ -49,8 +45,6 @@ Checkout keystone master success 16afc813b Merge "Abandon server-side paged sear
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-   e248fffe09..d04539fe75  master     -> origin/master
-Previous HEAD position was e248fffe09 Merge "Revert "[CI][FT] Tempoarary skip failing tests centos 10 stream""
 HEAD is now at d04539fe75 Merge "Reduce ``test_get_and_delete_gateway`` privsep load"
 Checkout neutron master success d04539fe75 Merge "Reduce ``test_get_and_delete_gateway`` privsep load"
 
