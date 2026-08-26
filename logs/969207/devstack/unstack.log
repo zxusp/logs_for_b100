@@ -278,8 +278,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   grep '\-A'
 + lib/nova:clean_iptables:199              :   sed s/-A/-D/g
-+ lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
@@ -298,9 +298,9 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:205              :   grep nova
 + lib/nova:clean_iptables:205              :   grep '\-N'
++ lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:205              :   bash
-+ lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
 ++ lib/nova:cleanup_nova:217                :   grep instance-
@@ -845,8 +845,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/ovn-central.service".
 + lib/neutron_plugins/ovn_agent:stop_ovn:858 :   is_service_enabled ovs-vtep
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 1
@@ -1036,6 +1036,7 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@etcd.service".
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
+rm: cannot remove '/opt/stack/data/etcd': Device or resource busy
 + ./unstack.sh:main:183                    :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2047 :   local xtrace
 ++ functions-common:is_service_enabled:2048 :   set +o

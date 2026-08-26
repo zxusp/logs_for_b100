@@ -274,10 +274,10 @@ disabled
 + lib/nova:cleanup_nova:213                :   clean_iptables
 + lib/nova:clean_iptables:199              :   sudo iptables -S -v
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   grep '\-A'
-+ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
++ lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
@@ -296,10 +296,10 @@ disabled
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:205              :   grep nova
-+ lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   sed s/-N/-X/g
-+ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
++ lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   bash
++ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   grep instance-
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
@@ -1025,7 +1025,6 @@ Failed to disable unit: Unit file devstack@etcd.service does not exist.
 + lib/etcd3:cleanup_etcd3:94               :   sudo systemctl daemon-reload
 + lib/etcd3:cleanup_etcd3:96               :   [[ True == \T\r\u\e ]]
 + lib/etcd3:cleanup_etcd3:97               :   sudo umount /opt/stack/data/etcd
-umount: /opt/stack/data/etcd: no mount point specified.
 + lib/etcd3:cleanup_etcd3:99               :   sudo rm -rf /opt/stack/data/etcd
 + unstack.sh:main:183                      :   is_service_enabled openstack-cli-server
 + functions-common:is_service_enabled:2047 :   local xtrace
@@ -1326,15 +1325,15 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:clean_iptables:203              :   sudo iptables -S -v
-+ lib/nova:clean_iptables:203              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:203              :   grep nova
++ lib/nova:clean_iptables:203              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:203              :   grep '\-N'
 + lib/nova:clean_iptables:203              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:203              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:203              :   bash
++ lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:205              :   grep nova
-+ lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
@@ -1449,7 +1448,9 @@ removing dangling symlink /etc/apache2/sites-enabled/placement-api.conf
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
-+ functions-common:is_service_enabled:2076 :   return 1
++ functions-common:is_service_enabled:2076 :   return 0
++ functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@neutron-api.service
+disabled
 + lib/neutron:cleanup_neutron:828          :   stop_process neutron-rpc-server
 + functions-common:stop_process:1696       :   local service=neutron-rpc-server
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
@@ -1459,7 +1460,9 @@ removing dangling symlink /etc/apache2/sites-enabled/placement-api.conf
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
-+ functions-common:is_service_enabled:2076 :   return 1
++ functions-common:is_service_enabled:2076 :   return 0
++ functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@neutron-rpc-server.service
+disabled
 + lib/neutron:cleanup_neutron:829          :   stop_process neutron-periodic-workers
 + functions-common:stop_process:1696       :   local service=neutron-periodic-workers
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
@@ -1469,7 +1472,9 @@ removing dangling symlink /etc/apache2/sites-enabled/placement-api.conf
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
-+ functions-common:is_service_enabled:2076 :   return 1
++ functions-common:is_service_enabled:2076 :   return 0
++ functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@neutron-periodic-workers.service
+disabled
 + lib/neutron:cleanup_neutron:830          :   _stop_ovn_maintenance
 + lib/neutron:_stop_ovn_maintenance:359    :   [[ ovn == \o\v\n ]]
 + lib/neutron:_stop_ovn_maintenance:360    :   stop_process neutron-ovn-maintenance-worker
@@ -1481,7 +1486,9 @@ removing dangling symlink /etc/apache2/sites-enabled/placement-api.conf
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
-+ functions-common:is_service_enabled:2076 :   return 1
++ functions-common:is_service_enabled:2076 :   return 0
++ functions-common:stop_process:1704       :   sudo systemctl is-enabled devstack@neutron-ovn-maintenance-worker.service
+disabled
 + lib/neutron:cleanup_neutron:831          :   remove_uwsgi_config /etc/neutron/neutron-api-uwsgi.ini neutron-api
 + lib/apache:remove_uwsgi_config:405       :   local conf=/etc/neutron/neutron-api-uwsgi.ini
 + lib/apache:remove_uwsgi_config:406       :   local wsgi=neutron-api
@@ -1656,14 +1663,14 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787728373310
-+ functions-common:time_stop:2429          :   [[ -z 1787728373310 ]]
++ functions-common:time_stop:2427          :   start_time=1787733296697
++ functions-common:time_stop:2429          :   [[ -z 1787733296697 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787728377873
-+ functions-common:time_stop:2433          :   elapsed_time=4563
++ functions-common:time_stop:2432          :   end_time=1787733301248
++ functions-common:time_stop:2433          :   elapsed_time=4551
 + functions-common:time_stop:2434          :   total=0
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=4563
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=4551
 + functions-common:apt_get:1215            :   return 0
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
@@ -1831,14 +1838,14 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787728377933
-+ functions-common:time_stop:2429          :   [[ -z 1787728377933 ]]
++ functions-common:time_stop:2427          :   start_time=1787733301310
++ functions-common:time_stop:2429          :   [[ -z 1787733301310 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787728386649
-+ functions-common:time_stop:2433          :   elapsed_time=8716
-+ functions-common:time_stop:2434          :   total=4563
++ functions-common:time_stop:2432          :   end_time=1787733309984
++ functions-common:time_stop:2433          :   elapsed_time=8674
++ functions-common:time_stop:2434          :   total=4551
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=13279
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=13225
 + functions-common:apt_get:1215            :   return 0
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
@@ -2024,21 +2031,21 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787728386713
-+ functions-common:time_stop:2429          :   [[ -z 1787728386713 ]]
++ functions-common:time_stop:2427          :   start_time=1787733310047
++ functions-common:time_stop:2429          :   [[ -z 1787733310047 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787728392641
-+ functions-common:time_stop:2433          :   elapsed_time=5928
-+ functions-common:time_stop:2434          :   total=13279
++ functions-common:time_stop:2432          :   end_time=1787733315966
++ functions-common:time_stop:2433          :   elapsed_time=5919
++ functions-common:time_stop:2434          :   total=13225
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=19207
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=19144
 + functions-common:apt_get:1215            :   return 0
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-26-145438 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-26-145438 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-26-145438
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-26-160143 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-26-160143 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-26-160143
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs
