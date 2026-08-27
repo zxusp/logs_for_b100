@@ -1,3 +1,7 @@
 /opt/stack/cinder-tempest-plugin ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
-HEAD is now at 29bb6f7 Merge "Add support for volume replication"
+Total 5 (delta 2), reused 4 (delta 2)
+From ssh://review.opendev.org:29418/openstack/cinder-tempest-plugin
+   29bb6f7..d4894b4  master     -> origin/master
+Previous HEAD position was 29bb6f7 Merge "Add support for volume replication"
+HEAD is now at d4894b4 Merge "Drop python 3.10 support"
 ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
