@@ -1,8 +1,6 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-   a6d00bde..eb43999b  master     -> origin/master
-Previous HEAD position was a6d00bde Merge "update constraint for glance_store to new release 5.7.0"
 HEAD is now at eb43999b Merge "update constraint for python-neutronclient to new release 14.0.0"
 Checkout requirements master success eb43999b Merge "update constraint for python-neutronclient to new release 14.0.0"
 
@@ -10,8 +8,6 @@ Checkout requirements master success eb43999b Merge "update constraint for pytho
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-   5a9d04d193..ae36baf182  master     -> origin/master
-Previous HEAD position was 5a9d04d193 Merge "Use service shutdown related config options in nova-graceful-shutdown"
 HEAD is now at ae36baf182 Merge "Remove unused default argument"
 Checkout nova master success ae36baf182 Merge "Remove unused default argument"
 
@@ -19,8 +15,6 @@ Checkout nova master success ae36baf182 Merge "Remove unused default argument"
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-   33b782f53..84ccb6d4d  master     -> origin/master
-Previous HEAD position was 33b782f53 Merge "Move boto3 to driver requirement"
 HEAD is now at 84ccb6d4d Merge "HPE: Update support matrix"
 Checkout cinder master success 84ccb6d4d Merge "HPE: Update support matrix"
 
@@ -49,8 +43,6 @@ Checkout keystone master success 16afc813b Merge "Abandon server-side paged sear
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-   d04539fe75..a64fd5cba1  master     -> origin/master
-Previous HEAD position was d04539fe75 Merge "Reduce ``test_get_and_delete_gateway`` privsep load"
 HEAD is now at a64fd5cba1 Merge "Raise error when adding another `advertise-host` subnet to a evpn router"
 Checkout neutron master success a64fd5cba1 Merge "Raise error when adding another `advertise-host` subnet to a evpn router"
 
@@ -58,8 +50,6 @@ Checkout neutron master success a64fd5cba1 Merge "Raise error when adding anothe
 ~/devstack/horizon ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/horizon
  * branch                master     -> FETCH_HEAD
-   777a2cb58..fc634fb68  master     -> origin/master
-Previous HEAD position was 777a2cb58 Add filtering to the image metadata form
 HEAD is now at fc634fb68 Merge "Enable RBAC new defaults in horizon"
 Checkout horizon master success fc634fb68 Merge "Enable RBAC new defaults in horizon"
 
