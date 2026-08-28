@@ -1,8 +1,6 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-   eb43999b..69c0522d  master     -> origin/master
-Previous HEAD position was eb43999b Merge "update constraint for python-neutronclient to new release 14.0.0"
 HEAD is now at 69c0522d Merge "update constraint for python-octaviaclient to new release 3.15.0"
 Checkout requirements master success 69c0522d Merge "update constraint for python-octaviaclient to new release 3.15.0"
 
@@ -10,17 +8,15 @@ Checkout requirements master success 69c0522d Merge "update constraint for pytho
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-   ae36baf182..004efcaba6  master     -> origin/master
-Previous HEAD position was ae36baf182 Merge "Remove unused default argument"
-HEAD is now at 004efcaba6 Merge "Add functional test for cleanup_host cancelling queued live migrations"
-Checkout nova master success 004efcaba6 Merge "Add functional test for cleanup_host cancelling queued live migrations"
+   004efcaba6..0b1ade7815  master     -> origin/master
+Previous HEAD position was 004efcaba6 Merge "Add functional test for cleanup_host cancelling queued live migrations"
+HEAD is now at 0b1ade7815 Merge "Replace OVN Metadata agent with OVN agent"
+Checkout nova master success 0b1ade7815 Merge "Replace OVN Metadata agent with OVN agent"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-   84ccb6d4d..7b02a990b  master     -> origin/master
-Previous HEAD position was 84ccb6d4d Merge "HPE: Update support matrix"
 HEAD is now at 7b02a990b Merge "NetApp ONTAP: fix ZAPI destroy_file_copy file-index type"
 Checkout cinder master success 7b02a990b Merge "NetApp ONTAP: fix ZAPI destroy_file_copy file-index type"
 
@@ -28,8 +24,6 @@ Checkout cinder master success 7b02a990b Merge "NetApp ONTAP: fix ZAPI destroy_f
 ~/devstack/glance ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/glance
  * branch                master     -> FETCH_HEAD
-   2699961fa..602b6d703  master     -> origin/master
-Previous HEAD position was 2699961fa tests: Ignore CHECK constraints in test_models_sync
 HEAD is now at 602b6d703 Test requirements: remove testresources and testscenarios
 Checkout glance master success 602b6d703 Test requirements: remove testresources and testscenarios
 
@@ -51,8 +45,6 @@ Checkout keystone master success 16afc813b Merge "Abandon server-side paged sear
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-   a64fd5cba1..dbdbfede94  master     -> origin/master
-Previous HEAD position was a64fd5cba1 Merge "Raise error when adding another `advertise-host` subnet to a evpn router"
 HEAD is now at dbdbfede94 Merge "DHCP: Clean HAProxy processes from ns during port_delete"
 Checkout neutron master success dbdbfede94 Merge "DHCP: Clean HAProxy processes from ns during port_delete"
 

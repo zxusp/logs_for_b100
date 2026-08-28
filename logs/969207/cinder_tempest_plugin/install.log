@@ -1,0 +1,83 @@
+Obtaining file:///opt/stack/cinder-tempest-plugin
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: pbr!=2.1.0,>=2.0.0 in ./.tox/venv/lib/python3.12/site-packages (from cinder-tempest-plugin==1.22.1.dev5) (7.0.3)
+Requirement already satisfied: oslo.config>=5.1.0 in ./.tox/venv/lib/python3.12/site-packages (from cinder-tempest-plugin==1.22.1.dev5) (10.7.0)
+Requirement already satisfied: oslo.serialization!=2.19.1,>=2.18.0 in ./.tox/venv/lib/python3.12/site-packages (from cinder-tempest-plugin==1.22.1.dev5) (5.11.0)
+Requirement already satisfied: tempest>=40.0.0 in ./.tox/venv/lib/python3.12/site-packages (from cinder-tempest-plugin==1.22.1.dev5) (46.1.2.dev8)
+Requirement already satisfied: netaddr>=0.7.18 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (1.3.0)
+Requirement already satisfied: stevedore>=5.6.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (5.9.0)
+Requirement already satisfied: oslo.i18n>=3.15.3 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (6.9.0)
+Requirement already satisfied: rfc3986>=1.2.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (2.0.0)
+Requirement already satisfied: PyYAML>=5.1 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (6.0.3)
+Requirement already satisfied: requests>=2.18.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (2.34.2)
+Requirement already satisfied: msgpack>=0.5.2 in ./.tox/venv/lib/python3.12/site-packages (from oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (1.2.1)
+Requirement already satisfied: oslo.utils>=3.33.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (10.1.1)
+Requirement already satisfied: setuptools in ./.tox/venv/lib/python3.12/site-packages (from pbr!=2.1.0,>=2.0.0->cinder-tempest-plugin==1.22.1.dev5) (84.0.0)
+Requirement already satisfied: cliff!=2.9.0,>=2.8.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.15.0)
+Requirement already satisfied: jsonschema>=4.5.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.26.0)
+Requirement already satisfied: testtools>=2.2.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.9.1)
+Requirement already satisfied: paramiko>=2.7.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.0.0)
+Requirement already satisfied: cryptography>=2.1 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (43.0.3)
+Requirement already satisfied: oslo.concurrency>=3.26.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (7.6.1)
+Requirement already satisfied: oslo.log>=3.36.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (8.3.0)
+Requirement already satisfied: stestr>=1.0.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.2.1)
+Requirement already satisfied: fixtures>=3.0.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.3.2)
+Requirement already satisfied: python-subunit>=1.0.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (1.4.6)
+Requirement already satisfied: PrettyTable>=0.7.1 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (3.18.0)
+Requirement already satisfied: urllib3>=1.21.1 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.7.0)
+Requirement already satisfied: debtcollector>=1.2.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (3.1.0)
+Requirement already satisfied: defusedxml>=0.7.1 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.7.1)
+Requirement already satisfied: fasteners>=0.16.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.20)
+Requirement already satisfied: testscenarios>=0.5.0 in ./.tox/venv/lib/python3.12/site-packages (from tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.6.2)
+Requirement already satisfied: autopage>=0.4.0 in ./.tox/venv/lib/python3.12/site-packages (from cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.6.0)
+Requirement already satisfied: cmd2>=3.0.0 in ./.tox/venv/lib/python3.12/site-packages (from cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.2.0)
+Requirement already satisfied: cffi>=1.12 in ./.tox/venv/lib/python3.12/site-packages (from cryptography>=2.1->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.1.1)
+Requirement already satisfied: wrapt>=2.1.0 in ./.tox/venv/lib/python3.12/site-packages (from debtcollector>=1.2.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.3.0)
+Requirement already satisfied: attrs>=22.2.0 in ./.tox/venv/lib/python3.12/site-packages (from jsonschema>=4.5.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.tox/venv/lib/python3.12/site-packages (from jsonschema>=4.5.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.tox/venv/lib/python3.12/site-packages (from jsonschema>=4.5.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in ./.tox/venv/lib/python3.12/site-packages (from jsonschema>=4.5.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2026.6.3)
+Requirement already satisfied: oslo.context>=2.21.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.log>=3.36.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (6.5.0)
+Requirement already satisfied: python-dateutil>=2.7.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.log>=3.36.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.9.0.post0)
+Requirement already satisfied: iso8601>=0.1.11 in ./.tox/venv/lib/python3.12/site-packages (from oslo.utils>=3.33.0->oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (2.1.0)
+Requirement already satisfied: pyparsing>=2.1.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.utils>=3.33.0->oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (3.3.2)
+Requirement already satisfied: packaging>=20.4 in ./.tox/venv/lib/python3.12/site-packages (from oslo.utils>=3.33.0->oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (26.3)
+Requirement already satisfied: psutil>=3.2.2 in ./.tox/venv/lib/python3.12/site-packages (from oslo.utils>=3.33.0->oslo.serialization!=2.19.1,>=2.18.0->cinder-tempest-plugin==1.22.1.dev5) (7.2.2)
+Requirement already satisfied: bcrypt>=3.2 in ./.tox/venv/lib/python3.12/site-packages (from paramiko>=2.7.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (5.0.0)
+Requirement already satisfied: invoke>=2.0 in ./.tox/venv/lib/python3.12/site-packages (from paramiko>=2.7.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (3.0.3)
+Requirement already satisfied: pynacl>=1.5 in ./.tox/venv/lib/python3.12/site-packages (from paramiko>=2.7.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (1.6.2)
+Requirement already satisfied: wcwidth>=0.3.5 in ./.tox/venv/lib/python3.12/site-packages (from PrettyTable>=0.7.1->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.8.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./.tox/venv/lib/python3.12/site-packages (from requests>=2.18.0->oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (3.5.0)
+Requirement already satisfied: idna<4,>=2.5 in ./.tox/venv/lib/python3.12/site-packages (from requests>=2.18.0->oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (3.18)
+Requirement already satisfied: certifi>=2023.5.7 in ./.tox/venv/lib/python3.12/site-packages (from requests>=2.18.0->oslo.config>=5.1.0->cinder-tempest-plugin==1.22.1.dev5) (2026.7.22)
+Requirement already satisfied: voluptuous>=0.8.9 in ./.tox/venv/lib/python3.12/site-packages (from stestr>=1.0.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.16.0)
+Requirement already satisfied: tomlkit>=0.11.6 in ./.tox/venv/lib/python3.12/site-packages (from stestr>=1.0.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.15.1)
+Requirement already satisfied: pycparser in ./.tox/venv/lib/python3.12/site-packages (from cffi>=1.12->cryptography>=2.1->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (3.0)
+Requirement already satisfied: prompt-toolkit>=3.0.53 in ./.tox/venv/lib/python3.12/site-packages (from cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (3.0.53)
+Requirement already satisfied: pyperclip>=1.8.2 in ./.tox/venv/lib/python3.12/site-packages (from cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (1.11.0)
+Requirement already satisfied: rich>=15.0.0 in ./.tox/venv/lib/python3.12/site-packages (from cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (15.0.0)
+Requirement already satisfied: rich-argparse>=1.7.2 in ./.tox/venv/lib/python3.12/site-packages (from cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (1.8.0)
+Requirement already satisfied: typing-extensions>=4.12.0 in ./.tox/venv/lib/python3.12/site-packages (from oslo.context>=2.21.0->oslo.log>=3.36.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.16.0)
+Requirement already satisfied: six>=1.5 in ./.tox/venv/lib/python3.12/site-packages (from python-dateutil>=2.7.0->oslo.log>=3.36.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (1.17.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.tox/venv/lib/python3.12/site-packages (from rich>=15.0.0->cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.tox/venv/lib/python3.12/site-packages (from rich>=15.0.0->cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (2.20.0)
+Requirement already satisfied: mdurl~=0.1 in ./.tox/venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=15.0.0->cmd2>=3.0.0->cliff!=2.9.0,>=2.8.0->tempest>=40.0.0->cinder-tempest-plugin==1.22.1.dev5) (0.1.2)
+Building wheels for collected packages: cinder-tempest-plugin
+  Building editable for cinder-tempest-plugin (pyproject.toml): started
+  Building editable for cinder-tempest-plugin (pyproject.toml): finished with status 'done'
+  Created wheel for cinder-tempest-plugin: filename=cinder_tempest_plugin-1.22.1.dev5-0.editable-py3-none-any.whl size=8606 sha256=9d3eb179befabbb08a7be1bd860b8bb4d319391434446e40551e1ba36ae1d685
+  Stored in directory: /tmp/pip-ephem-wheel-cache-a4ldo5d8/wheels/ed/66/13/a189967002c5a17b5be79aafc45c201bfd977ffc6e00d32aab
+Successfully built cinder-tempest-plugin
+Installing collected packages: cinder-tempest-plugin
+  Attempting uninstall: cinder-tempest-plugin
+    Found existing installation: cinder-tempest-plugin 1.22.1.dev5
+    Uninstalling cinder-tempest-plugin-1.22.1.dev5:
+      Successfully uninstalled cinder-tempest-plugin-1.22.1.dev5
+Successfully installed cinder-tempest-plugin-1.22.1.dev5
