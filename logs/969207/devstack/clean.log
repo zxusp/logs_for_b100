@@ -110,8 +110,8 @@ disabled
 + lib/nova:enable_nova_console_proxies:1096 :   for srv in n-novnc n-spice n-sproxy
 + lib/nova:enable_nova_console_proxies:1097 :   is_service_enabled n-novnc
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
@@ -282,8 +282,8 @@ disabled
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
-+ lib/nova:clean_iptables:201              :   grep '\-A'
 + lib/nova:clean_iptables:201              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:201              :   grep '\-A'
 + lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:clean_iptables:203              :   sudo iptables -S -v
@@ -296,9 +296,9 @@ disabled
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:205              :   grep nova
-+ lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   sed s/-N/-X/g
 + lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
++ lib/nova:clean_iptables:205              :   grep '\-N'
 + lib/nova:clean_iptables:205              :   bash
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
@@ -1315,15 +1315,15 @@ ERROR: Site keystone-wsgi-public does not exist!
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:199              :   grep nova
 + lib/nova:clean_iptables:199              :   grep '\-A'
++ lib/nova:clean_iptables:199              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
-+ lib/nova:clean_iptables:199              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-A'
-+ lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   sed s/-A/-D/g
++ lib/nova:clean_iptables:201              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:201              :   bash
 + lib/nova:clean_iptables:203              :   sudo iptables -S -v
 + lib/nova:clean_iptables:203              :   sed 's/-c [0-9]* [0-9]* //g'
@@ -1617,46 +1617,9 @@ To activate the new configuration, you need to run:
 + functions-common:apt_get:1195            :   xtrace='set -o xtrace'
 + functions-common:apt_get:1196            :   set +o xtrace
 + functions-common:apt_get:1207            :   sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes purge rabbitmq-server
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages were automatically installed and are no longer required:
-  alembic erlang-asn1 erlang-base erlang-crypto erlang-eldap erlang-ftp
-  erlang-inets erlang-mnesia erlang-os-mon erlang-parsetools erlang-public-key
-  erlang-runtime-tools erlang-snmp erlang-ssl erlang-syntax-tools erlang-tftp
-  erlang-tools erlang-xmerl keystone-common pycadf-common python3-alembic
-  python3-amqp python3-aniso8601 python3-asgiref python3-bs4 python3-cssselect
-  python3-debtcollector python3-decorator python3-defusedxml python3-dnspython
-  python3-dogpile.cache python3-elementpath python3-eventlet python3-fasteners
-  python3-flask python3-flask-restful python3-futurist python3-greenlet
-  python3-html5lib python3-iso8601 python3-itsdangerous python3-keystoneauth1
-  python3-keystoneclient python3-keystonemiddleware python3-kombu python3-ldap
-  python3-lxml python3-mako python3-memcache python3-migrate python3-monotonic
-  python3-msgpack python3-os-service-types python3-oslo.cache
-  python3-oslo.concurrency python3-oslo.config python3-oslo.context
-  python3-oslo.db python3-oslo.i18n python3-oslo.log python3-oslo.metrics
-  python3-oslo.middleware python3-oslo.policy python3-oslo.serialization
-  python3-oslo.upgradecheck python3-oslo.utils python3-osprofiler
-  python3-passlib python3-paste python3-pastedeploy python3-pastedeploy-tpl
-  python3-pastescript python3-prometheus-client python3-pyasyncore
-  python3-pycadf python3-pyinotify python3-pymysql python3-pysaml2
-  python3-repoze.lru python3-rfc3986 python3-routes python3-scrypt
-  python3-simplejson python3-soupsieve python3-sqlalchemy
-  python3-sqlalchemy-ext python3-sqlparse python3-statsd python3-tempita
-  python3-tenacity python3-testscenarios python3-vine python3-webencodings
-  python3-webob python3-werkzeug python3-wrapt python3-xmlschema xmlsec1
-Use 'sudo apt autoremove' to remove them.
-The following packages will be REMOVED:
-  rabbitmq-server*
-0 upgraded, 0 newly installed, 1 to remove and 75 not upgraded.
-After this operation, 24.3 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 172761 files and directories currently installed.)
-Removing rabbitmq-server (3.12.1-1ubuntu1.2) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 171040 files and directories currently installed.)
-Purging configuration files for rabbitmq-server (3.12.1-1ubuntu1.2) ...
-dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.d' not empty so not removed
-+ functions-common:apt_get:1211            :   result=0
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1772099 (unattended-upgr)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
++ functions-common:apt_get:1211            :   result=100
 + functions-common:apt_get:1214            :   time_stop apt-get
 + functions-common:time_stop:2420          :   local name
 + functions-common:time_stop:2421          :   local end_time
@@ -1664,15 +1627,15 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787829070570
-+ functions-common:time_stop:2429          :   [[ -z 1787829070570 ]]
++ functions-common:time_stop:2427          :   start_time=1787877559277
++ functions-common:time_stop:2429          :   [[ -z 1787877559277 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787829075095
-+ functions-common:time_stop:2433          :   elapsed_time=4525
++ functions-common:time_stop:2432          :   end_time=1787877559321
++ functions-common:time_stop:2433          :   elapsed_time=44
 + functions-common:time_stop:2434          :   total=0
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=4525
-+ functions-common:apt_get:1215            :   return 0
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=44
++ functions-common:apt_get:1215            :   return 100
 + lib/rpc_backend:cleanup_rpc_backend:42   :   sudo killall epmd
 + lib/rpc_backend:cleanup_rpc_backend:43   :   is_ubuntu
 + functions-common:is_ubuntu:546           :   [[ -z deb ]]
@@ -1684,154 +1647,9 @@ dpkg: warning: while removing rabbitmq-server, directory '/usr/lib/ocf/resource.
 + functions-common:apt_get:1195            :   xtrace='set -o xtrace'
 + functions-common:apt_get:1196            :   set +o xtrace
 + functions-common:apt_get:1207            :   sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes purge -y 'erlang*'
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Package 'erlang-base-hipe' is not installed, so not removed
-Package 'erlang-typer' is not installed, so not removed
-Package 'erlang-base-hipe:any' is not installed, so not removed
-Package 'erlang:any' is not installed, so not removed
-Package 'erlang' is not installed, so not removed
-Package 'erlang-manpages' is not installed, so not removed
-Package 'erlang-doc' is not installed, so not removed
-Package 'erlang-dev' is not installed, so not removed
-Package 'erlang-examples' is not installed, so not removed
-Package 'erlang-mode' is not installed, so not removed
-Package 'erlang-nox' is not installed, so not removed
-Package 'erlang-src' is not installed, so not removed
-Package 'erlang-x11' is not installed, so not removed
-Package 'erlang-megaco' is not installed, so not removed
-Package 'erlang-debugger' is not installed, so not removed
-Package 'erlang-et' is not installed, so not removed
-Package 'erlang-ssh' is not installed, so not removed
-Package 'erlang-cowboy' is not installed, so not removed
-Package 'erlang-getopt' is not installed, so not removed
-Package 'erlang-odbc' is not installed, so not removed
-Package 'erlang-base64url' is not installed, so not removed
-Package 'erlang-goldrush' is not installed, so not removed
-Package 'erlang-idna' is not installed, so not removed
-Package 'erlang-jiffy' is not installed, so not removed
-Package 'erlang-jose' is not installed, so not removed
-Package 'erlang-lager' is not installed, so not removed
-Package 'erlang-p1-acme' is not installed, so not removed
-Package 'erlang-p1-cache-tab' is not installed, so not removed
-Package 'erlang-p1-eimp' is not installed, so not removed
-Package 'erlang-p1-mqtree' is not installed, so not removed
-Package 'erlang-p1-pkix' is not installed, so not removed
-Package 'erlang-p1-stringprep' is not installed, so not removed
-Package 'erlang-p1-stun' is not installed, so not removed
-Package 'erlang-p1-tls' is not installed, so not removed
-Package 'erlang-p1-utils' is not installed, so not removed
-Package 'erlang-p1-xml' is not installed, so not removed
-Package 'erlang-p1-xmpp' is not installed, so not removed
-Package 'erlang-p1-yaml' is not installed, so not removed
-Package 'erlang-p1-yconf' is not installed, so not removed
-Package 'erlang-p1-zlib' is not installed, so not removed
-Package 'erlang-unicode-util-compat' is not installed, so not removed
-Package 'erlang-luerl' is not installed, so not removed
-Package 'erlang-p1-oauth2' is not installed, so not removed
-Package 'erlang-p1-mysql' is not installed, so not removed
-Package 'erlang-p1-pam' is not installed, so not removed
-Package 'erlang-p1-pgsql' is not installed, so not removed
-Package 'erlang-p1-sip' is not installed, so not removed
-Package 'erlang-p1-sqlite3' is not installed, so not removed
-Package 'erlang-redis-client' is not installed, so not removed
-Package 'erlang-jinterface' is not installed, so not removed
-Package 'erlang-asciideck' is not installed, so not removed
-Package 'erlang-bbmustache' is not installed, so not removed
-Package 'erlang-bear' is not installed, so not removed
-Package 'erlang-bitcask' is not installed, so not removed
-Package 'erlang-cuttlefish' is not installed, so not removed
-Package 'erlang-meck' is not installed, so not removed
-Package 'erlang-bitcask-dev' is not installed, so not removed
-Package 'erlang-cf' is not installed, so not removed
-Package 'erlang-cl' is not installed, so not removed
-Package 'erlang-common-test' is not installed, so not removed
-Package 'erlang-observer' is not installed, so not removed
-Package 'erlang-ranch' is not installed, so not removed
-Package 'erlang-cowlib' is not installed, so not removed
-Package 'erlang-cowboy-doc' is not installed, so not removed
-Package 'erlang-cowboy-examples' is not installed, so not removed
-Package 'erlang-eunit' is not installed, so not removed
-Package 'erlang-neotoma' is not installed, so not removed
-Package 'erlang-wx' is not installed, so not removed
-Package 'erlang-dialyzer' is not installed, so not removed
-Package 'erlang-diameter' is not installed, so not removed
-Package 'erlang-edoc' is not installed, so not removed
-Package 'erlang-erl-docgen' is not installed, so not removed
-Package 'erlang-erlware-commons' is not installed, so not removed
-Package 'erlang-erlware-commons-dev' is not installed, so not removed
-Package 'erlang-folsom' is not installed, so not removed
-Package 'erlang-folsom-dev' is not installed, so not removed
-Package 'erlang-hex' is not installed, so not removed
-Package 'erlang-horse' is not installed, so not removed
-Package 'erlang-proper' is not installed, so not removed
-Package 'erlang-metrics' is not installed, so not removed
-Package 'erlang-mimerl' is not installed, so not removed
-Package 'erlang-mochiweb' is not installed, so not removed
-Package 'erlang-p1-iconv' is not installed, so not removed
-Package 'erlang-poolboy' is not installed, so not removed
-Package 'erlang-proper-dev' is not installed, so not removed
-Package 'erlang-proper-doc' is not installed, so not removed
-Package 'erlang-ranch-doc' is not installed, so not removed
-Package 'erlang-reltool' is not installed, so not removed
-Package 'erlang-uuid' is not installed, so not removed
-Package 'erlang-yapp' is not installed, so not removed
-Package 'erlang-yaws' is not installed, so not removed
-The following packages were automatically installed and are no longer required:
-  alembic keystone-common pycadf-common python3-alembic python3-amqp
-  python3-aniso8601 python3-asgiref python3-bs4 python3-cssselect
-  python3-debtcollector python3-decorator python3-defusedxml python3-dnspython
-  python3-dogpile.cache python3-elementpath python3-eventlet python3-fasteners
-  python3-flask python3-flask-restful python3-futurist python3-greenlet
-  python3-html5lib python3-iso8601 python3-itsdangerous python3-keystoneauth1
-  python3-keystoneclient python3-keystonemiddleware python3-kombu python3-ldap
-  python3-lxml python3-mako python3-memcache python3-migrate python3-monotonic
-  python3-msgpack python3-os-service-types python3-oslo.cache
-  python3-oslo.concurrency python3-oslo.config python3-oslo.context
-  python3-oslo.db python3-oslo.i18n python3-oslo.log python3-oslo.metrics
-  python3-oslo.middleware python3-oslo.policy python3-oslo.serialization
-  python3-oslo.upgradecheck python3-oslo.utils python3-osprofiler
-  python3-passlib python3-paste python3-pastedeploy python3-pastedeploy-tpl
-  python3-pastescript python3-prometheus-client python3-pyasyncore
-  python3-pycadf python3-pyinotify python3-pymysql python3-pysaml2
-  python3-repoze.lru python3-rfc3986 python3-routes python3-scrypt
-  python3-simplejson python3-soupsieve python3-sqlalchemy
-  python3-sqlalchemy-ext python3-sqlparse python3-statsd python3-tempita
-  python3-tenacity python3-testscenarios python3-vine python3-webencodings
-  python3-webob python3-werkzeug python3-wrapt python3-xmlschema xmlsec1
-Use 'sudo apt autoremove' to remove them.
-The following packages will be REMOVED:
-  erlang-asn1* erlang-base* erlang-crypto* erlang-eldap* erlang-ftp*
-  erlang-inets* erlang-mnesia* erlang-os-mon* erlang-parsetools*
-  erlang-public-key* erlang-runtime-tools* erlang-snmp* erlang-ssl*
-  erlang-syntax-tools* erlang-tftp* erlang-tools* erlang-xmerl*
-0 upgraded, 0 newly installed, 17 to remove and 75 not upgraded.
-After this operation, 32.0 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 171032 files and directories currently installed.)
-Removing erlang-eldap (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-inets (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-xmerl (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-tools (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-os-mon (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-snmp (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-ftp (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-parsetools (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-syntax-tools (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-tftp (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-ssl (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-public-key (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-asn1 (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-crypto (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-runtime-tools (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-mnesia (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Removing erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-Searching for services which depend on erlang and should be stopped... none found.
-Killing epmd... it is not running.
-Processing triggers for man-db (2.12.0-4build2) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 169956 files and directories currently installed.)
-Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
-+ functions-common:apt_get:1211            :   result=0
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1772099 (unattended-upgr)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
++ functions-common:apt_get:1211            :   result=100
 + functions-common:apt_get:1214            :   time_stop apt-get
 + functions-common:time_stop:2420          :   local name
 + functions-common:time_stop:2421          :   local end_time
@@ -1839,15 +1657,15 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787829075155
-+ functions-common:time_stop:2429          :   [[ -z 1787829075155 ]]
++ functions-common:time_stop:2427          :   start_time=1787877559382
++ functions-common:time_stop:2429          :   [[ -z 1787877559382 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787829083983
-+ functions-common:time_stop:2433          :   elapsed_time=8828
-+ functions-common:time_stop:2434          :   total=4525
++ functions-common:time_stop:2432          :   end_time=1787877559425
++ functions-common:time_stop:2433          :   elapsed_time=43
++ functions-common:time_stop:2434          :   total=44
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=13353
-+ functions-common:apt_get:1215            :   return 0
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=87
++ functions-common:apt_get:1215            :   return 100
 + ./clean.sh:main:112                      :   cleanup_database
 + lib/database:cleanup_database:60         :   cleanup_database_mysql
 + lib/databases/mysql:cleanup_database_mysql:41 :   stop_service mysql
@@ -1863,168 +1681,9 @@ Purging configuration files for erlang-base (1:25.3.2.8+dfsg-1ubuntu4.6) ...
 + functions-common:apt_get:1195            :   xtrace='set -o xtrace'
 + functions-common:apt_get:1196            :   set +o xtrace
 + functions-common:apt_get:1207            :   sudo DEBIAN_FRONTEND=noninteractive http_proxy= https_proxy= no_proxy= apt-get --option Dpkg::Options::=--force-confold --assume-yes purge -y 'mysql*' 'mariadb*'
-Reading package lists...
-Building dependency tree...
-Reading state information...
-Package 'mysql-client-5.7' is not installed, so not removed
-Package 'mysql-client-core-5.7' is not installed, so not removed
-Package 'mysql-server-5.5' is not installed, so not removed
-Package 'mysql-server-5.7' is not installed, so not removed
-Package 'mysql-server-core-5.7' is not installed, so not removed
-Package 'mysql-client-core-5.5' is not installed, so not removed
-Package 'mysql-client-core-5.6' is not installed, so not removed
-Package 'mysql-client-5.5' is not installed, so not removed
-Package 'mysql-client-5.6' is not installed, so not removed
-Package 'mysql-cluster-community-client-plugins' is not installed, so not removed
-Package 'mysql-server-core-5.5' is not installed, so not removed
-Package 'mysql-server-core-5.6' is not installed, so not removed
-Package 'mysql-server-5.6' is not installed, so not removed
-Package 'mysql-testsuite-5.5' is not installed, so not removed
-Package 'mysql-testsuite-5.6' is not installed, so not removed
-Package 'mysql-testsuite-5.7' is not installed, so not removed
-Package 'mariadb-client-10.1' is not installed, so not removed
-Package 'mariadb-client-10.3' is not installed, so not removed
-Package 'mariadb-client-core-10.1' is not installed, so not removed
-Package 'mariadb-client-core-10.3' is not installed, so not removed
-Package 'mariadb-server-5.5' is not installed, so not removed
-Package 'mariadb-server-10.1' is not installed, so not removed
-Package 'mariadb-server-10.3' is not installed, so not removed
-Package 'mariadb-server-core-10.1' is not installed, so not removed
-Package 'mariadb-server-core-10.3' is not installed, so not removed
-Package 'mariadb-galera-server-10.0' is not installed, so not removed
-Package 'mariadb-galera-server-5.5' is not installed, so not removed
-Package 'mariadb-server-10.0' is not installed, so not removed
-Package 'mariadb-server-5.1' is not installed, so not removed
-Package 'mariadb-server-5.2' is not installed, so not removed
-Package 'mariadb-server-5.3' is not installed, so not removed
-Package 'mariadb-backup-10.1' is not installed, so not removed
-Package 'mariadb-backup-10.2' is not installed, so not removed
-Package 'mariadb-backup-10.3' is not installed, so not removed
-Package 'mariadb-client-10.0' is not installed, so not removed
-Package 'mariadb-client-10.2' is not installed, so not removed
-Package 'mariadb-client-10.4' is not installed, so not removed
-Package 'mariadb-client-10.5' is not installed, so not removed
-Package 'mariadb-client-10.6' is not installed, so not removed
-Package 'mariadb-client-5.5' is not installed, so not removed
-Package 'mariadb-client-core-10.0' is not installed, so not removed
-Package 'mariadb-client-core-10.2' is not installed, so not removed
-Package 'mariadb-client-core-10.4' is not installed, so not removed
-Package 'mariadb-client-core-10.5' is not installed, so not removed
-Package 'mariadb-client-core-10.6' is not installed, so not removed
-Package 'mariadb-server-10.2' is not installed, so not removed
-Package 'mariadb-server-10.4' is not installed, so not removed
-Package 'mariadb-server-10.6' is not installed, so not removed
-Package 'mariadb-client-core-5.5' is not installed, so not removed
-Package 'mariadb-server-core-10.4' is not installed, so not removed
-Package 'mariadb-server-core-10.5' is not installed, so not removed
-Package 'mariadb-server-core-10.6' is not installed, so not removed
-Package 'mariadb-connect-engine-10.0' is not installed, so not removed
-Package 'mariadb-connect-engine-10.1' is not installed, so not removed
-Package 'mariadb-gssapi-client-10.1' is not installed, so not removed
-Package 'mariadb-gssapi-client-10.2' is not installed, so not removed
-Package 'mariadb-gssapi-server-10.1' is not installed, so not removed
-Package 'mariadb-gssapi-server-10.2' is not installed, so not removed
-Package 'mariadb-oqgraph-engine-10.0' is not installed, so not removed
-Package 'mariadb-oqgraph-engine-10.1' is not installed, so not removed
-Package 'mariadb-rocksdb-engine-10.2' is not installed, so not removed
-Package 'mariadb-rocksdb-engine-10.3' is not installed, so not removed
-Package 'mariadb-tokudb-engine-10.0' is not installed, so not removed
-Package 'mariadb-tokudb-engine-10.1' is not installed, so not removed
-Package 'mariadb-tokudb-engine-5.5' is not installed, so not removed
-Package 'mariadb-galera-server' is not installed, so not removed
-Package 'mariadb-server-core-10.0' is not installed, so not removed
-Package 'mariadb-server-core-10.2' is not installed, so not removed
-Package 'mariadb-server-core-5.5' is not installed, so not removed
-Package 'mariadb-test-10.0' is not installed, so not removed
-Package 'mariadb-test-10.1' is not installed, so not removed
-Package 'mariadb-test-5.5' is not installed, so not removed
-Package 'mariadb-test-data-10.0' is not installed, so not removed
-Package 'mariadb-testsuite-10.1' is not installed, so not removed
-Package 'mariadb-testsuite-10.3' is not installed, so not removed
-Package 'mysql-client' is not installed, so not removed
-Package 'mysql-testsuite' is not installed, so not removed
-Package 'mysql-testsuite-8.0' is not installed, so not removed
-Package 'mysql-router' is not installed, so not removed
-Package 'mysql-sandbox' is not installed, so not removed
-Package 'mysql-shell' is not installed, so not removed
-Package 'mysql-source-8.0' is not installed, so not removed
-Package 'mysqltcl' is not installed, so not removed
-Package 'mysqltuner' is not installed, so not removed
-Package 'mariadb-common' is not installed, so not removed
-Package 'mariadb-server' is not installed, so not removed
-Package 'mariadb-client' is not installed, so not removed
-Package 'mariadb-backup' is not installed, so not removed
-Package 'mariadb-client-core' is not installed, so not removed
-Package 'mariadb-server-10.5' is not installed, so not removed
-Package 'mariadb-server-core' is not installed, so not removed
-Package 'mariadb-plugin-connect' is not installed, so not removed
-Package 'mariadb-plugin-cracklib-password-check' is not installed, so not removed
-Package 'mariadb-plugin-gssapi-client' is not installed, so not removed
-Package 'mariadb-plugin-gssapi-server' is not installed, so not removed
-Package 'mariadb-plugin-hashicorp-key-management' is not installed, so not removed
-Package 'mariadb-plugin-mroonga' is not installed, so not removed
-Package 'mariadb-plugin-oqgraph' is not installed, so not removed
-Package 'mariadb-plugin-provider-bzip2' is not installed, so not removed
-Package 'mariadb-plugin-provider-lz4' is not installed, so not removed
-Package 'mariadb-plugin-provider-lzma' is not installed, so not removed
-Package 'mariadb-plugin-provider-lzo' is not installed, so not removed
-Package 'mariadb-plugin-provider-snappy' is not installed, so not removed
-Package 'mariadb-plugin-rocksdb' is not installed, so not removed
-Package 'mariadb-plugin-s3' is not installed, so not removed
-Package 'mariadb-plugin-spider' is not installed, so not removed
-Package 'mariadb-test' is not installed, so not removed
-Package 'mariadb-test-data' is not installed, so not removed
-The following packages were automatically installed and are no longer required:
-  alembic keystone-common libcgi-fast-perl libcgi-pm-perl libclone-perl
-  libencode-locale-perl libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl
-  libfcgi0t64 libhtml-parser-perl libhtml-tagset-perl libhtml-template-perl
-  libhttp-date-perl libhttp-message-perl libio-html-perl
-  liblwp-mediatypes-perl libmecab2 libprotobuf-lite32t64 libtimedate-perl
-  liburi-perl mecab-ipadic mecab-ipadic-utf8 mecab-utils pycadf-common
-  python3-alembic python3-amqp python3-aniso8601 python3-asgiref python3-bs4
-  python3-cssselect python3-debtcollector python3-decorator python3-defusedxml
-  python3-dnspython python3-dogpile.cache python3-elementpath python3-eventlet
-  python3-fasteners python3-flask python3-flask-restful python3-futurist
-  python3-greenlet python3-html5lib python3-iso8601 python3-itsdangerous
-  python3-keystoneauth1 python3-keystoneclient python3-keystonemiddleware
-  python3-kombu python3-ldap python3-lxml python3-mako python3-memcache
-  python3-migrate python3-monotonic python3-msgpack python3-os-service-types
-  python3-oslo.cache python3-oslo.concurrency python3-oslo.config
-  python3-oslo.context python3-oslo.db python3-oslo.i18n python3-oslo.log
-  python3-oslo.metrics python3-oslo.middleware python3-oslo.policy
-  python3-oslo.serialization python3-oslo.upgradecheck python3-oslo.utils
-  python3-osprofiler python3-passlib python3-paste python3-pastedeploy
-  python3-pastedeploy-tpl python3-pastescript python3-prometheus-client
-  python3-pyasyncore python3-pycadf python3-pyinotify python3-pymysql
-  python3-pysaml2 python3-repoze.lru python3-rfc3986 python3-routes
-  python3-scrypt python3-simplejson python3-soupsieve python3-sqlalchemy
-  python3-sqlalchemy-ext python3-sqlparse python3-statsd python3-tempita
-  python3-tenacity python3-testscenarios python3-vine python3-webencodings
-  python3-webob python3-werkzeug python3-wrapt python3-xmlschema xmlsec1
-Use 'sudo apt autoremove' to remove them.
-The following packages will be REMOVED:
-  libmysqlclient21* mysql-client-8.0* mysql-client-core-8.0* mysql-common*
-  mysql-server* mysql-server-8.0* mysql-server-core-8.0* python3-mysqldb*
-0 upgraded, 0 newly installed, 8 to remove and 75 not upgraded.
-After this operation, 192 MB disk space will be freed.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 169956 files and directories currently installed.)
-Removing python3-mysqldb (1.4.6-2build3) ...
-Removing libmysqlclient21:amd64 (8.0.46-0ubuntu0.24.04.3) ...
-Removing mysql-server (8.0.46-0ubuntu0.24.04.3) ...
-Removing mysql-server-8.0 (8.0.46-0ubuntu0.24.04.3) ...
-update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
-update-alternatives: warning: not replacing /etc/mysql/my.cnf with a link
-Removing mysql-client-8.0 (8.0.46-0ubuntu0.24.04.3) ...
-Removing mysql-client-core-8.0 (8.0.46-0ubuntu0.24.04.3) ...
-Removing mysql-common (5.8+1.1.0build1) ...
-Removing mysql-server-core-8.0 (8.0.46-0ubuntu0.24.04.3) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-Processing triggers for libc-bin (2.39-0ubuntu8.8) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 169705 files and directories currently installed.)
-Purging configuration files for mysql-server-8.0 (8.0.46-0ubuntu0.24.04.3) ...
-Purging configuration files for mysql-common (5.8+1.1.0build1) ...
-dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so not removed
-+ functions-common:apt_get:1211            :   result=0
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1772099 (unattended-upgr)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
++ functions-common:apt_get:1211            :   result=100
 + functions-common:apt_get:1214            :   time_stop apt-get
 + functions-common:time_stop:2420          :   local name
 + functions-common:time_stop:2421          :   local end_time
@@ -2032,21 +1691,21 @@ dpkg: warning: while removing mysql-common, directory '/etc/mysql' not empty so 
 + functions-common:time_stop:2423          :   local total
 + functions-common:time_stop:2424          :   local start_time
 + functions-common:time_stop:2426          :   name=apt-get
-+ functions-common:time_stop:2427          :   start_time=1787829084046
-+ functions-common:time_stop:2429          :   [[ -z 1787829084046 ]]
++ functions-common:time_stop:2427          :   start_time=1787877559486
++ functions-common:time_stop:2429          :   [[ -z 1787877559486 ]]
 ++ functions-common:time_stop:2432          :   date +%s%3N
-+ functions-common:time_stop:2432          :   end_time=1787829090044
-+ functions-common:time_stop:2433          :   elapsed_time=5998
-+ functions-common:time_stop:2434          :   total=13353
++ functions-common:time_stop:2432          :   end_time=1787877559529
++ functions-common:time_stop:2433          :   elapsed_time=43
++ functions-common:time_stop:2434          :   total=87
 + functions-common:time_stop:2436          :   _TIME_START[$name]=
-+ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=19351
-+ functions-common:apt_get:1215            :   return 0
++ functions-common:time_stop:2437          :   _TIME_TOTAL[$name]=130
++ functions-common:apt_get:1215            :   return 100
 + lib/databases/mysql:cleanup_database_mysql:45 :   sudo rm -rf /var/lib/mysql
 + lib/databases/mysql:cleanup_database_mysql:46 :   sudo rm -rf /etc/mysql
 + ./clean.sh:main:115                      :   sudo rm -rf /opt/stack/data /opt/stack/status /opt/stack/async
-+ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-27-163857 ]]
-+ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-27-163857 ]]
-+ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-27-163857
++ ./clean.sh:main:118                      :   [[ -n /opt/stack/logs/stack.sh.log.2026-08-27-191146 ]]
++ ./clean.sh:main:118                      :   [[ -f /opt/stack/logs/stack.sh.log.2026-08-27-191146 ]]
++ ./clean.sh:main:119                      :   sudo rm -f /opt/stack/logs/stack.sh.log.2026-08-27-191146
 + ./clean.sh:main:121                      :   [[ -n /opt/stack/logs ]]
 + ./clean.sh:main:121                      :   [[ -d /opt/stack/logs ]]
 + ./clean.sh:main:122                      :   sudo rm -rf /opt/stack/logs
