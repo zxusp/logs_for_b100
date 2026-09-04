@@ -121,8 +121,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-sch.service".
 + lib/nova:enable_nova_console_proxies:1096 :   for srv in n-novnc n-spice n-sproxy
 + lib/nova:enable_nova_console_proxies:1097 :   is_service_enabled n-sproxy
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   grep xtrace
 ++ functions-common:is_service_enabled:2048 :   set +o
+++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 1
@@ -280,8 +280,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:199              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
-+ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   sed 's/-c [0-9]* [0-9]* //g'
++ lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:201              :   grep nova
 + lib/nova:clean_iptables:201              :   grep '\-A'
 + lib/nova:clean_iptables:201              :   sed s/-A/-D/g
@@ -296,11 +296,11 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:203              :   bash
 + lib/nova:clean_iptables:205              :   sudo iptables -S -v -t nat
 + lib/nova:clean_iptables:205              :   sed 's/-c [0-9]* [0-9]* //g'
-+ lib/nova:clean_iptables:205              :   grep nova
 + lib/nova:clean_iptables:205              :   grep '\-N'
++ lib/nova:clean_iptables:205              :   grep nova
 + lib/nova:clean_iptables:205              :   sed s/-N/-X/g
-+ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:clean_iptables:205              :   bash
++ lib/nova:clean_iptables:205              :   awk '{print "sudo iptables -t nat",$0}'
 + lib/nova:cleanup_nova:216                :   local instances
 ++ lib/nova:cleanup_nova:217                :   sudo virsh list --all
 ++ lib/nova:cleanup_nova:217                :   grep instance-
@@ -449,8 +449,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@g-api.service".
 + functions-common:stop_process:1698       :   SERVICE_DIR=/opt/stack/status
 + functions-common:stop_process:1700       :   is_service_enabled keystone
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 0
