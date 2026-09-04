@@ -1,8 +1,6 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-   69c0522d..c2333452  master     -> origin/master
-Previous HEAD position was 69c0522d Merge "update constraint for python-octaviaclient to new release 3.15.0"
 HEAD is now at c2333452 Merge "update constraint for python-tackerclient to new release 2.6.0"
 Checkout requirements master success c2333452 Merge "update constraint for python-tackerclient to new release 2.6.0"
 
@@ -10,8 +8,6 @@ Checkout requirements master success c2333452 Merge "update constraint for pytho
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-   0b1ade7815..ad5e2ea26e  master     -> origin/master
-Previous HEAD position was 0b1ade7815 Merge "Replace OVN Metadata agent with OVN agent"
 HEAD is now at ad5e2ea26e Stabilize _test_interface_attach_and_detach
 Checkout nova master success ad5e2ea26e Stabilize _test_interface_attach_and_detach
 
@@ -19,8 +15,6 @@ Checkout nova master success ad5e2ea26e Stabilize _test_interface_attach_and_det
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-   7b02a990b..c409487fb  master     -> origin/master
-Previous HEAD position was 7b02a990b Merge "NetApp ONTAP: fix ZAPI destroy_file_copy file-index type"
 HEAD is now at c409487fb Merge "NetApp ONTAP retype/migrate to a non-NetApp backend fails with host 'none'"
 Checkout cinder master success c409487fb Merge "NetApp ONTAP retype/migrate to a non-NetApp backend fails with host 'none'"
 
@@ -28,8 +22,6 @@ Checkout cinder master success c409487fb Merge "NetApp ONTAP retype/migrate to a
 ~/devstack/glance ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/glance
  * branch                master     -> FETCH_HEAD
-   602b6d703..d1c3ffc71  master     -> origin/master
-Previous HEAD position was 602b6d703 Test requirements: remove testresources and testscenarios
 HEAD is now at d1c3ffc71 Merge "Block restricted hosts when adding HTTP image locations"
 Checkout glance master success d1c3ffc71 Merge "Block restricted hosts when adding HTTP image locations"
 
@@ -37,8 +29,6 @@ Checkout glance master success d1c3ffc71 Merge "Block restricted hosts when addi
 ~/devstack/os-brick ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/os-brick
  * branch            master     -> FETCH_HEAD
-   46ca08f..44c0199  master     -> origin/master
-Previous HEAD position was 46ca08f Merge "Initiate NVMeConnProps with controllers in extend_volume"
 HEAD is now at 44c0199 Update master for stable/2026.2
 Checkout os-brick master success 44c0199 Update master for stable/2026.2
 
@@ -46,8 +36,6 @@ Checkout os-brick master success 44c0199 Update master for stable/2026.2
 ~/devstack/keystone ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/keystone
  * branch                master     -> FETCH_HEAD
-   16afc813b..5f1d13f38  master     -> origin/master
-Previous HEAD position was 16afc813b Merge "Abandon server-side paged search cursor when sizelimit is reached"
 HEAD is now at 5f1d13f38 Merge "Use a %% to escape the % sign"
 Checkout keystone master success 5f1d13f38 Merge "Use a %% to escape the % sign"
 
@@ -55,8 +43,6 @@ Checkout keystone master success 5f1d13f38 Merge "Use a %% to escape the % sign"
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-   dbdbfede94..fb8a869626  master     -> origin/master
-Previous HEAD position was dbdbfede94 Merge "DHCP: Clean HAProxy processes from ns during port_delete"
 HEAD is now at fb8a869626 Merge "Add PVLAN support to ovn-db-sync"
 Checkout neutron master success fb8a869626 Merge "Add PVLAN support to ovn-db-sync"
 
@@ -64,8 +50,6 @@ Checkout neutron master success fb8a869626 Merge "Add PVLAN support to ovn-db-sy
 ~/devstack/horizon ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/horizon
  * branch                master     -> FETCH_HEAD
-   fc634fb68..df18361ca  master     -> origin/master
-Previous HEAD position was fc634fb68 Merge "Enable RBAC new defaults in horizon"
 HEAD is now at df18361ca Merge "Build flavor test data with openstacksdk"
 Checkout horizon master success df18361ca Merge "Build flavor test data with openstacksdk"
 
@@ -73,8 +57,6 @@ Checkout horizon master success df18361ca Merge "Build flavor test data with ope
 ~/devstack/tempest ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/tempest
  * branch                master     -> FETCH_HEAD
-   ea2da2069..c00f1590e  master     -> origin/master
-Previous HEAD position was ea2da2069 Fix list_live_migrations for the server uuid field
 HEAD is now at c00f1590e Avoid loopback URIs in hash cancellation location test
 Checkout tempest master success c00f1590e Avoid loopback URIs in hash cancellation location test
 
