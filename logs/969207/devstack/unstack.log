@@ -121,8 +121,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-sch.service".
 + lib/nova:enable_nova_console_proxies:1096 :   for srv in n-novnc n-spice n-sproxy
 + lib/nova:enable_nova_console_proxies:1097 :   is_service_enabled n-sproxy
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   set +o
 ++ functions-common:is_service_enabled:2048 :   grep xtrace
+++ functions-common:is_service_enabled:2048 :   set +o
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 1
@@ -276,8 +276,8 @@ Removed "/etc/systemd/system/multi-user.target.wants/devstack@n-cpu.service".
 + lib/nova:clean_iptables:199              :   sudo iptables -S -v
 + lib/nova:clean_iptables:199              :   sed 's/-c [0-9]* [0-9]* //g'
 + lib/nova:clean_iptables:199              :   grep nova
-+ lib/nova:clean_iptables:199              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:199              :   grep '\-A'
++ lib/nova:clean_iptables:199              :   sed s/-A/-D/g
 + lib/nova:clean_iptables:199              :   awk '{print "sudo iptables",$0}'
 + lib/nova:clean_iptables:199              :   bash
 + lib/nova:clean_iptables:201              :   sudo iptables -S -v -t nat
@@ -320,7 +320,7 @@ iscsiadm: No records found
 + lib/nova:cleanup_nova:236                :   sudo nvme disconnect-all
 sudo: nvme: command not found
 + lib/nova:cleanup_nova:236                :   true
-+ lib/nova:cleanup_nova:239                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
++ lib/nova:cleanup_nova:239                :   sudo rm -rf /opt/stack/data/nova/instances/_base /opt/stack/data/nova/instances/compute_nodes /opt/stack/data/nova/instances/locks /opt/stack/data/nova/instances/snapshots
 + lib/nova:cleanup_nova:242                :   sudo rm -rf /opt/stack/data/nova
 + lib/nova:cleanup_nova:251                :   stop_process n-api
 + functions-common:stop_process:1696       :   local service=n-api
@@ -844,8 +844,8 @@ enabled
 Removed "/etc/systemd/system/multi-user.target.wants/ovn-central.service".
 + lib/neutron_plugins/ovn_agent:stop_ovn:858 :   is_service_enabled ovs-vtep
 + functions-common:is_service_enabled:2047 :   local xtrace
-++ functions-common:is_service_enabled:2048 :   grep xtrace
 ++ functions-common:is_service_enabled:2048 :   set +o
+++ functions-common:is_service_enabled:2048 :   grep xtrace
 + functions-common:is_service_enabled:2048 :   xtrace='set -o xtrace'
 + functions-common:is_service_enabled:2049 :   set +o xtrace
 + functions-common:is_service_enabled:2076 :   return 1
