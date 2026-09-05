@@ -1,22 +1,28 @@
 ~/devstack/requirements ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/requirements
  * branch              master     -> FETCH_HEAD
-HEAD is now at c2333452 Merge "update constraint for python-tackerclient to new release 2.6.0"
-Checkout requirements master success c2333452 Merge "update constraint for python-tackerclient to new release 2.6.0"
+   c2333452..9edc0428  master     -> origin/master
+Previous HEAD position was c2333452 Merge "update constraint for python-tackerclient to new release 2.6.0"
+HEAD is now at 9edc0428 Merge "update constraint for os_vif to new release 5.2.1"
+Checkout requirements master success 9edc0428 Merge "update constraint for os_vif to new release 5.2.1"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-HEAD is now at ad5e2ea26e Stabilize _test_interface_attach_and_detach
-Checkout nova master success ad5e2ea26e Stabilize _test_interface_attach_and_detach
+   ad5e2ea26e..56825a6508  master     -> origin/master
+Previous HEAD position was ad5e2ea26e Stabilize _test_interface_attach_and_detach
+HEAD is now at 56825a6508 Use a per-instance cephx identity for CephFS shares
+Checkout nova master success 56825a6508 Use a per-instance cephx identity for CephFS shares
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/cinder ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/cinder
  * branch                master     -> FETCH_HEAD
-HEAD is now at c409487fb Merge "NetApp ONTAP retype/migrate to a non-NetApp backend fails with host 'none'"
-Checkout cinder master success c409487fb Merge "NetApp ONTAP retype/migrate to a non-NetApp backend fails with host 'none'"
+   c409487fb..a4767351c  master     -> origin/master
+Previous HEAD position was c409487fb Merge "NetApp ONTAP retype/migrate to a non-NetApp backend fails with host 'none'"
+HEAD is now at a4767351c Merge "[Hitachi] Update version for Hibiscus release / small doc updates"
+Checkout cinder master success a4767351c Merge "[Hitachi] Update version for Hibiscus release / small doc updates"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/glance ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
@@ -43,8 +49,10 @@ Checkout keystone master success 5f1d13f38 Merge "Use a %% to escape the % sign"
 ~/devstack/neutron ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/neutron
  * branch                  master     -> FETCH_HEAD
-HEAD is now at fb8a869626 Merge "Add PVLAN support to ovn-db-sync"
-Checkout neutron master success fb8a869626 Merge "Add PVLAN support to ovn-db-sync"
+   fb8a869626..b593ae0a66  master     -> origin/master
+Previous HEAD position was fb8a869626 Merge "Add PVLAN support to ovn-db-sync"
+HEAD is now at b593ae0a66 Merge "Add upstream EVPN multinode Zuul job"
+Checkout neutron master success b593ae0a66 Merge "Add upstream EVPN multinode Zuul job"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 ~/devstack/horizon ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
@@ -57,7 +65,9 @@ Checkout horizon master success df18361ca Merge "Build flavor test data with ope
 ~/devstack/tempest ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/tempest
  * branch                master     -> FETCH_HEAD
-HEAD is now at c00f1590e Avoid loopback URIs in hash cancellation location test
-Checkout tempest master success c00f1590e Avoid loopback URIs in hash cancellation location test
+   c00f1590e..6d858a41e  master     -> origin/master
+Previous HEAD position was c00f1590e Avoid loopback URIs in hash cancellation location test
+HEAD is now at 6d858a41e Merge "Don't send immutable fields when updating a credential"
+Checkout tempest master success 6d858a41e Merge "Don't send immutable fields when updating a credential"
 
 ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
