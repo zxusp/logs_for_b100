@@ -8,8 +8,6 @@ Checkout requirements master success 9edc0428 Merge "update constraint for os_vi
 ~/devstack/nova ~/devstack ~/workspace/workspace/cinder_for_zte_usp_dirver/ciscripts_for_b100
 From https://opendev.org/openstack/nova
  * branch                  master     -> FETCH_HEAD
-   56825a6508..1dc44b5988  master     -> origin/master
-Previous HEAD position was 56825a6508 Use a per-instance cephx identity for CephFS shares
 HEAD is now at 1dc44b5988 Only load same-host instances when checking share usage
 Checkout nova master success 1dc44b5988 Only load same-host instances when checking share usage
 
